@@ -44,10 +44,14 @@
   </header>
 
   <main id="top">
-    <section class="relative isolate overflow-hidden px-5 pb-20 pt-36 sm:px-8 lg:min-h-[760px] lg:px-16 lg:pt-44">
-      <div class="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1fr_1.1fr]">
-        <div class="relative z-10"><p class="mb-5 text-xs font-semibold uppercase tracking-[.24em] text-ink/55">MindState journal</p><h1 class="font-instrument text-[clamp(4rem,10vw,8.5rem)] leading-[.84]">A place for<br><em>thoughtful minds.</em></h1><p class="mt-8 max-w-xl text-lg leading-7 text-ink/75 sm:text-xl">Explore essays, research, art, and voices shaping the future of mental wellbeing.</p><a href="#featured" class="mt-8 inline-flex rounded-full bg-wine px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink">Read the journal <span class="ml-3">↗</span></a></div>
-        <div class="relative min-h-[350px] sm:min-h-[480px] lg:min-h-[560px]"><div class="absolute -right-16 top-8 h-56 w-56 rounded-[2rem] bg-wine sm:h-72 sm:w-72"></div><div class="fallback relative z-10 ml-auto h-[350px] w-[86%] overflow-hidden rounded-[2rem] sm:h-[480px] lg:h-[560px]"><img src="{% static 'ChatgptImageJul23202607_36_21Pm1.png' %}" alt="A thoughtful person in a creative space" class="h-full w-full object-cover" onerror="this.style.display='none'"></div><img src="{% static 'ChatgptImageJun6202611_24_00Pmphotoroom1.png' %}" alt="MindState illustration" class="absolute -bottom-3 left-0 z-20 w-40 sm:w-64"></div>
+    <section class="relative isolate flex min-h-[680px] items-center justify-center overflow-hidden bg-wine px-5 pb-20 pt-32 text-center text-white sm:min-h-[760px] sm:px-8 sm:pt-40">
+      <img src="{% static 'ChatgptImageJul23202607_36_21Pm1.png' %}" alt="A thoughtful person in a creative space" class="absolute inset-0 -z-20 h-full w-full object-cover opacity-70" onerror="this.style.display='none'">
+      <div class="absolute inset-0 -z-10 bg-gradient-to-b from-wine/55 via-wine/35 to-wine/90"></div>
+      <div class="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center">
+        <img src="{% static 'ChatgptImageJun6202611_24_00Pmphotoroom1.png' %}" alt="MindState illustration" class="mb-3 w-44 sm:mb-5 sm:w-64">
+        <h1 class="max-w-4xl font-instrument text-[clamp(4rem,10vw,8.5rem)] leading-[.84] text-white">A place for<br><em>thoughtful minds.</em></h1>
+        <p class="mt-7 max-w-3xl text-base leading-6 text-white/85 sm:text-xl sm:leading-8">Explore essays, research, art, and voices shaping the future of mental wellbeing.</p>
+        <a href="#featured" class="mt-8 inline-flex items-center rounded-full border border-black bg-wine px-7 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-white hover:text-wine">Read the journal <span class="ml-3 text-lg">↗</span></a>
       </div>
     </section>
 
