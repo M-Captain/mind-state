@@ -1,0 +1,123 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MindState | Redefining the way we understand mental health</title>
+  <meta name="description" content="MindState is a space for honest conversations about mental health, culture, and being human.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['DM Sans', 'ui-sans-serif', 'sans-serif'],
+            serif: ['Instrument Serif', 'Georgia', 'serif']
+          },
+          colors: { ink: '#060606', cream: '#FEF0D8', wine: '#292021' }
+        }
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: light; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #FEF0D8; color: #060606; font-family: 'DM Sans', sans-serif; }
+    .display { letter-spacing: -.055em; line-height: .9; }
+    .serif { font-family: 'Instrument Serif', Georgia, serif; }
+    .tag-row { scrollbar-width: none; }
+    .tag-row::-webkit-scrollbar { display: none; }
+    .image-fallback { background: linear-gradient(135deg, #d7a66d 0%, #876e71 48%, #292021 100%); }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal { opacity: 1; transform: none; transition: none; } }
+  </style>
+</head>
+<body>
+  <header class="fixed inset-x-0 top-0 z-50 px-3 py-3 sm:px-6">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between rounded-full bg-wine px-4 py-2.5 text-white shadow-lg shadow-black/10" aria-label="Main navigation">
+      <a href="#top" class="flex items-center gap-2 text-lg font-semibold tracking-tight"><span class="grid h-8 w-8 place-items-center rounded-full bg-cream text-wine">M</span> MINDSTATE</a>
+      <div class="hidden items-center gap-6 text-sm md:flex"><a href="#articles" class="hover:text-cream">Articles <sup>13</sup></a><a href="#art" class="hover:text-cream">Art</a><a href="#about" class="hover:text-cream">About us</a><a href="#contact" class="hover:text-cream">Contact us</a></div>
+      <div class="flex items-center gap-2"><button type="button" id="search-button" class="grid h-9 w-9 place-items-center rounded-full border border-white/40" aria-label="Open search">⌕</button><a href="#community" class="hidden rounded-full bg-white px-4 py-2 text-sm font-semibold text-wine sm:block">Join community</a><button type="button" id="menu-button" class="grid h-9 w-9 place-items-center rounded-full border border-white/40 md:hidden" aria-label="Open menu">☰</button></div>
+    </nav>
+    <div id="mobile-menu" class="mx-auto mt-2 hidden max-w-7xl rounded-2xl bg-wine p-5 text-white md:hidden"><div class="grid gap-3 text-lg"><a href="#articles">Articles</a><a href="#events">Events</a><a href="#art">Art & design</a><a href="#about">About us</a><a href="#contact">Contact us</a></div></div>
+  </header>
+
+  <main id="top" class="overflow-hidden">
+    <section class="px-5 pb-20 pt-36 sm:px-8 lg:px-16 lg:pb-32 lg:pt-48">
+      <div class="mx-auto max-w-[1400px]">
+        <div class="grid items-end gap-6 lg:grid-cols-[1fr_360px]">
+          <h1 class="display text-[clamp(4.3rem,12vw,10rem)] font-medium">Redefining</h1>
+          <p class="serif max-w-sm pb-3 text-lg uppercase leading-tight text-ink/45">Explore stories, ideas, and conversations that challenge how we see mental health, society, and ourselves.</p>
+        </div>
+        <div class="my-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-[clamp(4rem,11vw,9.5rem)] font-medium leading-[.9] tracking-[-.055em]">
+          <span>The</span><button type="button" id="way-button" class="serif rounded-full border-[3px] border-ink px-7 py-2 italic transition hover:bg-ink hover:text-cream">Way</button><span>we understand</span>
+        </div>
+        <div class="grid items-start gap-6 lg:grid-cols-[360px_1fr] lg:items-center">
+          <p class="serif order-2 max-w-sm text-lg uppercase leading-tight text-ink/45 lg:order-1">From personal stories to culture, politics, and psychology, we create space for honest conversations.</p>
+          <h2 class="display order-1 text-right text-[clamp(3.7rem,10vw,8.7rem)] font-medium lg:order-2">Mental health</h2>
+        </div>
+      </div>
+    </section>
+
+    <section id="articles" class="mx-auto max-w-[1400px] scroll-mt-20 px-5 pb-24 sm:px-8 lg:px-16">
+      <div class="mb-8 flex items-center gap-3"><h2 class="text-3xl font-medium tracking-tight">Articles</h2><button type="button" class="view-all rounded-full border border-ink px-5 py-2 text-sm transition hover:bg-ink hover:text-cream">View all</button></div>
+      <div id="article-grid" class="grid gap-x-5 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
+    </section>
+
+    <section id="events" class="scroll-mt-20 bg-wine px-5 py-20 text-white sm:px-8 lg:px-16">
+      <div class="mx-auto max-w-[1400px]"><div class="mb-8 flex items-center gap-3"><h2 class="text-3xl font-medium tracking-tight">Events</h2><button type="button" class="rounded-full border border-white px-5 py-2 text-sm transition hover:bg-white hover:text-wine">View all</button></div><div id="event-grid" class="grid gap-5 lg:grid-cols-3"></div></div>
+    </section>
+
+    <section class="mx-auto max-w-[1400px] px-5 py-24 sm:px-8 lg:px-16"><div class="mb-8 flex items-center gap-3"><h2 class="text-3xl font-medium tracking-tight">Recently added</h2><button type="button" class="rounded-full border border-ink px-5 py-2 text-sm transition hover:bg-ink hover:text-cream">View all</button></div><div class="grid gap-8 lg:grid-cols-[1.55fr_1fr]"><div class="image-fallback relative min-h-[360px] overflow-hidden rounded-2xl"><img src="{% static 'MainArticleFrame.png' %}" alt="Supreme and Nike collaboration" class="h-full w-full object-cover" onerror="this.style.display='none'"><div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-7 text-white"><p class="mb-2 text-xs uppercase tracking-[.18em]">Fashion · Supreme · Nike</p><h3 class="max-w-xl text-3xl font-medium">Supreme and Nike Have an Air Max TL 99 Collaboration on the Way</h3><p class="mt-3 text-sm text-white/70">02 Nov 2024 · By Guy Hawkins</p></div></div><div class="divide-y divide-ink/20" id="recent-list"></div></div></section>
+
+    <section id="community" class="scroll-mt-20 bg-wine px-5 py-24 text-white sm:px-8 lg:px-16"><div class="mx-auto max-w-[1400px]"><p class="mb-16 text-center text-xl">Our community members</p><div class="flex flex-wrap justify-center gap-x-8 gap-y-5 text-center text-4xl font-medium tracking-tight sm:text-6xl"><span>Zidan Muharwan <small class="align-top rounded-full border border-white/50 px-2 py-1 text-xs font-normal">Writer</small></span><span>Arlene McCoy <small class="align-top rounded-full border border-white/50 px-2 py-1 text-xs font-normal">Artist</small></span><span>Robert Fox <small class="align-top rounded-full border border-white/50 px-2 py-1 text-xs font-normal">Writer</small></span></div><div class="mt-16 flex flex-col items-center gap-4"><a href="#contact" class="rounded-full border border-white px-6 py-3 text-sm transition hover:bg-white hover:text-wine">View all members</a><a href="#contact" class="text-sm text-white/60 underline underline-offset-4">How to join community members?</a></div></div></section>
+
+    <section id="art" class="mx-auto max-w-[1400px] scroll-mt-20 px-5 py-24 sm:px-8 lg:px-16"><div class="mb-8 flex items-center gap-3"><h2 class="text-3xl font-medium tracking-tight">Art</h2><button type="button" class="rounded-full border border-ink px-5 py-2 text-sm transition hover:bg-ink hover:text-cream">View all</button></div><div id="art-grid" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"></div></section>
+  </main>
+
+  <footer id="contact" class="bg-cream px-5 pb-8 pt-16 sm:px-8 lg:px-16"><div class="mx-auto grid max-w-[1400px] gap-12 border-t border-ink/15 pt-12 md:grid-cols-4"><div class="md:col-span-1"><p class="serif text-5xl">MINDSTATE</p><p class="mt-5 max-w-xs text-sm leading-6 text-ink/50">A space for honest conversations about mental health, culture, and being human.</p></div><div><h3 class="mb-4 font-semibold">Categories</h3><div class="grid gap-2 text-sm text-ink/70"><a href="#articles">Articles</a><a href="#art">Art and design</a><a href="#contact">Contact us</a><a href="#about">About us</a></div></div><div><h3 class="mb-4 font-semibold">Social</h3><div class="grid gap-2 text-sm text-ink/70"><a href="#contact">Instagram</a><a href="#contact">Facebook</a><a href="#contact">Twitter</a><a href="#contact">YouTube</a></div></div><div><h3 class="mb-4 font-semibold">Subscribe</h3><form id="subscribe-form" class="flex rounded-full border border-ink px-4 py-2"><label for="email" class="sr-only">Email address</label><input id="email" type="email" required placeholder="Enter your email" class="min-w-0 flex-1 bg-transparent text-sm outline-none"><button aria-label="Subscribe" class="text-xl" type="submit">→</button></form><p id="form-message" class="mt-2 text-xs text-ink/50" role="status"></p></div></div><div class="mx-auto mt-16 flex max-w-[1400px] flex-wrap justify-between gap-3 border-t border-ink/15 pt-5 text-xs text-ink/50"><span>MindState © 2026, All Rights Reserved</span><span>Privacy Policy · Terms and conditions</span></div></footer>
+
+  <div id="search-panel" class="fixed inset-0 z-[60] hidden bg-wine/95 p-6 text-white"><button id="close-search" class="absolute right-6 top-6 text-3xl" aria-label="Close search">×</button><div class="mx-auto mt-32 max-w-3xl"><label for="search-input" class="serif text-6xl">Search MindState</label><input id="search-input" type="search" placeholder="Try fashion, art, music..." class="mt-8 w-full border-b-2 border-white bg-transparent py-4 text-2xl outline-none placeholder:text-white/40"></div></div>
+  <script>
+    const staticPrefix = '{% get_static_prefix %}';
+    const staticPath = name => `${staticPrefix}${name}`;
+    const articles = [
+      ['ArticleImage.png', 'Sports · Events · Skateboard', 'World Skate’s recent Street Skateboarding Championship in Hawaii', '22 May 2024', 'Wade Warren'],
+      ['ArticleImage(1).png', 'Music · Album Review · Country', 'Sturgill Simpson Made a Bluegrass Concept Album For His Grandparents. It Rules', '01 Apr 2024', 'Esther Howard'],
+      ['ArticleImage(2).png', 'Music · Interview · Hyperpop', 'We Asked PC Music Fans: Is Hyperpop Dead?', '30 Aug 2024', 'Robert Fox'],
+      ['ArticleImage(3).png', 'Pop Culture · Art Records · Hardly Art', 'Colleen Green Is the Coolest of the Anti-Cool on “I Want To Grow Up”', '06 Jun 2024', 'Leslie Alexander'],
+      ['ArticleImage(4).png', 'Fashion · Streetwear · Sneakers', 'Hoka’s Bondi 7 Shoes Saved My Feet as a Runner', '24 Sep 2024', 'Leslie Alexander'],
+      ['ArticleImage(5).png', 'Sports · Surfing · John Freed', 'The coastal waters near Cape Town are part of the reason it’s the most visited city in China', '18 Jun 2024', 'Guy Hawkins']
+    ];
+    const events = [
+      ['EventImage.png', 'Punk in Drublic: Craft Beer & Music Festival Spring 2024', '19 Mar 2024 · Henry Maier Festival Park'],
+      ['EventImage(1).png', 'Silvia Giordani and the Stratifications of Time and Space', '22 May 2024 · Museo de Los Pintores Oaxaqueños'],
+      ['EventImage(2).png', 'L’Arc de Triomphe, Wrapped: Testament to Christo and Jeanne Claude', '01 Jan 2024 · Institute of Contemporary Arts']
+    ];
+    const art = [
+      ['Frame81.png', 'Nothing Announces ChatGPT-Assisted Earbuds, Ear (1) and Ear (a)'],
+      ['Frame81(1).png', 'Nothing Unveils First Community-Designed Phone (1)'],
+      ['Frame81(2).png', 'SCOPE Art Show 2024 Explores Interdependence and Innovation']
+    ];
+    const fallback = image => { image.classList.add('image-fallback'); image.removeAttribute('src'); };
+    const tags = text => text.split(' · ').map(tag => `<span class="shrink-0 rounded border border-ink/20 px-2 py-1 text-xs">${tag}</span>`).join('');
+    document.querySelector('#article-grid').innerHTML = articles.map(item => `<article class="reveal group"><div class="image-fallback mb-4 h-60 overflow-hidden rounded-xl"><img src="${staticPath(item[0])}" alt="${item[2]}" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" onerror="fallback(this)"></div><div class="tag-row mb-3 flex gap-2 overflow-x-auto">${tags(item[1])}</div><h3 class="text-xl font-medium leading-tight">${item[2]}</h3><p class="mt-4 text-sm text-ink/45">${item[3]} <span class="text-ink">· By ${item[4]}</span></p></article>`).join('');
+    document.querySelector('#event-grid').innerHTML = events.map(item => `<article class="reveal overflow-hidden rounded-2xl border border-white/10 bg-white/5"><div class="image-fallback h-64"><img src="${staticPath(item[0])}" alt="${item[1]}" class="h-full w-full object-cover" onerror="fallback(this)"></div><div class="p-6"><p class="mb-3 text-xs uppercase tracking-[.16em] text-white/50">Events · Design · Exhibition</p><h3 class="text-2xl font-medium leading-tight">${item[1]}</h3><p class="mt-8 text-sm text-white/50">${item[2]}</p></div></article>`).join('');
+    document.querySelector('#recent-list').innerHTML = ['Inges Idee and AllRightsReserved’s Art Installations Tower Over New Landmark in Shanghai', 'New “Andy Warhol’s Social Network” Exhibition To Explore the Late Visionary’s Pop-Cultural Works', 'The Big Australian Music Festival Is Dead. What Next?'].map((title, index) => `<article class="reveal py-6 first:pt-0 last:pb-0"><p class="mb-2 text-xs uppercase tracking-[.16em] text-ink/45">${['Design', 'Pop Culture', 'Events'][index]} · Recently added</p><h3 class="text-2xl font-medium leading-tight">${title}</h3><p class="mt-3 text-sm text-ink/45">${['11 Sep 2024', '25 Aug 2024', '12 Feb 2024'][index]} · By ${['Rich Taylor', 'Jacob Jones', 'Leslie Alexander'][index]}</p></article>`).join('');
+    document.querySelector('#art-grid').innerHTML = art.map(item => `<article class="reveal group"><div class="image-fallback mb-4 h-72 overflow-hidden rounded-2xl"><img src="${staticPath(item[0])}" alt="${item[1]}" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" onerror="fallback(this)"></div><p class="mb-3 text-xs uppercase tracking-[.16em] text-ink/45">Tech · Design · Art</p><h3 class="text-2xl font-medium leading-tight">${item[1]}</h3><p class="mt-4 text-sm text-ink/45">22 May 2023 · By Leslie Alexander</p></article>`).join('');
+
+    document.querySelector('#menu-button').addEventListener('click', () => document.querySelector('#mobile-menu').classList.toggle('hidden'));
+    document.querySelector('#search-button').addEventListener('click', () => { document.querySelector('#search-panel').classList.remove('hidden'); document.querySelector('#search-input').focus(); });
+    document.querySelector('#close-search').addEventListener('click', () => document.querySelector('#search-panel').classList.add('hidden'));
+    document.querySelector('#way-button').addEventListener('click', event => { event.currentTarget.classList.toggle('bg-ink'); event.currentTarget.classList.toggle('text-cream'); });
+    document.querySelector('#subscribe-form').addEventListener('submit', event => { event.preventDefault(); document.querySelector('#form-message').textContent = 'Thanks for joining the conversation.'; event.currentTarget.reset(); });
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }), { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
+  </script>
+</body>
+</html>
