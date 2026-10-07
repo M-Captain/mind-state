@@ -1,0 +1,75 @@
+{
+  "post_slug": "the-quiet-work-of-care",
+  "images": [
+    {
+      "filename": "image_01_featured.jpg",
+      "role": "featured",
+      "title": "A physician and nurse attending a sick patient (?) and her servant. Watercolour.",
+      "creator": "Unknown",
+      "museum_source": "Wellcome Collection",
+      "license": "Public Domain Mark",
+      "license_url": "https://creativecommons.org/share-your-work/public-domain/pdm/",
+      "page_url": "https://wellcomecollection.org/works/d8a3bxxt",
+      "download_url": "https://iiif.wellcomecollection.org/image/V0015987/full/max/0/default.jpg",
+      "bytes": 2045853,
+      "wellcome_image_id": "yzvntg22",
+      "met_object_id": null
+    },
+    {
+      "filename": "image_02.jpg",
+      "role": "supporting",
+      "title": "A physician checks the pulse of a patient in a hospital. Pen drawing.",
+      "creator": "Unknown",
+      "museum_source": "Wellcome Collection",
+      "license": "Public Domain Mark",
+      "license_url": "https://creativecommons.org/share-your-work/public-domain/pdm/",
+      "page_url": "https://wellcomecollection.org/works/kpq5mtha",
+      "download_url": "https://iiif.wellcomecollection.org/image/V0014828/full/max/0/default.jpg",
+      "bytes": 1969398,
+      "wellcome_image_id": "rcyf6b86",
+      "met_object_id": null
+    },
+    {
+      "filename": "image_03.jpg",
+      "role": "supporting",
+      "title": "Two people come into a pharmacy to ask for advice, the apothecary sits resting his gouty leg on a stool. Engraving.",
+      "creator": "N. Loder (active c.1760)",
+      "museum_source": "Wellcome Collection",
+      "license": "Public Domain Mark",
+      "license_url": "https://creativecommons.org/share-your-work/public-domain/pdm/",
+      "page_url": "https://wellcomecollection.org/works/r47hg554",
+      "download_url": "https://iiif.wellcomecollection.org/image/V0015120/full/max/0/default.jpg",
+      "bytes": 3243462,
+      "wellcome_image_id": "m9h77s6c",
+      "met_object_id": null
+    },
+    {
+      "filename": "image_04.jpg",
+      "role": "supporting",
+      "title": "A seventeenth-century German apothecary's shop with ornate pharmacy jars, large metal mortars, and shelves of remedies.",
+      "creator": "Christof Müller (photographer of historical shop)",
+      "museum_source": "Wellcome Collection",
+      "license": "Public Domain Mark",
+      "license_url": "https://creativecommons.org/share-your-work/public-domain/pdm/",
+      "page_url": "https://wellcomecollection.org/works/hg5em3hh",
+      "download_url": "https://iiif.wellcomecollection.org/image/V0029786/full/max/0/default.jpg",
+      "bytes": 1721594,
+      "wellcome_image_id": "f5b7gdeh",
+      "met_object_id": null
+    },
+    {
+      "filename": "image_05.jpg",
+      "role": "supporting",
+      "title": "A physician examining a child, who is being comforted by a nurse in the ward of a children's hospital. Photogravure after I. Knopp.",
+      "creator": "Imre Knopp; Josef Löwy",
+      "museum_source": "Wellcome Collection",
+      "license": "Public Domain Mark",
+      "license_url": "https://creativecommons.org/share-your-work/public-domain/pdm/",
+      "page_url": "https://wellcomecollection.org/works/j2hr7s76",
+      "download_url": "https://iiif.wellcomecollection.org/image/V0016273/full/max/0/default.jpg",
+      "bytes": 1857018,
+      "wellcome_image_id": "eayx3e59",
+      "met_object_id": null
+    }
+  ]
+}

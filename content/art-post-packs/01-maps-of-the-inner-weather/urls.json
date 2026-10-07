@@ -1,0 +1,75 @@
+{
+  "post_slug": "maps-of-the-inner-weather",
+  "images": [
+    {
+      "filename": "image_01_featured.jpg",
+      "role": "featured",
+      "title": "Nervous system: five figures, showing the nerves, brain and spine. Line engraving by A. Bell after Eustachius, 1788/1797.",
+      "creator": "Bartolomeo Eustachi; Andrew Bell (engraver)",
+      "museum_source": "Wellcome Collection",
+      "license": "Public Domain Mark",
+      "license_url": "https://creativecommons.org/share-your-work/public-domain/pdm/",
+      "page_url": "https://wellcomecollection.org/works/y5qx5fy6",
+      "download_url": "https://iiif.wellcomecollection.org/image/V0008033EL/full/max/0/default.jpg",
+      "bytes": 603728,
+      "wellcome_image_id": "hvudc76k",
+      "met_object_id": null
+    },
+    {
+      "filename": "image_02.jpg",
+      "role": "supporting",
+      "title": "The nervous system: two figures showing the brain, spine and nerves, and an écorché figure with the spinal cord exposed.",
+      "creator": "Thomas Jefferys",
+      "museum_source": "Wellcome Collection",
+      "license": "Public Domain Mark",
+      "license_url": "https://creativecommons.org/share-your-work/public-domain/pdm/",
+      "page_url": "https://wellcomecollection.org/works/wvhmw3dc",
+      "download_url": "https://iiif.wellcomecollection.org/image/V0008430EL/full/max/0/default.jpg",
+      "bytes": 1103707,
+      "wellcome_image_id": "pxbjvx8e",
+      "met_object_id": null
+    },
+    {
+      "filename": "image_03.jpg",
+      "role": "supporting",
+      "title": "The nervous system: illustration of a human figure seen from behind, showing the brain and the nerves.",
+      "creator": "Unknown",
+      "museum_source": "Wellcome Collection",
+      "license": "Public Domain Mark",
+      "license_url": "https://creativecommons.org/share-your-work/public-domain/pdm/",
+      "page_url": "https://wellcomecollection.org/works/jp662zz5",
+      "download_url": "https://iiif.wellcomecollection.org/image/V0008485/full/max/0/default.jpg",
+      "bytes": 2527137,
+      "wellcome_image_id": "fs4t3ru3",
+      "met_object_id": null
+    },
+    {
+      "filename": "image_04.jpg",
+      "role": "supporting",
+      "title": "Nervous system after Vieussens (fig. 1); brain and spinal cord after Eustachius (fig. 2). Engraving.",
+      "creator": "After Vieussens / Eustachius; Encyclopédie (Diderot & d'Alembert)",
+      "museum_source": "Wellcome Collection",
+      "license": "Public Domain Mark",
+      "license_url": "https://creativecommons.org/share-your-work/public-domain/pdm/",
+      "page_url": "https://wellcomecollection.org/works/r2dt2hum",
+      "download_url": "https://iiif.wellcomecollection.org/image/V0007827/full/max/0/default.jpg",
+      "bytes": 2225587,
+      "wellcome_image_id": "pjbum2ap",
+      "met_object_id": null
+    },
+    {
+      "filename": "image_05.jpg",
+      "role": "supporting",
+      "title": "Nervous system: five figures, showing the nerves, brain and spine. Line engraving by A. Bell after Eustachius.",
+      "creator": "Bartolomeo Eustachi; Andrew Bell (engraver)",
+      "museum_source": "Wellcome Collection",
+      "license": "Public Domain Mark",
+      "license_url": "https://creativecommons.org/share-your-work/public-domain/pdm/",
+      "page_url": "https://wellcomecollection.org/works/cax9btc8",
+      "download_url": "https://iiif.wellcomecollection.org/image/V0008027ER/full/max/0/default.jpg",
+      "bytes": 625815,
+      "wellcome_image_id": "xmpu4b2h",
+      "met_object_id": null
+    }
+  ]
+}

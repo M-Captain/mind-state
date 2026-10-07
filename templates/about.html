@@ -1,0 +1,48 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="description" content="Meet MindState, a student-led mental wellbeing and media platform helping young people reflect, learn, express themselves, and connect.">
+ <title>About Us — MindState</title>
+ <link href="{% static 'site-fonts.css' %}" rel="stylesheet">
+ <link href="{% static 'community-footer.css' %}?v=colored-logo-1" rel="stylesheet">
+ <link href="{% static 'article-ui.css' %}?v=reading-7" rel="stylesheet">
+ <link href="{% static 'about.css' %}" rel="stylesheet">
+ <script src="{% static 'home-ui.js' %}" defer></script>
+</head>
+<body class="about-page">
+ {% include 'article-navigation.html' %}
+ <main class="about-main">
+  <header class="about-intro">
+   <p class="about-eyebrow">A space for honest conversations</p>
+   <h1>About MindState</h1>
+   <nav class="about-contents" aria-label="Page contents">
+    <span>Contents</span>
+    <div><a href="#about-us">About Us</a><a href="#contact-us">Contact Us</a><a href="#get-involved">Get Involved</a></div>
+   </nav>
+  </header>
+  <section class="about-section" id="about-us" aria-labelledby="about-title">
+   <div class="about-number" aria-hidden="true">01</div>
+   <div class="about-copy">
+    <h2 id="about-title">About Us</h2>
+    <div class="about-block"><h3>A space to understand yourself.</h3><p>MindState is a student-led mental wellbeing and media platform for young people. We bring together psychology, personal stories, art, and everyday reflection to help you understand yourself and feel a little less alone.</p><p>Student life can come with pressure, uncertainty, and questions about who you are. We want caring for your mind to feel natural, accessible, and part of everyday life.</p></div>
+    <div class="about-block"><h3>Our mission &amp; vision</h3><p>Make understanding your mind a normal part of everyday life. We imagine a world where people can express themselves and care for their wellbeing without shame or judgment.</p></div>
+    <div class="about-block"><h3>What matters to us</h3><div class="about-values"><div><h4>Honest expression</h4><p>Real voices, student stories, and room to create.</p></div><div><h4>Everyday wellbeing</h4><p>Reflection, learning, and small habits that support you.</p></div><div><h4>Connection</h4><p>A welcoming community where experiences can be shared.</p></div></div></div>
+    <div class="about-block"><h3>What we’re building</h3><p>Our website is an editorial home for articles, stories, ideas, and art. Alongside it, we’re planning a wellbeing app with mood and sleep tracking, private journaling, mindfulness, educational resources, and community.</p><p class="about-note">MindState supports wellbeing, reflection, and education. It does not provide therapy, diagnosis, medical advice, or crisis support, and does not replace professional mental healthcare.</p></div>
+    <div class="about-block"><h3>Built by students</h3><p>MindState is a collaborative project with seven founders, bringing together people across product, design, development, editorial, marketing, and community.</p></div>
+   </div>
+  </section>
+  <section class="about-section" id="contact-us" aria-labelledby="contact-title">
+   <div class="about-number" aria-hidden="true">02</div>
+   <div class="about-copy"><h2 id="contact-title">Contact Us</h2><div class="about-block"><h3>We’d love to hear from you.</h3><p>Have a question, an idea, feedback, or a collaboration in mind? Get in touch with the MindState team.</p><a class="about-contact" href="mailto:contact@mindstate.space">contact@mindstate.space <span aria-hidden="true">↗</span></a><a class="about-social" href="https://www.instagram.com/mindstate.space/">Find us on Instagram ↗</a></div></div>
+  </section>
+  <section class="about-section" id="get-involved" aria-labelledby="involve-title">
+   <div class="about-number" aria-hidden="true">03</div>
+   <div class="about-copy"><h2 id="involve-title">Get Involved</h2><div class="about-block"><h3>Help shape MindState.</h3><p>We welcome students, writers, artists, designers, developers, researchers, and people who care about mental wellbeing. Share your perspective, contribute creative work, or help build a community that feels human.</p><a class="about-join" href="mailto:contact@mindstate.space?subject=Joining%20the%20MindState%20community&amp;body=Hi%20MindState%20team%2C%0A%0AI%27d%20love%20to%20get%20involved.%20Here%27s%20a%20little%20about%20me%3A%0A">Join the Community <span aria-hidden="true">↗</span></a></div></div>
+  </section>
+ </main>
+ {% include 'community-footer.html' %}
+</body>
+</html>

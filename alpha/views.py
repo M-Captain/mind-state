@@ -15,11 +15,21 @@ def home(request):
 		return redirect('home')
 
 	content = LandingContent.objects.filter(is_published=True)
+	latest_articles = list(content.filter(section=LandingContent.ARTICLES).order_by('-published_at', 'display_order')[:2])
+	latest_art = list(content.filter(section=LandingContent.ART).order_by('-published_at', 'display_order')[:2])
+	recently_added = []
+	for index in range(max(len(latest_articles), len(latest_art))):
+		for group in [latest_articles, latest_art]:
+			if index < len(group):
+				recently_added.append(group[index])
+	pick_ids = [1005, 2006, 1008]
+	picks = content.in_bulk(pick_ids)
 	return render(request, 'home.html', {
-		'articles': content.filter(section=LandingContent.ARTICLES)[:8],
+		'articles': content.filter(section=LandingContent.ARTICLES)[:12],
 		'landing_events': content.filter(section=LandingContent.EVENTS)[:3],
-		'editor_picks': content.filter(section=LandingContent.TOP_PICKS)[:3],
-		'artworks': content.filter(section=LandingContent.ART)[:3],
+		'recently_added': recently_added,
+		'editor_picks': [picks[pk] for pk in pick_ids if pk in picks],
+		'artworks': content.filter(section=LandingContent.ART),
 		'community_voices': CommunityVoice.objects.filter(is_published=True)[:3],
 	})
 
@@ -30,14 +40,10 @@ def article(request, pk):
 		pk=pk,
 		is_published=True,
 	)
-	related_articles = LandingContent.objects.filter(
+	other_content = LandingContent.objects.filter(is_published=True).exclude(pk=content.pk)
+	related_articles = list(other_content.filter(
 		section=content.section,
-		is_published=True,
-	).exclude(pk=content.pk)[:4]
-	if not related_articles.exists():
-		related_articles = LandingContent.objects.filter(
-			is_published=True,
-		).exclude(pk=content.pk)[:4]
+	)[:2]) + list(other_content.exclude(section=content.section)[:2])
 	community_voices = CommunityVoice.objects.filter(is_published=True)[:3]
 	return render(request, 'article.html', {
 		'article': content,
@@ -50,8 +56,11 @@ def search(request):
 	query = request.GET.get('q', '').strip()
 	results = LandingContent.objects.filter(
 		is_published=True,
-		section=LandingContent.ARTICLES,
+		section__in=[LandingContent.ARTICLES, LandingContent.ART],
 	)
+	section = request.GET.get('section', '')
+	if section in [LandingContent.ARTICLES, LandingContent.ART]:
+		results = results.filter(section=section)
 	if query:
 		results = results.filter(
 			Q(title__icontains=query)
@@ -61,8 +70,15 @@ def search(request):
 		)
 	return render(request, 'search.html', {
 		'search_query': query,
-		'search_results': results[:12],
+		'search_results': results,
+		'search_section': section,
 	})
+
+
+def art_post(request, slug):
+	content = get_object_or_404(LandingContent, section=LandingContent.ART,
+		link_url=f'/app/art/{slug}/', is_published=True)
+	return article(request, content.pk)
 
 
 def landing(request):

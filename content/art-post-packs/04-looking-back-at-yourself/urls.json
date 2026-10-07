@@ -1,0 +1,75 @@
+{
+  "post_slug": "looking-back-at-yourself",
+  "images": [
+    {
+      "filename": "image_01_featured.jpg",
+      "role": "featured",
+      "title": "A Woman Reading",
+      "creator": "Camille Corot",
+      "museum_source": "The Metropolitan Museum of Art (Open Access)",
+      "license": "CC0 (Met Open Access / Public Domain)",
+      "license_url": "https://www.metmuseum.org/policies/image-resources",
+      "page_url": "https://www.metmuseum.org/art/collection/search/435991",
+      "download_url": "https://images.metmuseum.org/CRDImages/ep/original/DP-16589-001.jpg",
+      "bytes": 3389355,
+      "wellcome_image_id": null,
+      "met_object_id": 435991
+    },
+    {
+      "filename": "image_02.jpg",
+      "role": "supporting",
+      "title": "Portrait of a Young Woman",
+      "creator": "Edgar Degas",
+      "museum_source": "The Metropolitan Museum of Art (Open Access)",
+      "license": "CC0 (Met Open Access / Public Domain)",
+      "license_url": "https://www.metmuseum.org/policies/image-resources",
+      "page_url": "https://www.metmuseum.org/art/collection/search/436153",
+      "download_url": "https://images.metmuseum.org/CRDImages/ep/original/DT297552.jpg",
+      "bytes": 3510185,
+      "wellcome_image_id": null,
+      "met_object_id": 436153
+    },
+    {
+      "filename": "image_03.jpg",
+      "role": "supporting",
+      "title": "Woman Reading",
+      "creator": "Rembrandt (Rembrandt van Rijn)",
+      "museum_source": "The Metropolitan Museum of Art (Open Access)",
+      "license": "CC0 (Met Open Access / Public Domain)",
+      "license_url": "https://www.metmuseum.org/policies/image-resources",
+      "page_url": "https://www.metmuseum.org/art/collection/search/347891",
+      "download_url": "https://images.metmuseum.org/CRDImages/dp/original/DP800595.jpg",
+      "bytes": 721708,
+      "wellcome_image_id": null,
+      "met_object_id": 347891
+    },
+    {
+      "filename": "image_04.jpg",
+      "role": "supporting",
+      "title": "Portrait of a Young Woman",
+      "creator": "Wenceslaus Hollar",
+      "museum_source": "The Metropolitan Museum of Art (Open Access)",
+      "license": "CC0 (Met Open Access / Public Domain)",
+      "license_url": "https://www.metmuseum.org/policies/image-resources",
+      "page_url": "https://www.metmuseum.org/art/collection/search/398748",
+      "download_url": "https://images.metmuseum.org/CRDImages/dp/original/DP828154.jpg",
+      "bytes": 3153129,
+      "wellcome_image_id": null,
+      "met_object_id": 398748
+    },
+    {
+      "filename": "image_05.jpg",
+      "role": "supporting",
+      "title": "A despondent winged woman holding a geometrical instrument surrounded by attributes associated with geometry, alchemy and melancholy (after Dürer's Melencolia I).",
+      "creator": "Albrecht Dürer; Charles Amand-Durand (reproduction)",
+      "museum_source": "Wellcome Collection",
+      "license": "Public Domain Mark",
+      "license_url": "https://creativecommons.org/share-your-work/public-domain/pdm/",
+      "page_url": "https://wellcomecollection.org/works/sdrkq9e2",
+      "download_url": "https://iiif.wellcomecollection.org/image/V0016656/full/max/0/default.jpg",
+      "bytes": 2187795,
+      "wellcome_image_id": "hvuqk48g",
+      "met_object_id": null
+    }
+  ]
+}

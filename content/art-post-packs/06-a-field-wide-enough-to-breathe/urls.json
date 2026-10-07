@@ -1,0 +1,75 @@
+{
+  "post_slug": "a-field-wide-enough-to-breathe",
+  "images": [
+    {
+      "filename": "image_01_featured.jpg",
+      "role": "featured",
+      "title": "Wheat Field with Cypresses",
+      "creator": "Vincent van Gogh",
+      "museum_source": "The Metropolitan Museum of Art (Open Access)",
+      "license": "CC0 (Met Open Access / Public Domain)",
+      "license_url": "https://www.metmuseum.org/policies/image-resources",
+      "page_url": "https://www.metmuseum.org/art/collection/search/436535",
+      "download_url": "https://images.metmuseum.org/CRDImages/ep/original/DP-42549-001.jpg",
+      "bytes": 8291194,
+      "wellcome_image_id": null,
+      "met_object_id": 436535
+    },
+    {
+      "filename": "image_02.jpg",
+      "role": "supporting",
+      "title": "Wheat Field",
+      "creator": "Vincent van Gogh",
+      "museum_source": "The Metropolitan Museum of Art (Open Access)",
+      "license": "CC0 (Met Open Access / Public Domain)",
+      "license_url": "https://www.metmuseum.org/policies/image-resources",
+      "page_url": "https://www.metmuseum.org/art/collection/search/335537",
+      "download_url": "https://images.metmuseum.org/CRDImages/dp/original/DP108507.jpg",
+      "bytes": 2645711,
+      "wellcome_image_id": null,
+      "met_object_id": 335537
+    },
+    {
+      "filename": "image_03.jpg",
+      "role": "supporting",
+      "title": "Reapers Resting in a Wheat Field",
+      "creator": "John Singer Sargent",
+      "museum_source": "The Metropolitan Museum of Art (Open Access)",
+      "license": "CC0 (Met Open Access / Public Domain)",
+      "license_url": "https://www.metmuseum.org/policies/image-resources",
+      "page_url": "https://www.metmuseum.org/art/collection/search/12162",
+      "download_url": "https://images.metmuseum.org/CRDImages/ad/original/DT5587.jpg",
+      "bytes": 2742802,
+      "wellcome_image_id": null,
+      "met_object_id": 12162
+    },
+    {
+      "filename": "image_04.jpg",
+      "role": "supporting",
+      "title": "St. Ives Bridge, St. Ives, Huntingdonshire",
+      "creator": "William Fraser Garden",
+      "museum_source": "The Metropolitan Museum of Art (Open Access)",
+      "license": "CC0 (Met Open Access / Public Domain)",
+      "license_url": "https://www.metmuseum.org/policies/image-resources",
+      "page_url": "https://www.metmuseum.org/art/collection/search/341664",
+      "download_url": "https://images.metmuseum.org/CRDImages/dp/original/DP821132.jpg",
+      "bytes": 2099063,
+      "wellcome_image_id": null,
+      "met_object_id": 341664
+    },
+    {
+      "filename": "image_05.jpg",
+      "role": "supporting",
+      "title": "A classical garden with statues and topiary work. Coloured etching.",
+      "creator": "Unknown",
+      "museum_source": "Wellcome Collection",
+      "license": "Public Domain Mark",
+      "license_url": "https://creativecommons.org/share-your-work/public-domain/pdm/",
+      "page_url": "https://wellcomecollection.org/works/w486nr8w",
+      "download_url": "https://iiif.wellcomecollection.org/image/V0044533/full/max/0/default.jpg",
+      "bytes": 2976248,
+      "wellcome_image_id": "xv625quh",
+      "met_object_id": null
+    }
+  ]
+}

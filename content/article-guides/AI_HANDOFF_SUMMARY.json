@@ -1,0 +1,19 @@
+{
+  "package": "MindState Articles AI Implementation Handoff",
+  "created": "2026-10-07",
+  "source_of_truth": "source_articles/*.docx",
+  "article_count": 11,
+  "images_per_article": 5,
+  "total_image_slots": 55,
+  "immutable_source_files": true,
+  "do_not_modify_source_words": true,
+  "layout": [
+    "featured image",
+    "article text",
+    "two-image horizontal row",
+    "article text",
+    "two-image horizontal row",
+    "article text"
+  ],
+  "implementation_instruction": "Read AI_IMPLEMENTATION_HANDOFF.md before changing any code."
+}

@@ -1,0 +1,6 @@
+<article class="library-card{% if story.section == 'art' %} library-art-card{% endif %}">
+ <a class="library-card-image" href="{% if story.section == 'art' %}{{ story.link_url }}{% else %}{% url 'article' story.pk %}{% endif %}"><img src="{{ story.image_url }}" alt="{{ story.title }}" loading="lazy"></a>
+ <div class="library-card-tags">{% for tag in story.tag_list %}<span>{{ tag }}</span>{% endfor %}</div>
+ <h3><a href="{% if story.section == 'art' %}{{ story.link_url }}{% else %}{% url 'article' story.pk %}{% endif %}">{{ story.title }}</a></h3>
+ <div class="library-card-meta"><time datetime="{{ story.published_at|date:'Y-m-d' }}">{{ story.published_at|date:"d M Y" }}</time><span>{% if story.author %}• By {{ story.author }}{% elif story.section == 'art' %}Art collection{% else %}MindState{% endif %}</span></div>
+</article>

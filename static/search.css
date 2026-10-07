@@ -4896,7 +4896,7 @@ body { background: rgb(254, 240, 216); }
     gap: 24px;
 }
 .search__brand {
-    background: url('ChatgptImageSep19202611_28_00Pm2.png') center / contain no-repeat;
+    background: none;
     width: 36px;
     height: 40px;
     flex: 0 0 36px;
@@ -4908,6 +4908,7 @@ body { background: rgb(254, 240, 216); }
 .search__header-icon { display: block; width: 24px; height: 24px; }
 .search__header-icon svg { width: 24px; height: 24px; }
 .search__read-more-button { width: auto; height: 40px; padding: 8px 24px; }
+.search__read-more-button, .search__header-icon { text-decoration: none; color: inherit; }
 .search__button-text-2 { display: block; width: auto; height: auto; white-space: nowrap; font-size: 18px; line-height: 24px; }
 @media (max-width: 1100px) {
     .search__header { gap: 16px; padding: 12px 20px; }

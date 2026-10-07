@@ -1,0 +1,75 @@
+{
+  "post_slug": "what-the-night-keeps",
+  "images": [
+    {
+      "filename": "image_01_featured.jpg",
+      "role": "featured",
+      "title": "A sleeping woman is disturbed in her dreams by a winged figure pointing to five people in the clouds. Engraving.",
+      "creator": "Unknown",
+      "museum_source": "Wellcome Collection",
+      "license": "Public Domain Mark",
+      "license_url": "https://creativecommons.org/share-your-work/public-domain/pdm/",
+      "page_url": "https://wellcomecollection.org/works/e9ceu5j5",
+      "download_url": "https://iiif.wellcomecollection.org/image/V0047952/full/max/0/default.jpg",
+      "bytes": 2306536,
+      "wellcome_image_id": "dvsxna3w",
+      "met_object_id": null
+    },
+    {
+      "filename": "image_02.jpg",
+      "role": "supporting",
+      "title": "A Scottish soldier sleeping after battle dreams of a reunion with his wife and family. Colour wood engraving after F. Goodall.",
+      "creator": "Frederick Goodall; Edmund Evans",
+      "museum_source": "Wellcome Collection",
+      "license": "Public Domain Mark",
+      "license_url": "https://creativecommons.org/share-your-work/public-domain/pdm/",
+      "page_url": "https://wellcomecollection.org/works/nzfkvw6r",
+      "download_url": "https://iiif.wellcomecollection.org/image/V0038722/full/max/0/default.jpg",
+      "bytes": 2977918,
+      "wellcome_image_id": "cpj6jay7",
+      "met_object_id": null
+    },
+    {
+      "filename": "image_03.jpg",
+      "role": "supporting",
+      "title": "The Dream",
+      "creator": "Narcisse-Virgile Diaz de la Peña",
+      "museum_source": "The Metropolitan Museum of Art (Open Access)",
+      "license": "CC0 (Met Open Access / Public Domain)",
+      "license_url": "https://www.metmuseum.org/policies/image-resources",
+      "page_url": "https://www.metmuseum.org/art/collection/search/812618",
+      "download_url": "https://images.metmuseum.org/CRDImages/dp/original/DP882966.jpg",
+      "bytes": 4264022,
+      "wellcome_image_id": null,
+      "met_object_id": 812618
+    },
+    {
+      "filename": "image_04.jpg",
+      "role": "supporting",
+      "title": "Landscape with the Moon",
+      "creator": "Shiokawa Bunrin",
+      "museum_source": "The Metropolitan Museum of Art (Open Access)",
+      "license": "CC0 (Met Open Access / Public Domain)",
+      "license_url": "https://www.metmuseum.org/policies/image-resources",
+      "page_url": "https://www.metmuseum.org/art/collection/search/55299",
+      "download_url": "https://images.metmuseum.org/CRDImages/as/original/36_100_5_O2_sf.jpg",
+      "bytes": 812471,
+      "wellcome_image_id": null,
+      "met_object_id": 55299
+    },
+    {
+      "filename": "image_05.jpg",
+      "role": "supporting",
+      "title": "The Dream (La Rêve)",
+      "creator": "Henri Courselles-Dumont",
+      "museum_source": "The Metropolitan Museum of Art (Open Access)",
+      "license": "CC0 (Met Open Access / Public Domain)",
+      "license_url": "https://www.metmuseum.org/policies/image-resources",
+      "page_url": "https://www.metmuseum.org/art/collection/search/819432",
+      "download_url": "https://images.metmuseum.org/CRDImages/dp/original/DP884284.jpg",
+      "bytes": 2873737,
+      "wellcome_image_id": null,
+      "met_object_id": 819432
+    }
+  ]
+}

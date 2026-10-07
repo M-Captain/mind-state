@@ -1,0 +1,18 @@
+<section class="library-section" id="home-articles">
+ <header class="library-section-heading"><h2>Articles</h2><a href="{% url 'search' %}">View All</a></header>
+ <div class="library-grid">{% for story in articles %}{% include 'library-card.html' %}{% empty %}<p>No articles published yet.</p>{% endfor %}</div>
+ <aside class="library-newsletter"><h3>Subscribe so you don’t miss out!</h3><form class="home-signup" method="post" action="{% url 'home' %}">{% csrf_token %}<label><span class="sr-only">Email address</span><input type="email" name="email" placeholder="Enter your mail" required><button type="submit" aria-label="Subscribe">→</button></label><p role="status" class="home-signup-message" hidden></p></form></aside>
+</section>
+<section class="library-section">
+ <header class="library-section-heading"><h2>Recently Added</h2><a href="{% url 'search' %}">View All</a></header>
+ <div class="library-grid">{% for story in recently_added %}{% include 'library-card.html' %}{% endfor %}</div>
+</section>
+<section class="library-section library-editors">
+ <header class="library-section-heading"><h2>Editor’s Top Picks</h2></header>
+ <div class="library-grid">{% for story in editor_picks %}{% include 'library-card.html' %}{% endfor %}</div>
+</section>
+<section class="library-section" id="home-art">
+ <header class="library-section-heading"><h2>Art</h2><a href="{% url 'search' %}?section=art">View All</a></header>
+ <div class="library-carousel" id="home-art-track">{% for story in artworks %}{% include 'library-card.html' %}{% endfor %}</div>
+ <div class="home-carousel-controls" aria-label="Art scroll controls"><button type="button" data-scroll-target="home-art-track" data-scroll-direction="-1" aria-label="Previous art"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><button type="button" data-scroll-target="home-art-track" data-scroll-direction="1" aria-label="Next art"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div>
+</section>

@@ -1,0 +1,98 @@
+[
+  {
+    "model": "alpha.landingcontent",
+    "pk": 2001,
+    "fields": {
+      "section": "art",
+      "title": "Maps of the Inner Weather",
+      "description": "Historical nerve and brain engravings as quiet maps of feeling — how the mind has been drawn when words ran out. Crop, recolour, and let the lines become texture for Mind & Body.",
+      "author": "",
+      "published_at": "2026-10-07",
+      "image_url": "/static/art-posts/01-maps-of-the-inner-weather/image_01_featured.jpg",
+      "link_url": "/app/art/maps-of-the-inner-weather/",
+      "tags": "Art, Mind & Body",
+      "is_published": true,
+      "display_order": 0
+    }
+  },
+  {
+    "model": "alpha.landingcontent",
+    "pk": 2002,
+    "fields": {
+      "section": "art",
+      "title": "The Quiet Work of Care",
+      "description": "Wards, pharmacies, and hands on a pulse — public-domain scenes of tending. Soft browns and linen tones for Care posts that honour help without spectacle.",
+      "author": "",
+      "published_at": "2026-10-07",
+      "image_url": "/static/art-posts/02-the-quiet-work-of-care/image_01_featured.jpg",
+      "link_url": "/app/art/the-quiet-work-of-care/",
+      "tags": "Art, Care",
+      "is_published": true,
+      "display_order": 1
+    }
+  },
+  {
+    "model": "alpha.landingcontent",
+    "pk": 2003,
+    "fields": {
+      "section": "art",
+      "title": "What the Night Keeps",
+      "description": "Sleep, dream, and moonlit quiet from Wellcome and The Met — night as mood, not horror. Deep indigo accents for Night Thoughts and insomnia pieces.",
+      "author": "",
+      "published_at": "2026-10-07",
+      "image_url": "/static/art-posts/03-what-the-night-keeps/image_01_featured.jpg",
+      "link_url": "/app/art/what-the-night-keeps/",
+      "tags": "Art, Night Thoughts",
+      "is_published": true,
+      "display_order": 2
+    }
+  },
+  {
+    "model": "alpha.landingcontent",
+    "pk": 2004,
+    "fields": {
+      "section": "art",
+      "title": "Looking Back at Yourself",
+      "description": "Quiet portraits and readers — self-regard without spectacle. Soft charcoal and rose-grey for body-image and Looking Closely stories.",
+      "author": "",
+      "published_at": "2026-10-07",
+      "image_url": "/static/art-posts/04-looking-back-at-yourself/image_01_featured.jpg",
+      "link_url": "/app/art/looking-back-at-yourself/",
+      "tags": "Art, Looking Closely",
+      "is_published": true,
+      "display_order": 3
+    }
+  },
+  {
+    "model": "alpha.landingcontent",
+    "pk": 2005,
+    "fields": {
+      "section": "art",
+      "title": "Paper Trails We Leave",
+      "description": "Calligraphy notebooks, ink letters, and writing manuals — the handmade page as house texture. Cream paper and iron-gall brown for Paper Trails.",
+      "author": "",
+      "published_at": "2026-10-07",
+      "image_url": "/static/art-posts/05-paper-trails-we-leave/image_01_featured.jpg",
+      "link_url": "/app/art/paper-trails-we-leave/",
+      "tags": "Art, Paper Trails",
+      "is_published": true,
+      "display_order": 4
+    }
+  },
+  {
+    "model": "alpha.landingcontent",
+    "pk": 2006,
+    "fields": {
+      "section": "art",
+      "title": "A Field Wide Enough to Breathe",
+      "description": "Open fields, gardens, and quiet landscapes as metaphors for recovery — room to inhale. Cypress green and sky gold for calm and reset pieces.",
+      "author": "",
+      "published_at": "2026-10-07",
+      "image_url": "/static/art-posts/06-a-field-wide-enough-to-breathe/image_01_featured.jpg",
+      "link_url": "/app/art/a-field-wide-enough-to-breathe/",
+      "tags": "Art, Memory",
+      "is_published": true,
+      "display_order": 5
+    }
+  }
+]

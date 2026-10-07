@@ -11,7 +11,7 @@
 .mindstate-community-footer { width: 100%; }
 .mindstate-community-footer button, .mindstate-community-footer input { font-family: "Google Sans Flex", system-ui, sans-serif; }
 .mindstate-community-footer .community-actions button { font-size: 14px; line-height: 20px; }
-.mindstate-community-footer .footer-brand h2 { line-height: 1.2; }
+.mindstate-community-footer .footer-brand h2 { font-family: "Instrument Serif", Georgia, serif !important; font-weight:400; line-height: 1.2; }
 .mindstate-community-footer .footer-column h3, .mindstate-community-footer .footer-subscribe h3 { font-weight: 600; line-height: 20px; }
 .mindstate-community-footer .footer-column button, .mindstate-community-footer .footer-legal button { line-height: 18px; }
 .mindstate-community-footer .footer-subscribe input { min-width: 0; font-size: 14px; }
@@ -24,7 +24,8 @@
 .mindstate-community-footer .members-track { gap: 0; }
 .mindstate-community-footer .members-group { display: flex; align-items: center; gap: 70px; padding-right: 70px; }
 @media (min-width: 901px) { .mindstate-community-footer .mindstate-footer { padding-bottom: 70px; } }
-.mindstate-community-footer .footer-logo { display: inline-block; width: 1em; line-height: 1; }
+.mindstate-community-footer .footer-logo { display: inline-block; width:36px; height:40px; line-height:1; transform:none; }
+.mindstate-community-footer .footer-logo img { display:block; width:36px; height:40px; object-fit:contain; filter:none; }
 
 /* Fit the community and footer to mobile rather than clipping desktop content. */
 @media (max-width: 900px) {

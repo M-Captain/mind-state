@@ -1,0 +1,41 @@
+{
+  "posts": [
+    {
+      "folder": "01-maps-of-the-inner-weather",
+      "title": "Maps of the Inner Weather",
+      "slug": "maps-of-the-inner-weather",
+      "rubric": "Mind & Body"
+    },
+    {
+      "folder": "02-the-quiet-work-of-care",
+      "title": "The Quiet Work of Care",
+      "slug": "the-quiet-work-of-care",
+      "rubric": "Care"
+    },
+    {
+      "folder": "03-what-the-night-keeps",
+      "title": "What the Night Keeps",
+      "slug": "what-the-night-keeps",
+      "rubric": "Night Thoughts"
+    },
+    {
+      "folder": "04-looking-back-at-yourself",
+      "title": "Looking Back at Yourself",
+      "slug": "looking-back-at-yourself",
+      "rubric": "Looking Closely"
+    },
+    {
+      "folder": "05-paper-trails-we-leave",
+      "title": "Paper Trails We Leave",
+      "slug": "paper-trails-we-leave",
+      "rubric": "Paper Trails"
+    },
+    {
+      "folder": "06-a-field-wide-enough-to-breathe",
+      "title": "A Field Wide Enough to Breathe",
+      "slug": "a-field-wide-enough-to-breathe",
+      "rubric": "Memory"
+    }
+  ],
+  "failures": []
+}

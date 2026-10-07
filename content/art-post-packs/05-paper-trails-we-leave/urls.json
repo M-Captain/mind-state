@@ -1,0 +1,75 @@
+{
+  "post_slug": "paper-trails-we-leave",
+  "images": [
+    {
+      "filename": "image_01_featured.jpg",
+      "role": "featured",
+      "title": "Notebook of Calligraphy",
+      "creator": "Unknown",
+      "museum_source": "The Metropolitan Museum of Art (Open Access)",
+      "license": "CC0 (Met Open Access / Public Domain)",
+      "license_url": "https://www.metmuseum.org/policies/image-resources",
+      "page_url": "https://www.metmuseum.org/art/collection/search/822466",
+      "download_url": "https://images.metmuseum.org/CRDImages/is/original/LC-2019_174a.jpg",
+      "bytes": 871296,
+      "wellcome_image_id": null,
+      "met_object_id": 822466
+    },
+    {
+      "filename": "image_02.jpg",
+      "role": "supporting",
+      "title": "Manuscript Letter from W. H. Fox Talbot to Antonio Bertoloni",
+      "creator": "William Henry Fox Talbot",
+      "museum_source": "The Metropolitan Museum of Art (Open Access)",
+      "license": "CC0 (Met Open Access / Public Domain)",
+      "license_url": "https://www.metmuseum.org/policies/image-resources",
+      "page_url": "https://www.metmuseum.org/art/collection/search/289191",
+      "download_url": "https://images.metmuseum.org/CRDImages/ph/original/DP202183.jpg",
+      "bytes": 1573295,
+      "wellcome_image_id": null,
+      "met_object_id": 289191
+    },
+    {
+      "filename": "image_03.jpg",
+      "role": "supporting",
+      "title": "Manuscript Letter from W. H. Fox Talbot to Antonio Bertoloni",
+      "creator": "William Henry Fox Talbot",
+      "museum_source": "The Metropolitan Museum of Art (Open Access)",
+      "license": "CC0 (Met Open Access / Public Domain)",
+      "license_url": "https://www.metmuseum.org/policies/image-resources",
+      "page_url": "https://www.metmuseum.org/art/collection/search/289201",
+      "download_url": "https://images.metmuseum.org/CRDImages/ph/original/DP202214.jpg",
+      "bytes": 1457759,
+      "wellcome_image_id": null,
+      "met_object_id": 289201
+    },
+    {
+      "filename": "image_04.jpg",
+      "role": "supporting",
+      "title": "Manuscript Letter from William-Fox Strangways to Antonio Bertoloni",
+      "creator": "William Thomas Horner Fox-Strangways",
+      "museum_source": "The Metropolitan Museum of Art (Open Access)",
+      "license": "CC0 (Met Open Access / Public Domain)",
+      "license_url": "https://www.metmuseum.org/policies/image-resources",
+      "page_url": "https://www.metmuseum.org/art/collection/search/289207",
+      "download_url": "https://images.metmuseum.org/CRDImages/ph/original/DP202230.jpg",
+      "bytes": 1551594,
+      "wellcome_image_id": null,
+      "met_object_id": 289207
+    },
+    {
+      "filename": "image_05.jpg",
+      "role": "supporting",
+      "title": "The Art of Preparing and Making the Materials used in Writing",
+      "creator": "Carington Bowles I",
+      "museum_source": "The Metropolitan Museum of Art (Open Access)",
+      "license": "CC0 (Met Open Access / Public Domain)",
+      "license_url": "https://www.metmuseum.org/policies/image-resources",
+      "page_url": "https://www.metmuseum.org/art/collection/search/888341",
+      "download_url": "https://images.metmuseum.org/CRDImages/dp/original/DP-26614-001.jpg",
+      "bytes": 3886161,
+      "wellcome_image_id": null,
+      "met_object_id": 888341
+    }
+  ]
+}

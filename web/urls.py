@@ -16,15 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from alpha.views import article, home, landing, search
+from django.views.generic import TemplateView
+from alpha.views import article, art_post, home, landing, search
 
 urlpatterns = [
     path('', home, name='home'),
     path('app/', home, name='home_app'),
     path('app/article/<int:pk>/', article, name='article'),
+    path('app/art/<slug:slug>/', art_post, name='art_post'),
     path('article/<int:pk>/', article),
     path('app/search/', search, name='search'),
     path('search/', search),
     path('landing/', landing, name='landing'),
+    path('about/', TemplateView.as_view(template_name='about.html'), name='about'),
     path('admin/', admin.site.urls),
 ]
