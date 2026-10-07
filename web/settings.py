@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-nzwpq!)+9njg2-md^illns*(%#de2&r4mvkez7s96#ka9!j(w8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mind-state.onrender.com', '127.0.0.1', 'localhost', 'testserver']
+ALLOWED_HOSTS = ['mind-state.onrender.com', '127.0.0.1', 'localhost', 'mindstate.space','www.mindstate.space']
 
 
 # Application definition
