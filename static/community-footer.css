@@ -20,7 +20,7 @@
 .mindstate-community-footer .footer-subscribe label:focus-within { outline: 2px solid var(--community-dark); outline-offset: 3px; }
 .mindstate-community-footer button:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
 .mindstate-community-footer .subscribe-status { font-size: 13px; line-height: 18px; }
-.mindstate-community-footer .members-track:hover { animation-play-state: paused; }
+@media (hover: hover) and (pointer: fine) { .mindstate-community-footer .members-track:hover { animation-play-state: paused; } }
 .mindstate-community-footer .members-track { gap: 0; }
 .mindstate-community-footer .members-group { display: flex; align-items: center; gap: 70px; padding-right: 70px; }
 @media (min-width: 901px) { .mindstate-community-footer .mindstate-footer { padding-bottom: 70px; } }
@@ -35,15 +35,15 @@
     .mindstate-community-footer .footer-legal { flex-wrap: wrap; gap: 16px 24px; }
 }
 @media (max-width: 540px) {
-    .mindstate-community-footer .community-section { margin-inline: 20px; min-height: 0; padding: 24px 20px 28px; }
-    .mindstate-community-footer .community-label { font-size: 16px; line-height: 24px; }
-    .mindstate-community-footer .members-marquee { margin-top: 28px; overflow: visible; }
-    .mindstate-community-footer .members-track { width: 100%; animation: none; }
-    .mindstate-community-footer .members-group { width: 100%; padding: 0; flex-direction: column; gap: 18px; }
-    .mindstate-community-footer .members-group[aria-hidden="true"] { display: none; }
-    .mindstate-community-footer .member { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 10px; white-space: normal; font-size: clamp(24px, 7vw, 32px); line-height: 1.2; letter-spacing: -.04em; }
+    .mindstate-community-footer .community-section { margin-inline: 20px; min-height: 0; padding: 24px 0 28px; }
+    .mindstate-community-footer .community-label { font-size: 16px; line-height: 24px; padding-inline: 20px; }
+    .mindstate-community-footer .members-marquee { margin-top: 40px; overflow: hidden; }
+    .mindstate-community-footer .members-track { width: max-content; animation: member-scroll 24s linear infinite; }
+    .mindstate-community-footer .members-group { width: auto; flex: 0 0 auto; padding: 0 32px 0 0; flex-direction: row; gap: 32px; }
+    .mindstate-community-footer .members-group[aria-hidden="true"] { display: flex; }
+    .mindstate-community-footer .member { display: flex; flex: 0 0 auto; flex-wrap: nowrap; justify-content: center; align-items: center; gap: 10px; white-space: nowrap; font-size: clamp(28px, 8vw, 36px); line-height: 1.2; letter-spacing: -.04em; }
     .mindstate-community-footer .member span { margin: 0; font-size: 11px; line-height: 16px; }
-    .mindstate-community-footer .community-actions { margin-top: 28px; gap: 16px; }
+    .mindstate-community-footer .community-actions { margin-top: 40px; gap: 16px; padding-inline: 20px; }
     .mindstate-community-footer .community-actions button { min-height: 44px; max-width: 100%; }
     .mindstate-community-footer .community-actions .text-link { line-height: 20px; }
     .mindstate-community-footer .mindstate-footer { padding: 32px 20px 24px; min-height: 0; gap: 24px 20px; }
@@ -55,3 +55,5 @@
     .mindstate-community-footer .copyright { line-height: 20px; }
     .mindstate-community-footer .footer-legal button { min-height: 32px; }
 }
+
+@media (prefers-reduced-motion: reduce) { .mindstate-community-footer .members-track { animation: none; } }
