@@ -1,0 +1,27 @@
+.mindstate-community-footer { --community-cream: #fff0d7; --community-dark: #292022; --community-ink: #161111; --community-muted: #c7b9a5; }
+.mindstate-community-footer, .mindstate-community-footer * { box-sizing: border-box; }
+.community-section { margin: 0 2.35vw; min-height: 450px; overflow: hidden; border-radius: 12px; padding: 28px 0 44px; color: #fff; background: var(--community-dark); text-align: center; font-family: "Google Sans Flex", system-ui, sans-serif; }
+.community-label { margin: 0; font-size: 17px; }.members-marquee { width: 100%; overflow: hidden; margin-top: 142px; }.members-track { display: flex; width: max-content; align-items: center; gap: 70px; animation: member-scroll 24s linear infinite; }.member { white-space: nowrap; font-size: clamp(34px, 3.7vw, 56px); letter-spacing: -.065em; }.member span { margin-left: 10px; border: 1px solid #aaa; border-radius: 99px; padding: 2px 5px; font-size: 13px; letter-spacing: 0; vertical-align: middle; }.community-actions { display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 76px; }.community-actions button { border: 1px solid #fff; border-radius: 999px; padding: 8px 22px; color: #fff; background: transparent; cursor: pointer; }.community-actions .text-link { border: 0; padding: 0; text-decoration: underline; font-size: 14px; }
+.mindstate-footer { position: relative; display: grid; grid-template-columns: 1.65fr .8fr .8fr 1.6fr; gap: 30px; min-height: 325px; padding: 48px 3.5vw 25px; color: var(--community-ink); background: var(--community-cream); font-family: "Google Sans Flex", system-ui, sans-serif; }.footer-logo { font-size: 34px; color: var(--community-dark); transform: rotate(-25deg); }.footer-brand h2 { margin: 14px 0; font-family: "Instrument Serif", Georgia, serif; font-size: 42px; font-weight: 400; }.footer-brand p { max-width: 220px; color: var(--community-muted); font-size: 15px; line-height: 1.45; }.footer-column, .footer-subscribe { display: flex; flex-direction: column; align-items: flex-start; gap: 11px; }.footer-column h3, .footer-subscribe h3 { margin: 12px 0 5px; font-size: 14px; text-transform: uppercase; }.footer-column button, .footer-legal button { border: 0; padding: 0; color: var(--community-ink); background: transparent; cursor: pointer; font-size: 13px; text-transform: uppercase; }.footer-subscribe label { display: flex; width: 100%; align-items: center; border: 1px solid var(--community-dark); border-radius: 999px; padding: 0 12px; }.footer-subscribe input { width: 100%; border: 0; outline: 0; padding: 10px 0; background: transparent; }.footer-subscribe button { border: 0; background: transparent; font-size: 22px; cursor: pointer; }.copyright { position: absolute; bottom: 12px; left: 3.5vw; font-size: 13px; }.footer-legal { position: absolute; right: 3.5vw; bottom: 12px; display: flex; gap: 94px; }.footer-legal button { text-decoration: underline; text-transform: none; }.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+@keyframes member-scroll { to { transform: translateX(-50%); } }
+@media (max-width: 900px) { .community-section { margin: 0 16px; min-height: 360px; }.members-marquee { margin-top: 90px; }.community-actions { margin-top: 55px; }.mindstate-footer { grid-template-columns: 1fr 1fr; padding: 36px 24px 28px; }.footer-brand, .footer-subscribe { grid-column: 1 / -1; }.copyright, .footer-legal { position: static; grid-column: 1 / -1; }.footer-legal { gap: 25px; } }
+@media (prefers-reduced-motion: reduce) { .members-track { animation: none; } }
+
+/* Django integration: contain the supplied sections without affecting search styles. */
+.mindstate-community-footer { width: 100%; }
+.mindstate-community-footer button, .mindstate-community-footer input { font-family: "Google Sans Flex", system-ui, sans-serif; }
+.mindstate-community-footer .community-actions button { font-size: 14px; line-height: 20px; }
+.mindstate-community-footer .footer-brand h2 { line-height: 1.2; }
+.mindstate-community-footer .footer-column h3, .mindstate-community-footer .footer-subscribe h3 { font-weight: 600; line-height: 20px; }
+.mindstate-community-footer .footer-column button, .mindstate-community-footer .footer-legal button { line-height: 18px; }
+.mindstate-community-footer .footer-subscribe input { min-width: 0; font-size: 14px; }
+.mindstate-community-footer .footer-subscribe button { flex: 0 0 32px; text-align: center; }
+.mindstate-community-footer .footer-subscribe { min-width: 0; }
+.mindstate-community-footer .footer-subscribe label:focus-within { outline: 2px solid var(--community-dark); outline-offset: 3px; }
+.mindstate-community-footer button:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+.mindstate-community-footer .subscribe-status { font-size: 13px; line-height: 18px; }
+.mindstate-community-footer .members-track:hover { animation-play-state: paused; }
+.mindstate-community-footer .members-track { gap: 0; }
+.mindstate-community-footer .members-group { display: flex; align-items: center; gap: 70px; padding-right: 70px; }
+@media (min-width: 901px) { .mindstate-community-footer .mindstate-footer { padding-bottom: 70px; } }
+.mindstate-community-footer .footer-logo { display: inline-block; width: 1em; line-height: 1; }
