@@ -25,3 +25,33 @@
 .mindstate-community-footer .members-group { display: flex; align-items: center; gap: 70px; padding-right: 70px; }
 @media (min-width: 901px) { .mindstate-community-footer .mindstate-footer { padding-bottom: 70px; } }
 .mindstate-community-footer .footer-logo { display: inline-block; width: 1em; line-height: 1; }
+
+/* Fit the community and footer to mobile rather than clipping desktop content. */
+@media (max-width: 900px) {
+    .mindstate-community-footer .mindstate-footer { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; }
+    .mindstate-community-footer .footer-brand, .mindstate-community-footer .footer-column { min-width: 0; }
+    .mindstate-community-footer .footer-brand p { max-width: 360px; }
+    .mindstate-community-footer .footer-column button { white-space: normal; text-align: left; overflow-wrap: anywhere; }
+    .mindstate-community-footer .footer-legal { flex-wrap: wrap; gap: 16px 24px; }
+}
+@media (max-width: 540px) {
+    .mindstate-community-footer .community-section { margin-inline: 20px; min-height: 0; padding: 24px 20px 28px; }
+    .mindstate-community-footer .community-label { font-size: 16px; line-height: 24px; }
+    .mindstate-community-footer .members-marquee { margin-top: 28px; overflow: visible; }
+    .mindstate-community-footer .members-track { width: 100%; animation: none; }
+    .mindstate-community-footer .members-group { width: 100%; padding: 0; flex-direction: column; gap: 18px; }
+    .mindstate-community-footer .members-group[aria-hidden="true"] { display: none; }
+    .mindstate-community-footer .member { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 10px; white-space: normal; font-size: clamp(24px, 7vw, 32px); line-height: 1.2; letter-spacing: -.04em; }
+    .mindstate-community-footer .member span { margin: 0; font-size: 11px; line-height: 16px; }
+    .mindstate-community-footer .community-actions { margin-top: 28px; gap: 16px; }
+    .mindstate-community-footer .community-actions button { min-height: 44px; max-width: 100%; }
+    .mindstate-community-footer .community-actions .text-link { line-height: 20px; }
+    .mindstate-community-footer .mindstate-footer { padding: 32px 20px 24px; min-height: 0; gap: 24px 20px; }
+    .mindstate-community-footer .footer-brand h2 { font-size: 36px; }
+    .mindstate-community-footer .footer-brand p { font-size: 14px; }
+    .mindstate-community-footer .footer-column { gap: 8px; }
+    .mindstate-community-footer .footer-column button { padding-block: 5px; min-height: 32px; }
+    .mindstate-community-footer .footer-subscribe label { min-height: 44px; }
+    .mindstate-community-footer .copyright { line-height: 20px; }
+    .mindstate-community-footer .footer-legal button { min-height: 32px; }
+}
