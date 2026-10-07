@@ -181,3 +181,13 @@ html { scroll-behavior: smooth; }
  .homepage .homepage__latest-news .homepage__main-article-frame { min-height: 340px !important; }
  .homepage .homepage__latest-news .homepage__main-article-info-container { padding: 20px !important; }
 }
+
+/* Match the other mobile navbars without the exported section-header sizing. */
+@media (max-width: 768px) {
+ .homepage .homepage__header.home-nav { box-sizing:border-box; width:calc(100% - 32px); margin:22px auto 0; padding:12px 16px; border-radius:28px; gap:12px; }
+ .homepage .home-nav__search { width:24px; height:24px; }
+ .homepage .home-nav__actions { gap:12px; }
+ .homepage .home-nav__join { box-sizing:border-box; height:36px; padding:6px 12px; font-size:14px; line-height:24px; }
+ .homepage .home-nav__links { gap:10px 16px; font-size:12px; line-height:20px; }
+ .homepage .home-nav__links a { min-height:20px; }
+}
