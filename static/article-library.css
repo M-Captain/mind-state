@@ -51,9 +51,11 @@
 .article .library-card-meta span { white-space:nowrap; }
 .article .library-card { height:100%; }
 .article .article__credits a { color:inherit; text-decoration:underline; }
+.article .article__event-card .article__credits,
+.article .article__event-card .article__credits a { color:#fff !important; }
 .library-art-card .library-card-image img { object-fit:contain; background:#e9ddc8; }
 .article.art-post .article__article-image { background-size:contain !important; background-repeat:no-repeat; background-color:#e9ddc8; }
-.article.art-post .art-hero-credit { display:block !important; color:#c7b9a5 !important; font-size:11px !important; line-height:1.5 !important; overflow-wrap:anywhere; }
+.article.art-post .art-hero-credit { display:block !important; color:#fff !important; font-size:11px !important; line-height:1.5 !important; overflow-wrap:anywhere; }
 .article.art-post .art-hero-credit a { display:inline !important; color:inherit !important; }
 .article.art-post .article__more-options { display:none !important; }
 .art-reading { width:min(1020px,100%); }
