@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>Log in | MindState</title>
+  <link rel="icon" type="image/x-icon" href="{% static 'ChatgptImageSep19202611_28_00Pm2.png' %}"/>
+  <link href="{% static 'auth.css' %}" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600&display=swap" rel="stylesheet"/>
+ </head>
+ <body class="auth-page">
+  <main class="auth-layout">
+   <section class="auth-intro" aria-labelledby="auth-brand">
+    <a class="auth-brand" id="auth-brand" href="{% url 'home' %}" aria-label="MindState home">
+     <img src="{% static 'ChatgptImageSep19202611_28_00Pm2.png' %}" alt=""/>
+     <span>MindState</span>
+    </a>
+    <div class="auth-intro-copy">
+     <p class="auth-kicker">A space for honest conversations</p>
+     <h1>Welcome back<br/>to MindState.</h1>
+     <p>Sign in to continue to your account.</p>
+    </div>
+    <a class="auth-home-link" href="{% url 'home' %}">Back to MindState <span aria-hidden="true">&rarr;</span></a>
+   </section>
+   <section class="auth-form-panel" aria-labelledby="login-title">
+    <div class="auth-form-wrap">
+     <p class="auth-kicker">Member access</p>
+     <h2 id="login-title">Log in</h2>
+     <p class="auth-form-intro">Use the username and password for your MindState account.</p>
+     <form method="post" class="auth-form">
+      {% csrf_token %}
+      {% if form.non_field_errors %}
+       <div class="auth-error-summary" role="alert">{{ form.non_field_errors }}</div>
+      {% endif %}
+      <div class="auth-field">
+       <label for="id_username">Username</label>
+       {{ form.username }}
+       {% if form.username.errors %}<div class="auth-field-error" role="alert">{{ form.username.errors }}</div>{% endif %}
+      </div>
+      <div class="auth-field">
+       <label for="id_password">Password</label>
+       {{ form.password }}
+       {% if form.password.errors %}<div class="auth-field-error" role="alert">{{ form.password.errors }}</div>{% endif %}
+      </div>
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+      <button type="submit" class="auth-submit">Log in <span aria-hidden="true">&rarr;</span></button>
+     </form>
+    </div>
+    <p class="auth-access-note">Accounts are managed by the MindState team.</p>
+   </section>
+  </main>
+ </body>
+</html>

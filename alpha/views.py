@@ -1,10 +1,11 @@
 from django.contrib import messages
 from django.db.models import Q
 from django.shortcuts import get_object_or_404, redirect, render
-
+from django.contrib.auth.decorators import login_required
 from .models import CommunityVoice, EventConversation, FeaturedEdition, LandingContent, Newsletter, Waitlist
 
 
+@login_required
 def home(request):
 	if request.method == 'POST':
 		name = request.POST.get('name', '').strip()
@@ -33,7 +34,7 @@ def home(request):
 		'community_voices': CommunityVoice.objects.filter(is_published=True)[:3],
 	})
 
-
+@login_required
 def article(request, pk):
 	content = get_object_or_404(
 		LandingContent,
@@ -51,7 +52,7 @@ def article(request, pk):
 		'community_voices': community_voices,
 	})
 
-
+@login_required
 def search(request):
 	query = request.GET.get('q', '').strip()
 	results = LandingContent.objects.filter(
@@ -74,13 +75,13 @@ def search(request):
 		'search_section': section,
 	})
 
-
+@login_required
 def art_post(request, slug):
 	content = get_object_or_404(LandingContent, section=LandingContent.ART,
 		link_url=f'/app/art/{slug}/', is_published=True)
 	return article(request, content.pk)
 
-
+@login_required
 def landing(request):
 	if request.method == 'POST':
 		name = request.POST.get('name', '').strip()
