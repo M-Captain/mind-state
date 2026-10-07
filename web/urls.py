@@ -16,10 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from alpha.views import home, landing
+from alpha.views import article, home, landing, search
 
 urlpatterns = [
     path('', home, name='home'),
+    path('app/', home, name='home_app'),
+    path('app/article/<int:pk>/', article, name='article'),
+    path('article/<int:pk>/', article),
+    path('app/search/', search, name='search'),
+    path('search/', search),
     path('landing/', landing, name='landing'),
     path('admin/', admin.site.urls),
 ]

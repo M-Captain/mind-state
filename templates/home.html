@@ -1,123 +1,2198 @@
 {% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MindState | Redefining the way we understand mental health</title>
-  <meta name="description" content="MindState is a space for honest conversations about mental health, culture, and being human.">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['DM Sans', 'ui-sans-serif', 'sans-serif'],
-            serif: ['Instrument Serif', 'Georgia', 'serif']
-          },
-          colors: { ink: '#060606', cream: '#FEF0D8', wine: '#292021' }
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>Landing Pages &mdash; HomePage</title>
+    <link href="{% static 'home.css' %}" rel="stylesheet"/>
+    <style>
+      .homepage__article-container {
+        display: grid !important;
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        column-gap: 20px !important;
+        row-gap: 32px !important;
+      }
+      .homepage__article-container > div {
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      /* === Recently Added Section: UI/UX Fixes === */
+      .homepage__latest-news {
+        width: 100% !important;
+        max-width: 1372px !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 32px !important;
+        height: auto !important;
+      }
+
+      /* Top Area: Big Banner (Left) + 3 Sidebar Articles (Right) */
+      .homepage__main-article-container {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1.85fr) minmax(0, 1fr) !important;
+        column-gap: 24px !important;
+        row-gap: 24px !important;
+        width: 100% !important;
+        height: auto !important;
+        align-items: stretch !important;
+      }
+      @media (max-width: 992px) {
+        .homepage__main-article-container {
+          grid-template-columns: 1fr !important;
         }
       }
-    };
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <style>
-    :root { color-scheme: light; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; background: #FEF0D8; color: #060606; font-family: 'DM Sans', sans-serif; }
-    .display { letter-spacing: -.055em; line-height: .9; }
-    .serif { font-family: 'Instrument Serif', Georgia, serif; }
-    .tag-row { scrollbar-width: none; }
-    .tag-row::-webkit-scrollbar { display: none; }
-    .image-fallback { background: linear-gradient(135deg, #d7a66d 0%, #876e71 48%, #292021 100%); }
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal { opacity: 1; transform: none; transition: none; } }
-  </style>
-</head>
-<body>
-  <header class="fixed inset-x-0 top-0 z-50 px-3 py-3 sm:px-6">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between rounded-full bg-wine px-4 py-2.5 text-white shadow-lg shadow-black/10" aria-label="Main navigation">
-      <a href="#top" class="flex items-center gap-2 text-lg font-semibold tracking-tight"><span class="grid h-8 w-8 place-items-center rounded-full bg-cream text-wine">M</span> MINDSTATE</a>
-      <div class="hidden items-center gap-6 text-sm md:flex"><a href="#articles" class="hover:text-cream">Articles <sup>13</sup></a><a href="#art" class="hover:text-cream">Art</a><a href="#about" class="hover:text-cream">About us</a><a href="#contact" class="hover:text-cream">Contact us</a></div>
-      <div class="flex items-center gap-2"><button type="button" id="search-button" class="grid h-9 w-9 place-items-center rounded-full border border-white/40" aria-label="Open search">⌕</button><a href="#community" class="hidden rounded-full bg-white px-4 py-2 text-sm font-semibold text-wine sm:block">Join community</a><button type="button" id="menu-button" class="grid h-9 w-9 place-items-center rounded-full border border-white/40 md:hidden" aria-label="Open menu">☰</button></div>
-    </nav>
-    <div id="mobile-menu" class="mx-auto mt-2 hidden max-w-7xl rounded-2xl bg-wine p-5 text-white md:hidden"><div class="grid gap-3 text-lg"><a href="#articles">Articles</a><a href="#events">Events</a><a href="#art">Art & design</a><a href="#about">About us</a><a href="#contact">Contact us</a></div></div>
-  </header>
 
-  <main id="top" class="overflow-hidden">
-    <section class="px-5 pb-20 pt-36 sm:px-8 lg:px-16 lg:pb-32 lg:pt-48">
-      <div class="mx-auto max-w-[1400px]">
-        <div class="grid items-end gap-6 lg:grid-cols-[1fr_360px]">
-          <h1 class="display text-[clamp(4.3rem,12vw,10rem)] font-medium">Redefining</h1>
-          <p class="serif max-w-sm pb-3 text-lg uppercase leading-tight text-ink/45">Explore stories, ideas, and conversations that challenge how we see mental health, society, and ourselves.</p>
-        </div>
-        <div class="my-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-[clamp(4rem,11vw,9.5rem)] font-medium leading-[.9] tracking-[-.055em]">
-          <span>The</span><button type="button" id="way-button" class="serif rounded-full border-[3px] border-ink px-7 py-2 italic transition hover:bg-ink hover:text-cream">Way</button><span>we understand</span>
-        </div>
-        <div class="grid items-start gap-6 lg:grid-cols-[360px_1fr] lg:items-center">
-          <p class="serif order-2 max-w-sm text-lg uppercase leading-tight text-ink/45 lg:order-1">From personal stories to culture, politics, and psychology, we create space for honest conversations.</p>
-          <h2 class="display order-1 text-right text-[clamp(3.7rem,10vw,8.7rem)] font-medium lg:order-2">Mental health</h2>
-        </div>
+      /* Big Banner */
+      .homepage__main-article-frame {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100% !important;
+        min-height: 560px !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        border-radius: 12px !important;
+        padding: 32px !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        position: relative !important;
+        overflow: hidden !important;
+      }
+      .homepage__main-article-info-container {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        height: 100% !important;
+        width: 100% !important;
+        flex: 1 1 auto !important;
+      }
+      .homepage__tags-container-11 {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+        align-items: center !important;
+        height: auto !important;
+        width: 100% !important;
+      }
+      .homepage__tags-container-11 > [class*="homepage__tag-container"] {
+        width: auto !important;
+        height: 28px !important;
+        padding: 4px 10px !important;
+        border-radius: 4px !important;
+        box-shadow: inset 0 0 0 1.5px rgba(246, 246, 246, 0.6) !important;
+        background: rgba(0, 0, 0, 0.3) !important;
+        backdrop-filter: blur(4px) !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+      }
+      .homepage__tags-container-11 [class*="homepage__tag-text"] {
+        color: #fff !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        width: auto !important;
+        height: auto !important;
+        line-height: normal !important;
+        margin: 0 !important;
+        white-space: nowrap !important;
+      }
+      .homepage__more-options-4 {
+        margin-left: auto !important;
+        display: flex !important;
+        align-items: center !important;
+      }
+      .homepage__main-article-info {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        height: auto !important;
+        width: 100% !important;
+      }
+      .homepage__event-description-4 {
+        font-size: 34px !important;
+        line-height: 1.25 !important;
+        font-weight: 500 !important;
+        color: #fff !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+      }
+      .homepage__article-meta {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 8px !important;
+        height: auto !important;
+        width: 100% !important;
+      }
+      .homepage__date-8 {
+        color: rgba(255, 255, 255, 0.75) !important;
+        font-size: 14px !important;
+        width: auto !important;
+        height: auto !important;
+        margin: 0 !important;
+        line-height: normal !important;
+      }
+      .homepage__author-8 {
+        width: auto !important;
+        height: auto !important;
+        margin: 0 !important;
+        display: inline-flex !important;
+      }
+      .homepage__author-8-runs,
+      .homepage__author-8-run-1,
+      .homepage__author-8-run-2 {
+        color: #fff !important;
+        font-size: 14px !important;
+        line-height: normal !important;
+      }
+
+      /* 3 Sidebar Articles on the Right */
+      .homepage__sidebar-articles-container {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        height: 100% !important;
+        min-height: 560px !important;
+        width: 100% !important;
+        gap: 0 !important;
+        box-sizing: border-box !important;
+      }
+      .homepage__sidebar-article,
+      .homepage__sidebar-article-2,
+      .homepage__sidebar-article-3 {
+        width: 100% !important;
+        height: auto !important;
+        flex: 1 1 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        box-sizing: border-box !important;
+        box-shadow: none !important;
+      }
+      .homepage__sidebar-article {
+        padding: 0 0 18px 0 !important;
+        border-bottom: 1px solid rgba(6, 6, 6, 0.12) !important;
+      }
+      .homepage__sidebar-article-2 {
+        padding: 18px 0 !important;
+        border-bottom: 1px solid rgba(6, 6, 6, 0.12) !important;
+      }
+      .homepage__sidebar-article-3 {
+        padding: 18px 0 0 0 !important;
+        border-bottom: none !important;
+      }
+      .homepage__sidebar-tags-container,
+      .homepage__sidebar-tags-container-2,
+      .homepage__sidebar-tags-container-3 {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 6px !important;
+        height: auto !important;
+        width: 100% !important;
+        margin: 0 !important;
+        flex-wrap: wrap !important;
+      }
+      .homepage__sidebar-tags-container [class*="homepage__tag-container"],
+      .homepage__sidebar-tags-container-2 [class*="homepage__tag-container"],
+      .homepage__sidebar-tags-container-3 [class*="homepage__tag-container"] {
+        width: auto !important;
+        height: 24px !important;
+        padding: 2px 8px !important;
+        border-radius: 4px !important;
+        box-shadow: inset 0 0 0 1px rgba(6, 6, 6, 0.25) !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: transparent !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+      }
+      .homepage__sidebar-tags-container [class*="homepage__tag-text"],
+      .homepage__sidebar-tags-container-2 [class*="homepage__tag-text"],
+      .homepage__sidebar-tags-container-3 [class*="homepage__tag-text"] {
+        width: auto !important;
+        height: auto !important;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        color: #111 !important;
+        line-height: 1 !important;
+        margin: 0 !important;
+        white-space: nowrap !important;
+      }
+      .homepage__sidebar-article-title,
+      .homepage__sidebar-article-title-2,
+      .homepage__sidebar-article-title-3 {
+        font-size: 18px !important;
+        line-height: 1.35 !important;
+        font-weight: 600 !important;
+        color: #060606 !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        white-space: normal !important;
+        text-align: left !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+      }
+      .homepage__date-and-author-container,
+      .homepage__date-and-author-container-2,
+      .homepage__date-and-author-container-3 {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 8px !important;
+        height: auto !important;
+        width: 100% !important;
+        margin: 0 !important;
+      }
+      .homepage__date-text,
+      .homepage__date-text-2,
+      .homepage__date-text-3 {
+        font-size: 13px !important;
+        color: #767676 !important;
+        width: auto !important;
+        height: auto !important;
+        margin: 0 !important;
+        text-transform: uppercase !important;
+        line-height: 1 !important;
+      }
+      .homepage__author-text,
+      .homepage__author-text-2,
+      .homepage__author-text-3 {
+        width: auto !important;
+        height: auto !important;
+        margin: 0 !important;
+        display: inline-flex !important;
+      }
+      .homepage__author-text-runs,
+      .homepage__author-text-2-runs,
+      .homepage__author-text-3-runs {
+        display: inline-flex !important;
+        gap: 3px !important;
+        color: #555 !important;
+        font-size: 13px !important;
+        line-height: 1 !important;
+      }
+
+      /* Bottom 3 Articles in a Single Row */
+      .homepage__bottom-articles-container {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        column-gap: 20px !important;
+        row-gap: 20px !important;
+        width: 100% !important;
+        height: auto !important;
+        align-items: stretch !important;
+      }
+      @media (max-width: 860px) {
+        .homepage__bottom-articles-container {
+          grid-template-columns: 1fr !important;
+        }
+      }
+      .homepage__bottom-article,
+      .homepage__bottom-article-2,
+      .homepage__bottom-article-3 {
+        width: 100% !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        box-sizing: border-box !important;
+      }
+      .homepage__bottom-article-image,
+      .homepage__bottom-article-image-2,
+      .homepage__bottom-article-image-3 {
+        width: 100% !important;
+        height: 250px !important;
+        border-radius: 12px !important;
+        flex: 0 0 250px !important;
+        object-fit: cover !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        display: block !important;
+        margin: 0 !important;
+      }
+      .homepage__main-tags-container,
+      .homepage__main-tags-container-2,
+      .homepage__main-tags-container-3 {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 6px !important;
+        height: auto !important;
+        width: 100% !important;
+        flex-wrap: wrap !important;
+        margin: 0 !important;
+      }
+      .homepage__main-tags-container [class*="homepage__tag-container"],
+      .homepage__main-tags-container-2 [class*="homepage__tag-container"],
+      .homepage__main-tags-container-3 [class*="homepage__tag-container"] {
+        width: auto !important;
+        height: 24px !important;
+        padding: 2px 8px !important;
+        border-radius: 4px !important;
+        box-shadow: inset 0 0 0 1px rgba(6, 6, 6, 0.2) !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+      }
+      .homepage__main-tags-container [class*="homepage__tag-text"],
+      .homepage__main-tags-container-2 [class*="homepage__tag-text"],
+      .homepage__main-tags-container-3 [class*="homepage__tag-text"] {
+        width: auto !important;
+        height: auto !important;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        color: #111 !important;
+        line-height: 1 !important;
+        margin: 0 !important;
+        white-space: nowrap !important;
+      }
+      .homepage__overflow-menu,
+      .homepage__overflow-menu-3 {
+        width: auto !important;
+        height: 24px !important;
+        padding: 2px 8px !important;
+        border-radius: 4px !important;
+        box-shadow: inset 0 0 0 1px rgba(6, 6, 6, 0.2) !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        list-style: none !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+      }
+      .homepage__overflow-menu-dots-4,
+      .homepage__overflow-menu-dots-6 {
+        width: auto !important;
+        height: auto !important;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        color: #111 !important;
+        margin: 0 !important;
+        list-style: none !important;
+        line-height: 1 !important;
+      }
+      .homepage__main-article,
+      .homepage__overflow-menu-2,
+      .homepage__bottom-article-title-2 {
+        margin-left: auto !important;
+        display: flex !important;
+        align-items: center !important;
+        width: auto !important;
+        height: auto !important;
+      }
+      .homepage__author-9,
+      .homepage__bottom-article-title,
+      .homepage__bottom-article-title-3 {
+        font-size: 21px !important;
+        line-height: 1.35 !important;
+        font-weight: 600 !important;
+        color: #060606 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 56px !important;
+        margin: 0 !important;
+        white-space: normal !important;
+        text-align: left !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+      }
+      .homepage__bottom-article-metadata,
+      .homepage__bottom-article-metadata-2,
+      .homepage__bottom-article-metadata-4 {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 8px !important;
+        height: auto !important;
+        width: 100% !important;
+        margin-top: auto !important;
+      }
+      .homepage__date-10,
+      .homepage__date-11,
+      .homepage__date-12 {
+        font-size: 13px !important;
+        color: #767676 !important;
+        width: auto !important;
+        height: auto !important;
+        margin: 0 !important;
+        text-transform: uppercase !important;
+        line-height: 1 !important;
+      }
+      .homepage__author-10,
+      .homepage__author-11,
+      .homepage__author-12 {
+        width: auto !important;
+        height: auto !important;
+        margin: 0 !important;
+        display: inline-flex !important;
+      }
+      .homepage__author-10-runs,
+      .homepage__author-11-runs,
+      .homepage__author-12-runs {
+        display: inline-flex !important;
+        gap: 3px !important;
+        color: #555 !important;
+        font-size: 13px !important;
+        line-height: 1 !important;
+      }
+
+      /* === Editor’s Top Picks: UI/UX Fixes === */
+      .homepage__editor-s-top-picks {
+        width: 100% !important;
+        align-self: stretch !important;
+        background-color: rgb(41, 32, 33) !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        height: auto !important;
+        padding: 64px 34px 80px 34px !important;
+      }
+
+      .homepage__header-section {
+        width: 100% !important;
+        max-width: 1304px !important;
+        margin: 0 auto 16px auto !important;
+        height: auto !important;
+        display: flex !important;
+        align-items: center !important;
+      }
+
+      .homepage__header-title-2 {
+        color: rgb(246, 246, 246) !important;
+        font-family: "Google Sans Flex", system-ui, sans-serif !important;
+        font-size: 38px !important;
+        font-weight: 500 !important;
+        line-height: 1.2 !important;
+        height: auto !important;
+        width: auto !important;
+        margin: 0 !important;
+        letter-spacing: -0.5px !important;
+      }
+
+      /* Editorial Row Cards */
+      .homepage__item-row,
+      .homepage__item-row-2,
+      .homepage__item-row-3 {
+        width: 100% !important;
+        max-width: 1304px !important;
+        margin: 0 auto !important;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.25fr) minmax(0, 1.15fr) !important;
+        column-gap: 36px !important;
+        row-gap: 24px !important;
+        height: auto !important;
+        min-height: 280px !important;
+        align-items: stretch !important;
+        box-sizing: border-box !important;
+        padding: 36px 16px !important;
+        border-radius: 12px !important;
+        border-bottom: 1px solid rgba(246, 246, 246, 0.12) !important;
+        transition: background 0.25s ease !important;
+      }
+
+      .homepage__item-row:hover,
+      .homepage__item-row-2:hover,
+      .homepage__item-row-3:hover {
+        background: rgba(255, 255, 255, 0.02) !important;
+      }
+
+      .homepage__item-row-3 {
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+      }
+
+      @media (max-width: 1024px) {
+        .homepage__item-row,
+        .homepage__item-row-2,
+        .homepage__item-row-3 {
+          grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr) !important;
+          padding: 28px 12px !important;
+        }
+        .homepage__item-text-container,
+        .homepage__item-text-container-2,
+        .homepage__item-text-container-3 {
+          grid-column: span 2 !important;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .homepage__item-row,
+        .homepage__item-row-2,
+        .homepage__item-row-3 {
+          grid-template-columns: 1fr !important;
+          padding: 24px 8px !important;
+        }
+        .homepage__item-text-container,
+        .homepage__item-text-container-2,
+        .homepage__item-text-container-3 {
+          grid-column: auto !important;
+        }
+        .homepage__item-image,
+        .homepage__item-image-2,
+        .homepage__item-image-3 {
+          min-height: 220px !important;
+          height: 220px !important;
+        }
+      }
+
+      /* Column 1: Image */
+      .homepage__item-image,
+      .homepage__item-image-2,
+      .homepage__item-image-3 {
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 260px !important;
+        border-radius: 12px !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
+        flex: 1 1 auto !important;
+        transition: transform 0.35s ease, box-shadow 0.35s ease !important;
+      }
+
+      .homepage__item-row:hover .homepage__item-image,
+      .homepage__item-row-2:hover .homepage__item-image-2,
+      .homepage__item-row-3:hover .homepage__item-image-3 {
+        transform: scale(1.02) !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45) !important;
+      }
+
+      /* Column 2: Title, Tags & Metadata */
+      .homepage__item-description-container,
+      .homepage__item-description-container-2,
+      .homepage__item-description-container-3 {
+        width: 100% !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        gap: 12px !important;
+        box-sizing: border-box !important;
+      }
+
+      .homepage__categories-row,
+      .homepage__categories-row-2,
+      .homepage__categories-row-3 {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 6px !important;
+        height: auto !important;
+        width: 100% !important;
+        flex-wrap: wrap !important;
+        margin: 0 !important;
+      }
+
+      [class*="homepage__category-wrapper"] {
+        width: auto !important;
+        height: 26px !important;
+        padding: 2px 10px !important;
+        border-radius: 4px !important;
+        box-shadow: inset 0 0 0 1px rgba(246, 246, 246, 0.35) !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+        cursor: pointer !important;
+        transition: all 0.2s ease !important;
+      }
+
+      [class*="homepage__category-wrapper"]:hover {
+        background: rgba(255, 255, 255, 0.15) !important;
+        box-shadow: inset 0 0 0 1px rgba(246, 246, 246, 0.6) !important;
+      }
+
+      [class*="homepage__category-text"] {
+        color: rgba(246, 246, 246, 0.9) !important;
+        font-family: "Google Sans Flex", system-ui, sans-serif !important;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        width: auto !important;
+        height: auto !important;
+        line-height: 1 !important;
+        margin: 0 !important;
+        white-space: nowrap !important;
+      }
+
+      [class*="homepage__category-button-wrapper"] {
+        margin-left: auto !important;
+        width: 28px !important;
+        height: 28px !important;
+        border-radius: 50% !important;
+        box-shadow: inset 0 0 0 1px rgba(246, 246, 246, 0.25) !important;
+        background: transparent !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: pointer !important;
+        padding: 0 !important;
+        position: relative !important;
+        transition: all 0.2s ease !important;
+      }
+
+      [class*="homepage__category-button-wrapper"]:hover {
+        background: rgba(255, 255, 255, 0.12) !important;
+        box-shadow: inset 0 0 0 1px rgba(246, 246, 246, 0.6) !important;
+      }
+
+      .homepage__item-title,
+      .homepage__item-title-2,
+      .homepage__item-title-3 {
+        color: rgb(246, 246, 246) !important;
+        font-family: "Google Sans Flex", system-ui, sans-serif !important;
+        font-size: 26px !important;
+        line-height: 1.3 !important;
+        font-weight: 500 !important;
+        letter-spacing: -0.4px !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 8px 0 !important;
+        white-space: normal !important;
+        text-align: left !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 3 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+        cursor: pointer !important;
+        transition: color 0.2s ease !important;
+      }
+
+      .homepage__item-row:hover .homepage__item-title,
+      .homepage__item-row-2:hover .homepage__item-title-2,
+      .homepage__item-row-3:hover .homepage__item-title-3,
+      .homepage__item-title:hover,
+      .homepage__item-title-2:hover,
+      .homepage__item-title-3:hover {
+        color: #ffffff !important;
+      }
+
+      .homepage__item-metadata-wrapper,
+      .homepage__item-metadata-wrapper-2,
+      .homepage__item-metadata-wrapper-3 {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 8px !important;
+        height: auto !important;
+        width: 100% !important;
+        margin-top: auto !important;
+      }
+
+      .homepage__item-date,
+      .homepage__item-date-2,
+      .homepage__item-date-3 {
+        color: rgba(246, 246, 246, 0.6) !important;
+        font-family: "Google Sans Flex", system-ui, sans-serif !important;
+        font-size: 13px !important;
+        width: auto !important;
+        height: auto !important;
+        margin: 0 !important;
+        text-transform: uppercase !important;
+        line-height: 1 !important;
+      }
+
+      .homepage__item-author,
+      .homepage__item-author-2,
+      .homepage__item-author-3 {
+        width: auto !important;
+        height: auto !important;
+        margin: 0 !important;
+        display: inline-flex !important;
+      }
+
+      .homepage__item-author-runs,
+      .homepage__item-author-2-runs,
+      .homepage__item-author-3-runs {
+        display: inline-flex !important;
+        gap: 3px !important;
+        color: rgba(246, 246, 246, 0.85) !important;
+        font-size: 13px !important;
+        line-height: 1 !important;
+      }
+
+      /* Column 3: Description & Read More */
+      .homepage__item-text-container,
+      .homepage__item-text-container-2,
+      .homepage__item-text-container-3 {
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        gap: 20px !important;
+        box-sizing: border-box !important;
+      }
+
+      .homepage__item-description-text,
+      .homepage__item-description-text-2,
+      .homepage__item-description-text-3 {
+        font-family: "Google Sans Flex", system-ui, sans-serif !important;
+        font-size: 15px !important;
+        line-height: 1.65 !important;
+        color: rgba(246, 246, 246, 0.72) !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        white-space: normal !important;
+        text-align: left !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 5 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+      }
+
+      [class*="homepage__item-description-text-run"] {
+        color: inherit !important;
+        font-family: inherit !important;
+        font-size: inherit !important;
+        line-height: inherit !important;
+        white-space: normal !important;
+      }
+
+      .homepage__read-more-button,
+      .homepage__read-more-button-2,
+      .homepage__read-more-button-3 {
+        align-self: flex-start !important;
+        margin-top: auto !important;
+        height: 42px !important;
+        padding: 0 24px !important;
+        border-radius: 24px !important;
+        box-shadow: inset 0 0 0 1.5px rgba(246, 246, 246, 0.75) !important;
+        background: transparent !important;
+        cursor: pointer !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: auto !important;
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      }
+
+      .homepage__read-more-button:hover,
+      .homepage__read-more-button-2:hover,
+      .homepage__read-more-button-3:hover {
+        background: rgb(246, 246, 246) !important;
+        box-shadow: none !important;
+        transform: translateY(-2px) !important;
+      }
+
+      .homepage__button-text-4,
+      .homepage__button-text-5,
+      .homepage__button-text-6 {
+        color: rgb(246, 246, 246) !important;
+        font-family: "Google Sans Flex", system-ui, sans-serif !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        width: auto !important;
+        height: auto !important;
+        line-height: normal !important;
+        margin: 0 !important;
+        transition: color 0.2s ease !important;
+      }
+
+      .homepage__read-more-button:hover .homepage__button-text-4,
+      .homepage__read-more-button-2:hover .homepage__button-text-5,
+      .homepage__read-more-button-3:hover .homepage__button-text-6 {
+        color: rgb(41, 32, 33) !important;
+      }
+
+      /* === Our Community Members: UI/UX Fixes === */
+      .homepage__container {
+        width: 100% !important;
+        max-width: 1372px !important;
+        margin: 60px auto 0 auto !important;
+        padding: 0 34px !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+
+      .homepage__community-frame {
+        width: 100% !important;
+        background: radial-gradient(circle at 50% 15%, rgba(65, 48, 50, 0.75) 0%, rgb(34, 25, 26) 100%) !important;
+        border: 1px solid rgba(246, 246, 246, 0.08) !important;
+        border-radius: 20px !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 40px !important;
+        height: auto !important;
+        min-height: 440px !important;
+        padding: 56px 40px 48px 40px !important;
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3) !important;
+        position: relative !important;
+        overflow: hidden !important;
+      }
+
+      .homepage__section-title {
+        color: rgb(246, 246, 246) !important;
+        font-family: "Google Sans Flex", system-ui, sans-serif !important;
+        font-size: 32px !important;
+        font-weight: 500 !important;
+        letter-spacing: -0.5px !important;
+        line-height: 1.3 !important;
+        text-align: center !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        white-space: normal !important;
+      }
+
+      .homepage__members-list {
+        width: 100% !important;
+        max-width: 1240px !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        list-style: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 44px !important;
+        height: auto !important;
+      }
+
+      .homepage__member-item {
+        width: 100% !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 24px !important;
+        align-items: stretch !important;
+        justify-content: center !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .homepage__member-info,
+      .homepage__member-info-2,
+      .homepage__member-info-3 {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 12px !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 130px !important;
+        box-sizing: border-box !important;
+        padding: 24px 20px !important;
+        border-radius: 16px !important;
+        background: rgba(255, 255, 255, 0.03) !important;
+        border: 1px solid rgba(246, 246, 246, 0.08) !important;
+        cursor: pointer !important;
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      }
+
+      .homepage__member-info:hover,
+      .homepage__member-info-2:hover,
+      .homepage__member-info-3:hover {
+        background: rgba(255, 255, 255, 0.07) !important;
+        border-color: rgba(246, 246, 246, 0.2) !important;
+        transform: translateY(-4px) !important;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35) !important;
+      }
+
+      .homepage__member-name,
+      .homepage__member-name-2,
+      .homepage__member-name-3 {
+        color: rgb(246, 246, 246) !important;
+        font-family: "Google Sans Flex", system-ui, sans-serif !important;
+        font-size: clamp(22px, 2.2vw, 32px) !important;
+        font-weight: 500 !important;
+        letter-spacing: -0.5px !important;
+        line-height: 1.25 !important;
+        height: auto !important;
+        width: 100% !important;
+        margin: 0 !important;
+        white-space: nowrap !important;
+        text-align: center !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        transition: color 0.2s ease !important;
+      }
+
+      .homepage__member-info:hover .homepage__member-name,
+      .homepage__member-info-2:hover .homepage__member-name-2,
+      .homepage__member-info-3:hover .homepage__member-name-3 {
+        color: #ffffff !important;
+      }
+
+      .homepage__tag-container-59,
+      .homepage__tag-container-60,
+      .homepage__tag-container-61 {
+        width: auto !important;
+        height: 26px !important;
+        padding: 0 14px !important;
+        border-radius: 13px !important;
+        box-shadow: inset 0 0 0 1px rgba(246, 246, 246, 0.3) !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 !important;
+        flex-shrink: 0 !important;
+        box-sizing: border-box !important;
+        transition: all 0.2s ease !important;
+      }
+
+      .homepage__member-info:hover .homepage__tag-container-59,
+      .homepage__member-info-2:hover .homepage__tag-container-60,
+      .homepage__member-info-3:hover .homepage__tag-container-61 {
+        background: rgba(255, 255, 255, 0.16) !important;
+        box-shadow: inset 0 0 0 1px rgba(246, 246, 246, 0.6) !important;
+      }
+
+      .homepage__tag-text-66,
+      .homepage__tag-text-67,
+      .homepage__tag-text-68 {
+        color: rgba(246, 246, 246, 0.85) !important;
+        font-family: "Google Sans Flex", system-ui, sans-serif !important;
+        font-size: 12px !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.5px !important;
+        text-transform: uppercase !important;
+        line-height: 1 !important;
+        width: auto !important;
+        height: auto !important;
+        margin: 0 !important;
+        white-space: nowrap !important;
+      }
+
+      .homepage__action-section {
+        width: 100% !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 16px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .homepage__view-all-members-button {
+        height: 44px !important;
+        width: auto !important;
+        min-width: 190px !important;
+        padding: 0 28px !important;
+        border-radius: 24px !important;
+        box-shadow: inset 0 0 0 1.5px rgba(246, 246, 246, 0.8) !important;
+        background: transparent !important;
+        cursor: pointer !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      }
+
+      .homepage__view-all-members-button:hover {
+        background: rgb(246, 246, 246) !important;
+        box-shadow: none !important;
+        transform: translateY(-2px) !important;
+      }
+
+      .homepage__button-text-8 {
+        color: rgb(246, 246, 246) !important;
+        font-family: "Google Sans Flex", system-ui, sans-serif !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        line-height: normal !important;
+        width: auto !important;
+        height: auto !important;
+        margin: 0 !important;
+        transition: color 0.2s ease !important;
+      }
+
+      .homepage__view-all-members-button:hover .homepage__button-text-8 {
+        color: rgb(41, 32, 33) !important;
+      }
+
+      .homepage__join-info-container {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: auto !important;
+        height: auto !important;
+        margin: 0 !important;
+      }
+
+      .homepage__join-info-text {
+        color: rgba(246, 246, 246, 0.65) !important;
+        font-family: "Google Sans Flex", system-ui, sans-serif !important;
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        line-height: 1.4 !important;
+        text-align: center !important;
+        text-decoration: underline !important;
+        text-underline-offset: 4px !important;
+        cursor: pointer !important;
+        width: auto !important;
+        height: auto !important;
+        margin: 0 !important;
+        transition: color 0.2s ease !important;
+      }
+
+      .homepage__join-info-text:hover {
+        color: rgb(246, 246, 246) !important;
+      }
+
+      @media (max-width: 900px) {
+        .homepage__member-item {
+          grid-template-columns: 1fr !important;
+          gap: 16px !important;
+        }
+        .homepage__member-info,
+        .homepage__member-info-2,
+        .homepage__member-info-3 {
+          min-height: auto !important;
+          padding: 20px 16px !important;
+        }
+        .homepage__member-name,
+        .homepage__member-name-2,
+        .homepage__member-name-3 {
+          font-size: 26px !important;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .homepage__container {
+          padding: 0 16px !important;
+        }
+        .homepage__community-frame {
+          padding: 36px 16px 32px 16px !important;
+          gap: 28px !important;
+        }
+      }
+    </style>
+
+  <!--
+FONT REPORT — generated by figma-to-code
+Google Sans Flex: embedded 3/3 face(s), subset to the characters this design uses.
+Helvetica Neue: embedded 1/1 face(s), subset to the characters this design uses.
+Instrument Serif: embedded 1/1 face(s), subset to the characters this design uses.
+-->
+ </head>
+ <body>
+  <article class="homepage" data-fid="352:6538">
+   <div class="homepage__homepage" data-fid="343:5817">
+    <header class="homepage__header-3" data-fid="343:6453">
+     <div class="homepage__chatgpt-image-sep-19-2026-11-28-00-pm-1" data-fid="348:6535">
+     </div>
+     <ul class="homepage__menu" data-fid="343:6457">
+      <li class="homepage__menu-2" data-fid="343:6462">
+       <ul class="homepage__menu-item-17" data-fid="343:6463">Articles</ul>
+       <div class="homepage__number" data-fid="343:6464">
+        <p class="homepage__number-2" data-fid="343:6465">13</p>
+       </div>
+      </li>
+      <li class="homepage__menu-3" data-fid="343:6466">
+       <ul class="homepage__menu-item-18" data-fid="343:6467">Art</ul>
+       <div class="homepage__number-3" data-fid="343:6468">
+        <p class="homepage__number-4" data-fid="343:6469">42</p>
+       </div>
+      </li>
+      <li class="homepage__menu-4" data-fid="343:6458">
+       <ul class="homepage__menu-item-19" data-fid="343:6459">About US</ul>
+      </li>
+      <li class="homepage__menu-5" data-fid="343:6470">
+       <ul class="homepage__menu-item-20" data-fid="343:6471">Contact us</ul>
+      </li>
+     </ul>
+     <div class="homepage__user-actions" data-fid="343:6486">
+      <a href="{% url 'search' %}" class="homepage__search" data-fid="343:6487" style="text-decoration:none;">
+       <div class="homepage__vector-5" data-fid="343:6488">
+        <svg aria-label="vector-3" class="homepage__vector-3-2" fill="none" preserveaspectratio="none" role="img" viewbox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+         <path d="M0 7.001 L0.75 7.001 L0.75 7.001 L0 7.001 Z M13.466 4.321 L12.773 4.608 L12.773 4.608 L13.466 4.321 Z M10.889 12.82 L11.306 13.443 L11.306 13.443 L10.889 12.82 Z M2.051 11.95 L2.581 11.42 L2.581 11.42 L2.051 11.95 Z M0 7.001 L0.75 7.001 C0.75 4.02 2.855 1.453 5.78 0.871 L5.633 0.135 L5.487 -0.6 C1.861 0.122 -0.751 3.304 -0.75 7.001 L0 7.001 Z M5.633 0.135 L5.78 0.871 C8.704 0.289 11.632 1.853 12.773 4.608 L13.466 4.321 L14.159 4.034 C12.744 0.618 9.113 -1.322 5.487 -0.6 L5.633 0.135 Z M13.466 4.321 L12.773 4.608 C13.915 7.362 12.951 10.539 10.472 12.196 L10.889 12.82 L11.306 13.443 C14.38 11.389 15.574 7.449 14.159 4.034 L13.466 4.321 Z M10.889 12.82 L10.472 12.196 C7.993 13.853 4.689 13.528 2.581 11.42 L2.051 11.95 L1.52 12.481 C4.135 15.095 8.232 15.498 11.306 13.443 L10.889 12.82 Z M2.051 11.95 L2.581 11.42 C1.409 10.248 0.75 8.659 0.75 7.001 L0 7.001 L-0.75 7.001 C-0.75 9.057 0.067 11.028 1.52 12.481 L2.051 11.95 Z" fill="rgb(255, 255, 255)" fill-rule="nonzero">
+         </path>
+        </svg>
+        <svg aria-label="vector-4" class="homepage__vector-4-2" fill="none" preserveaspectratio="none" role="img" viewbox="0 0 4 4" xmlns="http://www.w3.org/2000/svg">
+         <path d="M0.53 -0.53 C0.237 -0.823 -0.237 -0.823 -0.53 -0.53 C-0.823 -0.237 -0.823 0.237 -0.53 0.53 L0 0 L0.53 -0.53 Z M3.47 4.53 C3.763 4.823 4.237 4.823 4.53 4.53 C4.823 4.237 4.823 3.763 4.53 3.47 L4 4 L3.47 4.53 Z M0 0 L-0.53 0.53 L3.47 4.53 L4 4 L4.53 3.47 L0.53 -0.53 L0 0 Z" fill="rgb(255, 255, 255)" fill-rule="nonzero">
+         </path>
+        </svg>
+       </div>
+      </a>
+      <button class="homepage__read-more-button-4" data-fid="343:6491">
+       <span class="homepage__button-text-9" data-fid="343:6492">Join the Community</span>
+      </button>
+     </div>
+    </header>
+    <div class="homepage__contents" data-fid="343:5818">
+     <div class="homepage__banner" data-fid="343:5819">
+      <div class="homepage__sub-container" data-fid="343:5820">
+       <p class="homepage__title" data-fid="343:5821">Redefining</p>
+       <p class="homepage__description" data-fid="343:5822">EXPLORE STORIES, IDEAS, AND CONVERSATIONS THAT CHALLENGE HOW WE SEE MENTAL HEALTH, SOCIETY, AND OURSELVES.</p>
       </div>
-    </section>
-
-    <section id="articles" class="mx-auto max-w-[1400px] scroll-mt-20 px-5 pb-24 sm:px-8 lg:px-16">
-      <div class="mb-8 flex items-center gap-3"><h2 class="text-3xl font-medium tracking-tight">Articles</h2><button type="button" class="view-all rounded-full border border-ink px-5 py-2 text-sm transition hover:bg-ink hover:text-cream">View all</button></div>
-      <div id="article-grid" class="grid gap-x-5 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
-    </section>
-
-    <section id="events" class="scroll-mt-20 bg-wine px-5 py-20 text-white sm:px-8 lg:px-16">
-      <div class="mx-auto max-w-[1400px]"><div class="mb-8 flex items-center gap-3"><h2 class="text-3xl font-medium tracking-tight">Events</h2><button type="button" class="rounded-full border border-white px-5 py-2 text-sm transition hover:bg-white hover:text-wine">View all</button></div><div id="event-grid" class="grid gap-5 lg:grid-cols-3"></div></div>
-    </section>
-
-    <section class="mx-auto max-w-[1400px] px-5 py-24 sm:px-8 lg:px-16"><div class="mb-8 flex items-center gap-3"><h2 class="text-3xl font-medium tracking-tight">Recently added</h2><button type="button" class="rounded-full border border-ink px-5 py-2 text-sm transition hover:bg-ink hover:text-cream">View all</button></div><div class="grid gap-8 lg:grid-cols-[1.55fr_1fr]"><div class="image-fallback relative min-h-[360px] overflow-hidden rounded-2xl"><img src="{% static 'MainArticleFrame.png' %}" alt="Supreme and Nike collaboration" class="h-full w-full object-cover" onerror="this.style.display='none'"><div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-7 text-white"><p class="mb-2 text-xs uppercase tracking-[.18em]">Fashion · Supreme · Nike</p><h3 class="max-w-xl text-3xl font-medium">Supreme and Nike Have an Air Max TL 99 Collaboration on the Way</h3><p class="mt-3 text-sm text-white/70">02 Nov 2024 · By Guy Hawkins</p></div></div><div class="divide-y divide-ink/20" id="recent-list"></div></div></section>
-
-    <section id="community" class="scroll-mt-20 bg-wine px-5 py-24 text-white sm:px-8 lg:px-16"><div class="mx-auto max-w-[1400px]"><p class="mb-16 text-center text-xl">Our community members</p><div class="flex flex-wrap justify-center gap-x-8 gap-y-5 text-center text-4xl font-medium tracking-tight sm:text-6xl"><span>Zidan Muharwan <small class="align-top rounded-full border border-white/50 px-2 py-1 text-xs font-normal">Writer</small></span><span>Arlene McCoy <small class="align-top rounded-full border border-white/50 px-2 py-1 text-xs font-normal">Artist</small></span><span>Robert Fox <small class="align-top rounded-full border border-white/50 px-2 py-1 text-xs font-normal">Writer</small></span></div><div class="mt-16 flex flex-col items-center gap-4"><a href="#contact" class="rounded-full border border-white px-6 py-3 text-sm transition hover:bg-white hover:text-wine">View all members</a><a href="#contact" class="text-sm text-white/60 underline underline-offset-4">How to join community members?</a></div></div></section>
-
-    <section id="art" class="mx-auto max-w-[1400px] scroll-mt-20 px-5 py-24 sm:px-8 lg:px-16"><div class="mb-8 flex items-center gap-3"><h2 class="text-3xl font-medium tracking-tight">Art</h2><button type="button" class="rounded-full border border-ink px-5 py-2 text-sm transition hover:bg-ink hover:text-cream">View all</button></div><div id="art-grid" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"></div></section>
-  </main>
-
-  <footer id="contact" class="bg-cream px-5 pb-8 pt-16 sm:px-8 lg:px-16"><div class="mx-auto grid max-w-[1400px] gap-12 border-t border-ink/15 pt-12 md:grid-cols-4"><div class="md:col-span-1"><p class="serif text-5xl">MINDSTATE</p><p class="mt-5 max-w-xs text-sm leading-6 text-ink/50">A space for honest conversations about mental health, culture, and being human.</p></div><div><h3 class="mb-4 font-semibold">Categories</h3><div class="grid gap-2 text-sm text-ink/70"><a href="#articles">Articles</a><a href="#art">Art and design</a><a href="#contact">Contact us</a><a href="#about">About us</a></div></div><div><h3 class="mb-4 font-semibold">Social</h3><div class="grid gap-2 text-sm text-ink/70"><a href="#contact">Instagram</a><a href="#contact">Facebook</a><a href="#contact">Twitter</a><a href="#contact">YouTube</a></div></div><div><h3 class="mb-4 font-semibold">Subscribe</h3><form id="subscribe-form" class="flex rounded-full border border-ink px-4 py-2"><label for="email" class="sr-only">Email address</label><input id="email" type="email" required placeholder="Enter your email" class="min-w-0 flex-1 bg-transparent text-sm outline-none"><button aria-label="Subscribe" class="text-xl" type="submit">→</button></form><p id="form-message" class="mt-2 text-xs text-ink/50" role="status"></p></div></div><div class="mx-auto mt-16 flex max-w-[1400px] flex-wrap justify-between gap-3 border-t border-ink/15 pt-5 text-xs text-ink/50"><span>MindState © 2026, All Rights Reserved</span><span>Privacy Policy · Terms and conditions</span></div></footer>
-
-  <div id="search-panel" class="fixed inset-0 z-[60] hidden bg-wine/95 p-6 text-white"><button id="close-search" class="absolute right-6 top-6 text-3xl" aria-label="Close search">×</button><div class="mx-auto mt-32 max-w-3xl"><label for="search-input" class="serif text-6xl">Search MindState</label><input id="search-input" type="search" placeholder="Try fashion, art, music..." class="mt-8 w-full border-b-2 border-white bg-transparent py-4 text-2xl outline-none placeholder:text-white/40"></div></div>
-  <script>
-    const staticPrefix = '{% get_static_prefix %}';
-    const staticPath = name => `${staticPrefix}${name}`;
-    const articles = [
-      ['ArticleImage.png', 'Sports · Events · Skateboard', 'World Skate’s recent Street Skateboarding Championship in Hawaii', '22 May 2024', 'Wade Warren'],
-      ['ArticleImage(1).png', 'Music · Album Review · Country', 'Sturgill Simpson Made a Bluegrass Concept Album For His Grandparents. It Rules', '01 Apr 2024', 'Esther Howard'],
-      ['ArticleImage(2).png', 'Music · Interview · Hyperpop', 'We Asked PC Music Fans: Is Hyperpop Dead?', '30 Aug 2024', 'Robert Fox'],
-      ['ArticleImage(3).png', 'Pop Culture · Art Records · Hardly Art', 'Colleen Green Is the Coolest of the Anti-Cool on “I Want To Grow Up”', '06 Jun 2024', 'Leslie Alexander'],
-      ['ArticleImage(4).png', 'Fashion · Streetwear · Sneakers', 'Hoka’s Bondi 7 Shoes Saved My Feet as a Runner', '24 Sep 2024', 'Leslie Alexander'],
-      ['ArticleImage(5).png', 'Sports · Surfing · John Freed', 'The coastal waters near Cape Town are part of the reason it’s the most visited city in China', '18 Jun 2024', 'Guy Hawkins']
-    ];
-    const events = [
-      ['EventImage.png', 'Punk in Drublic: Craft Beer & Music Festival Spring 2024', '19 Mar 2024 · Henry Maier Festival Park'],
-      ['EventImage(1).png', 'Silvia Giordani and the Stratifications of Time and Space', '22 May 2024 · Museo de Los Pintores Oaxaqueños'],
-      ['EventImage(2).png', 'L’Arc de Triomphe, Wrapped: Testament to Christo and Jeanne Claude', '01 Jan 2024 · Institute of Contemporary Arts']
-    ];
-    const art = [
-      ['Frame81.png', 'Nothing Announces ChatGPT-Assisted Earbuds, Ear (1) and Ear (a)'],
-      ['Frame81(1).png', 'Nothing Unveils First Community-Designed Phone (1)'],
-      ['Frame81(2).png', 'SCOPE Art Show 2024 Explores Interdependence and Innovation']
-    ];
-    const fallback = image => { image.classList.add('image-fallback'); image.removeAttribute('src'); };
-    const tags = text => text.split(' · ').map(tag => `<span class="shrink-0 rounded border border-ink/20 px-2 py-1 text-xs">${tag}</span>`).join('');
-    document.querySelector('#article-grid').innerHTML = articles.map(item => `<article class="reveal group"><div class="image-fallback mb-4 h-60 overflow-hidden rounded-xl"><img src="${staticPath(item[0])}" alt="${item[2]}" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" onerror="fallback(this)"></div><div class="tag-row mb-3 flex gap-2 overflow-x-auto">${tags(item[1])}</div><h3 class="text-xl font-medium leading-tight">${item[2]}</h3><p class="mt-4 text-sm text-ink/45">${item[3]} <span class="text-ink">· By ${item[4]}</span></p></article>`).join('');
-    document.querySelector('#event-grid').innerHTML = events.map(item => `<article class="reveal overflow-hidden rounded-2xl border border-white/10 bg-white/5"><div class="image-fallback h-64"><img src="${staticPath(item[0])}" alt="${item[1]}" class="h-full w-full object-cover" onerror="fallback(this)"></div><div class="p-6"><p class="mb-3 text-xs uppercase tracking-[.16em] text-white/50">Events · Design · Exhibition</p><h3 class="text-2xl font-medium leading-tight">${item[1]}</h3><p class="mt-8 text-sm text-white/50">${item[2]}</p></div></article>`).join('');
-    document.querySelector('#recent-list').innerHTML = ['Inges Idee and AllRightsReserved’s Art Installations Tower Over New Landmark in Shanghai', 'New “Andy Warhol’s Social Network” Exhibition To Explore the Late Visionary’s Pop-Cultural Works', 'The Big Australian Music Festival Is Dead. What Next?'].map((title, index) => `<article class="reveal py-6 first:pt-0 last:pb-0"><p class="mb-2 text-xs uppercase tracking-[.16em] text-ink/45">${['Design', 'Pop Culture', 'Events'][index]} · Recently added</p><h3 class="text-2xl font-medium leading-tight">${title}</h3><p class="mt-3 text-sm text-ink/45">${['11 Sep 2024', '25 Aug 2024', '12 Feb 2024'][index]} · By ${['Rich Taylor', 'Jacob Jones', 'Leslie Alexander'][index]}</p></article>`).join('');
-    document.querySelector('#art-grid').innerHTML = art.map(item => `<article class="reveal group"><div class="image-fallback mb-4 h-72 overflow-hidden rounded-2xl"><img src="${staticPath(item[0])}" alt="${item[1]}" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" onerror="fallback(this)"></div><p class="mb-3 text-xs uppercase tracking-[.16em] text-ink/45">Tech · Design · Art</p><h3 class="text-2xl font-medium leading-tight">${item[1]}</h3><p class="mt-4 text-sm text-ink/45">22 May 2023 · By Leslie Alexander</p></article>`).join('');
-
-    document.querySelector('#menu-button').addEventListener('click', () => document.querySelector('#mobile-menu').classList.toggle('hidden'));
-    document.querySelector('#search-button').addEventListener('click', () => { document.querySelector('#search-panel').classList.remove('hidden'); document.querySelector('#search-input').focus(); });
-    document.querySelector('#close-search').addEventListener('click', () => document.querySelector('#search-panel').classList.add('hidden'));
-    document.querySelector('#way-button').addEventListener('click', event => { event.currentTarget.classList.toggle('bg-ink'); event.currentTarget.classList.toggle('text-cream'); });
-    document.querySelector('#subscribe-form').addEventListener('submit', event => { event.preventDefault(); document.querySelector('#form-message').textContent = 'Thanks for joining the conversation.'; event.currentTarget.reset(); });
-    const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }), { threshold: .12 });
-    document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
-  </script>
-</body>
+      <div class="homepage__frame-80" data-fid="343:5823">
+       <p class="homepage__title-2" data-fid="343:5824">The</p>
+       <div class="homepage__frame-79" data-fid="343:5825">
+        <p class="homepage__title-3" data-fid="343:5826">Way</p>
+       </div>
+       <p class="homepage__title-4" data-fid="343:5827">we understand</p>
+      </div>
+      <div class="homepage__sub-container-2" data-fid="343:5828">
+       <p class="homepage__additional-description" data-fid="343:5829">FROM PERSONAL STORIES TO CULTURE, POLITICS, AND PSYCHOLOGY, WE CREATE SPACE FOR HONEST CONVERSATIONS.</p>
+       <p class="homepage__subtitle" data-fid="343:5830">MENTAL HEALTH</p>
+      </div>
+     </div>
+     <div class="homepage__features" data-fid="343:5831">
+      <header class="homepage__header-container" data-fid="343:5832">
+       <p class="homepage__title-5" data-fid="343:5833">Articles</p>
+       <button class="homepage__view-all-button" data-fid="343:5834">
+        <span class="homepage__button-text" data-fid="343:5835">View All</span>
+       </button>
+      </header>
+      <div class="homepage__article-container" data-fid="343:5836">
+       <div class="homepage__article-container-2" data-fid="343:5837">
+        <div class="homepage__article-image"{% if articles.0.image_url %} style="background-image: url('{{ articles.0.image_url }}');"{% endif %} data-fid="343:5838">
+        </div>
+        <div class="homepage__tags-container" data-fid="343:5839">
+         <div class="homepage__tag-container" data-fid="343:5840">
+          <p class="homepage__tag-text" data-fid="343:5841">Sports</p>
+         </div>
+         <div class="homepage__tag-container-2" data-fid="343:5842">
+          <p class="homepage__tag-text-2" data-fid="343:5843">Events</p>
+         </div>
+         <div class="homepage__tag-container-3" data-fid="343:5844">
+          <p class="homepage__tag-text-3" data-fid="343:5845">Skateboard</p>
+         </div>
+         <div class="homepage__more-options-container" data-fid="343:5846">
+          <div class="homepage__more-options-dots-container" data-fid="343:5847">
+           <div class="homepage__ellipse-6" data-fid="343:5848">
+           </div>
+           <div class="homepage__ellipse-7" data-fid="343:5849">
+           </div>
+           <div class="homepage__ellipse-8" data-fid="343:5850">
+           </div>
+          </div>
+         </div>
+        </div>
+        <p class="homepage__article-title" data-fid="343:5851">{{ articles.0.title }}</p>
+        <div class="homepage__metadata-container" data-fid="343:5852">
+         <p class="homepage__date" data-fid="343:5853">{{ articles.0.published_at|date:"d M Y" }}</p>
+         <p class="homepage__author" data-fid="343:5854">
+          <span class="homepage__author-runs">
+           <span class="homepage__author-run-1">&bull; By</span>
+           <span class="homepage__author-run-2">{{ articles.0.author }}</span>
+          </span>
+         </p>
+        </div>
+       </div>
+       <div class="homepage__article-container-3" data-fid="343:5855">
+        <div class="homepage__article-image-2"{% if articles.1.image_url %} style="background-image: url('{{ articles.1.image_url }}');"{% endif %} data-fid="343:5856">
+        </div>
+        <div class="homepage__tags-container-2" data-fid="343:5857">
+         <div class="homepage__tag-container-4" data-fid="343:5858">
+          <p class="homepage__tag-text-4" data-fid="343:5859">Music</p>
+         </div>
+         <div class="homepage__tag-container-5" data-fid="343:5860">
+          <p class="homepage__tag-text-5" data-fid="343:5861">Album Review</p>
+         </div>
+         <div class="homepage__tag-container-6" data-fid="343:5862">
+          <p class="homepage__tag-text-6" data-fid="343:5863">Country</p>
+         </div>
+         <div class="homepage__more-options-container-2" data-fid="343:5864">
+          <div class="homepage__more-options-dots-container-2" data-fid="343:5865">
+           <div class="homepage__ellipse-6-2" data-fid="343:5866">
+           </div>
+           <div class="homepage__ellipse-7-2" data-fid="343:5867">
+           </div>
+           <div class="homepage__ellipse-8-2" data-fid="343:5868">
+           </div>
+          </div>
+         </div>
+        </div>
+        <p class="homepage__article-title-2" data-fid="343:5869">{{ articles.1.title }}</p>
+        <div class="homepage__metadata-container-2" data-fid="343:5870">
+         <p class="homepage__date-2" data-fid="343:5871">{{ articles.1.published_at|date:"d M Y" }}</p>
+         <p class="homepage__author-2" data-fid="343:5872">
+          <span class="homepage__author-2-runs">
+           <span class="homepage__author-2-run-1">&bull; By</span>
+           <span class="homepage__author-2-run-2">{{ articles.1.author }}</span>
+          </span>
+         </p>
+        </div>
+       </div>
+       <div class="homepage__article-container-4" data-fid="343:5873">
+        <div class="homepage__article-image-3"{% if articles.2.image_url %} style="background-image: url('{{ articles.2.image_url }}');"{% endif %} data-fid="343:5874">
+        </div>
+        <div class="homepage__tags-container-3" data-fid="343:5875">
+         <div class="homepage__tag-container-7" data-fid="343:5876">
+          <p class="homepage__tag-text-7" data-fid="343:5877">Music</p>
+         </div>
+         <div class="homepage__tag-container-8" data-fid="343:5878">
+          <p class="homepage__tag-text-8" data-fid="343:5879">Interview</p>
+         </div>
+         <div class="homepage__tag-container-9" data-fid="343:5880">
+          <p class="homepage__tag-text-9" data-fid="343:5881">Hyperpop</p>
+         </div>
+         <div class="homepage__more-options-container-3" data-fid="343:5882">
+          <div class="homepage__more-options-dots-container-3" data-fid="343:5883">
+           <div class="homepage__ellipse-6-3" data-fid="343:5884">
+           </div>
+           <div class="homepage__ellipse-7-3" data-fid="343:5885">
+           </div>
+           <div class="homepage__ellipse-8-3" data-fid="343:5886">
+           </div>
+          </div>
+         </div>
+        </div>
+        <p class="homepage__article-title-3" data-fid="343:5887">{{ articles.2.title }}</p>
+        <div class="homepage__metadata-container-3" data-fid="343:5888">
+         <p class="homepage__date-3" data-fid="343:5889">{{ articles.2.published_at|date:"d M Y" }}</p>
+         <p class="homepage__author-3" data-fid="343:5890">
+          <span class="homepage__author-3-runs">
+           <span class="homepage__author-3-run-1">&bull; By</span>
+           <span class="homepage__author-3-run-2">{{ articles.2.author }}</span>
+          </span>
+         </p>
+        </div>
+       </div>
+       <div class="homepage__article-container-5" data-fid="343:5891">
+        <img alt="{{ articles.3.title|default:'Article Image' }}" class="homepage__article-image-4" src="{% if articles.3.image_url %}{{ articles.3.image_url }}{% else %}{% static 'ArticleImage(3).png' %}{% endif %}" data-fid="343:5892"/>
+        <div class="homepage__tags-container-4" data-fid="343:5893">
+         <div class="homepage__tag-container-10" data-fid="343:5894">
+          <p class="homepage__tag-text-10" data-fid="343:5895">Pop Culture</p>
+         </div>
+         <div class="homepage__tag-container-11" data-fid="343:5896">
+          <p class="homepage__tag-text-11" data-fid="343:5897">Art Records</p>
+         </div>
+         <div class="homepage__tag-container-12" data-fid="343:5898">
+          <p class="homepage__tag-text-12" data-fid="343:5899">Hardly Art</p>
+         </div>
+        </div>
+        <p class="homepage__article-title-4" data-fid="343:5900">{{ articles.3.title }}</p>
+        <div class="homepage__metadata-container-4" data-fid="343:5901">
+         <p class="homepage__date-4" data-fid="343:5902">{{ articles.3.published_at|date:"d M Y" }}</p>
+         <p class="homepage__author-4" data-fid="343:5903">
+          <span class="homepage__author-4-runs">
+           <span class="homepage__author-4-run-1">&bull; By</span>
+           <span class="homepage__author-4-run-2">{{ articles.3.author }}</span>
+          </span>
+         </p>
+        </div>
+       </div>
+       <div class="homepage__article-container-6" data-fid="343:5904">
+        <div class="homepage__article-image-5"{% if articles.4.image_url %} style="background-image: url('{{ articles.4.image_url }}');"{% endif %} data-fid="343:5905">
+        </div>
+        <div class="homepage__tags-container-5" data-fid="343:5906">
+         <div class="homepage__tag-container-13" data-fid="343:5907">
+          <p class="homepage__tag-text-13" data-fid="343:5908">Fashion</p>
+         </div>
+         <div class="homepage__tag-container-14" data-fid="343:5909">
+          <p class="homepage__tag-text-14" data-fid="343:5910">Streetwear</p>
+         </div>
+         <div class="homepage__tag-container-15" data-fid="343:5911">
+          <p class="homepage__tag-text-15" data-fid="343:5912">Sneakers</p>
+         </div>
+         <div class="homepage__more-options-container-4" data-fid="343:5913">
+          <div class="homepage__more-options-dots-container-4" data-fid="343:5914">
+           <div class="homepage__ellipse-6-4" data-fid="343:5915">
+           </div>
+           <div class="homepage__ellipse-7-4" data-fid="343:5916">
+           </div>
+           <div class="homepage__ellipse-8-4" data-fid="343:5917">
+           </div>
+          </div>
+         </div>
+        </div>
+        <p class="homepage__article-title-5" data-fid="343:5918">{{ articles.4.title }}</p>
+        <div class="homepage__metadata-container-5" data-fid="343:5919">
+         <p class="homepage__date-5" data-fid="343:5920">{{ articles.4.published_at|date:"d M Y" }}</p>
+         <p class="homepage__author-5" data-fid="343:5921">
+          <span class="homepage__author-5-runs">
+           <span class="homepage__author-5-run-1">&bull; By</span>
+           <span class="homepage__author-5-run-2">{{ articles.4.author }}</span>
+          </span>
+         </p>
+        </div>
+       </div>
+       <div class="homepage__article-container-7" data-fid="343:5922">
+        <div class="homepage__article-image-6"{% if articles.5.image_url %} style="background-image: url('{{ articles.5.image_url }}');"{% endif %} data-fid="343:5923">
+        </div>
+        <div class="homepage__tags-container-6" data-fid="343:5924">
+         <div class="homepage__tag-container-16" data-fid="343:5925">
+          <p class="homepage__tag-text-16" data-fid="343:5926">Sports</p>
+         </div>
+         <div class="homepage__tag-container-17" data-fid="343:5927">
+          <p class="homepage__tag-text-17" data-fid="343:5928">Surfing</p>
+         </div>
+         <div class="homepage__tag-container-18" data-fid="343:5929">
+          <p class="homepage__tag-text-18" data-fid="343:5930">Jhon Freed</p>
+         </div>
+         <div class="homepage__more-options-container-5" data-fid="343:5931">
+          <div class="homepage__more-options-dots-container-5" data-fid="343:5932">
+           <div class="homepage__ellipse-6-5" data-fid="343:5933">
+           </div>
+           <div class="homepage__ellipse-7-5" data-fid="343:5934">
+           </div>
+           <div class="homepage__ellipse-8-5" data-fid="343:5935">
+           </div>
+          </div>
+         </div>
+        </div>
+        <p class="homepage__article-title-6" data-fid="343:5936">{{ articles.5.title }}</p>
+        <div class="homepage__metadata-container-6" data-fid="343:5937">
+         <p class="homepage__date-6" data-fid="343:5938">{{ articles.5.published_at|date:"d M Y" }}</p>
+         <p class="homepage__author-6" data-fid="343:5939">
+          <span class="homepage__author-6-runs">
+           <span class="homepage__author-6-run-1">&bull; By</span>
+           <span class="homepage__author-6-run-2">{{ articles.5.author }}</span>
+          </span>
+         </p>
+        </div>
+       </div>
+       <div class="homepage__article-container-8" data-fid="343:5940">
+        <img alt="{{ articles.6.title|default:'Article Image' }}" class="homepage__article-image-7" src="{% if articles.6.image_url %}{{ articles.6.image_url }}{% else %}{% static 'ArticleImage(6).png' %}{% endif %}" data-fid="343:5941"/>
+        <div class="homepage__tags-container-7" data-fid="343:5942">
+         <div class="homepage__tag-container-19" data-fid="343:5943">
+          <p class="homepage__tag-text-19" data-fid="343:5944">{{ articles.6.tag_list.0|default:"Design" }}</p>
+         </div>
+         <div class="homepage__tag-container-20" data-fid="343:5945">
+          <p class="homepage__tag-text-20" data-fid="343:5946">{{ articles.6.tag_list.1|default:"Architecture" }}</p>
+         </div>
+         <div class="homepage__tag-container-21" data-fid="343:5947">
+          <p class="homepage__tag-text-21" data-fid="343:5948">{{ articles.6.tag_list.2|default:"Statue" }}</p>
+         </div>
+         <div class="homepage__more-options-container-6" data-fid="343:5949">
+          <div class="homepage__more-options-dots-container-6" data-fid="343:5950">
+           <div class="homepage__ellipse-6-6" data-fid="343:5951">
+           </div>
+           <div class="homepage__ellipse-7-6" data-fid="343:5952">
+           </div>
+           <div class="homepage__ellipse-8-6" data-fid="343:5953">
+           </div>
+          </div>
+         </div>
+        </div>
+        <p class="homepage__article-title-7" data-fid="343:5954">{{ articles.6.title|default:"Forgotten Architecture: The Weirdest Designs of the 20th Century" }}</p>
+        <div class="homepage__metadata-container-7" data-fid="343:5955">
+         <p class="homepage__date-7" data-fid="343:5956">{% if articles.6.published_at %}{{ articles.6.published_at|date:"d M Y" }}{% else %}09 Jul 2024{% endif %}</p>
+         <p class="homepage__author-7" data-fid="343:5957">
+          <span class="homepage__author-7-runs">
+           <span class="homepage__author-7-run-1">&bull; By</span>
+           <span class="homepage__author-7-run-2">{{ articles.6.author|default:"Jacob Jones" }}</span>
+          </span>
+         </p>
+        </div>
+       </div>
+       <div class="homepage__subscribe-container" data-fid="343:5958">
+        <p class="homepage__subscribe-prompt" data-fid="343:5959">Subscribe so you don't miss out!</p>
+        <form method="POST" action="{% url 'home' %}" class="homepage__email-input-container" data-fid="343:5960">{% csrf_token %}<div class="homepage__email-input" data-fid="343:5961">
+          <input type="email" name="email" required placeholder="Enter your mail" class="homepage__subscribe-placeholder" style="background:transparent;border:none;outline:none;" data-fid="343:5962"/>
+          <button type="submit" class="homepage__arrow" style="background:none;border:none;cursor:pointer;padding:0;" data-fid="343:5963">
+           <div class="homepage__vector" data-fid="343:5964">
+            <svg aria-label="Vector-12" class="homepage__vector-12" fill="none" preserveaspectratio="none" role="img" viewbox="0 0 16 12" xmlns="http://www.w3.org/2000/svg">
+             <path d="M6.442 0.442 C6.686 0.198 6.686 -0.198 6.442 -0.442 C6.198 -0.686 5.802 -0.686 5.558 -0.442 L6 0 L6.442 0.442 Z M-0.442 5.558 C-0.686 5.802 -0.686 6.198 -0.442 6.442 C-0.198 6.686 0.198 6.686 0.442 6.442 L0 6 L-0.442 5.558 Z M0.442 5.558 C0.198 5.314 -0.198 5.314 -0.442 5.558 C-0.686 5.802 -0.686 6.198 -0.442 6.442 L0 6 L0.442 5.558 Z M5.558 12.442 C5.802 12.686 6.198 12.686 6.442 12.442 C6.686 12.198 6.686 11.802 6.442 11.558 L6 12 L5.558 12.442 Z M0 5.375 C-0.345 5.375 -0.625 5.655 -0.625 6 C-0.625 6.345 -0.345 6.625 0 6.625 L0 6 L0 5.375 Z M16 6.625 C16.345 6.625 16.625 6.345 16.625 6 C16.625 5.655 16.345 5.375 16 5.375 L16 6 L16 6.625 Z M6 0 L5.558 -0.442 L-0.442 5.558 L0 6 L0.442 6.442 L6.442 0.442 L6 0 Z M0 6 L-0.442 6.442 L5.558 12.442 L6 12 L6.442 11.558 L0.442 5.558 L0 6 Z M0 6 L0 6.625 L16 6.625 L16 6 L16 5.375 L0 5.375 L0 6 Z" fill="rgb(6, 6, 6)" fill-rule="nonzero">
+             </path>
+            </svg>
+           </div>
+          </button>
+         </div>
+         <svg aria-label="Vector" class="homepage__vector-2" fill="none" preserveaspectratio="none" role="img" viewbox="0 0 260 0" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0 L0 0.75 L260 0.75 L260 0 L260 -0.75 L0 -0.75 L0 0 Z" fill="rgb(6, 6, 6)" fill-rule="nonzero">
+          </path>
+         </svg>
+        </form>
+       </div>
+      </div>
+     </div>
+     <div class="homepage__events" data-fid="343:5970">
+      <header class="homepage__header" data-fid="343:5971">
+       <p class="homepage__title-6" data-fid="343:5972">Events</p>
+       <button class="homepage__view-all-button-2" data-fid="343:5973">
+        <span class="homepage__button-text-2" data-fid="343:5974">View All</span>
+       </button>
+      </header>
+      <div class="homepage__events-container" data-fid="343:5975">
+       <div class="homepage__event-card" data-fid="343:5976">
+        <div class="homepage__event-info-container" data-fid="343:5977">
+         <div class="homepage__event-info" data-fid="343:5978">
+          <div class="homepage__tags-container-8" data-fid="343:5979">
+           <div class="homepage__tag-container-22" data-fid="343:5980">
+            <p class="homepage__tag-text-22" data-fid="343:5981">Events</p>
+           </div>
+           <div class="homepage__tag-container-23" data-fid="343:5982">
+            <p class="homepage__tag-text-23" data-fid="343:5983">Music</p>
+           </div>
+           <div class="homepage__tag-container-24" data-fid="343:5984">
+            <p class="homepage__tag-text-24" data-fid="343:5985">Festival</p>
+           </div>
+           <div class="homepage__tag-container-25" data-fid="343:5986">
+            <p class="homepage__tag-text-25" data-fid="343:5987">NOFX</p>
+           </div>
+           <div class="homepage__more-options" data-fid="343:5988">
+            <div class="homepage__more-options-dots" data-fid="343:5989">
+             <div class="homepage__ellipse-6-7" data-fid="343:5990">
+             </div>
+             <div class="homepage__ellipse-7-7" data-fid="343:5991">
+             </div>
+             <div class="homepage__ellipse-8-7" data-fid="343:5992">
+             </div>
+            </div>
+           </div>
+          </div>
+          <p class="homepage__event-description" data-fid="343:5993">{{ landing_events.0.title|default:"Punk in Drublic: Craft Beer &amp; Music Festival Spring 2024" }}</p>
+         </div>
+         <div class="homepage__frame-82" data-fid="343:5994">
+          <button class="homepage__action-button-container" data-fid="343:5995">
+           <span class="homepage__action-button-text" data-fid="343:5996">Buy Ticket</span>
+          </button>
+          <button class="homepage__action-button-container-2" data-fid="343:5997">
+           <span class="homepage__vector-3" data-fid="343:5998">
+            <svg aria-label="Vector-12" class="homepage__vector-12-2" fill="none" preserveaspectratio="none" role="img" viewbox="0 0 16 12" xmlns="http://www.w3.org/2000/svg">
+             <path d="M6.53 0.53 C6.823 0.237 6.823 -0.237 6.53 -0.53 C6.237 -0.823 5.763 -0.823 5.47 -0.53 L6 0 L6.53 0.53 Z M-0.53 5.47 C-0.823 5.763 -0.823 6.237 -0.53 6.53 C-0.237 6.823 0.237 6.823 0.53 6.53 L0 6 L-0.53 5.47 Z M0.53 5.47 C0.237 5.177 -0.237 5.177 -0.53 5.47 C-0.823 5.763 -0.823 6.237 -0.53 6.53 L0 6 L0.53 5.47 Z M5.47 12.53 C5.763 12.823 6.237 12.823 6.53 12.53 C6.823 12.237 6.823 11.763 6.53 11.47 L6 12 L5.47 12.53 Z M0 5.25 C-0.414 5.25 -0.75 5.586 -0.75 6 C-0.75 6.414 -0.414 6.75 0 6.75 L0 6 L0 5.25 Z M16 6.75 C16.414 6.75 16.75 6.414 16.75 6 C16.75 5.586 16.414 5.25 16 5.25 L16 6 L16 6.75 Z M6 0 L5.47 -0.53 L-0.53 5.47 L0 6 L0.53 6.53 L6.53 0.53 L6 0 Z M0 6 L-0.53 6.53 L5.47 12.53 L6 12 L6.53 11.47 L0.53 5.47 L0 6 Z M0 6 L0 6.75 L16 6.75 L16 6 L16 5.25 L0 5.25 L0 6 Z" fill="rgb(246, 246, 246)" fill-rule="nonzero">
+             </path>
+            </svg>
+           </span>
+          </button>
+         </div>
+        </div>
+        <footer class="homepage__event-footer-container" data-fid="343:6003">
+         <p class="homepage__event-date" data-fid="343:6004">{% if landing_events.0.published_at %}{{ landing_events.0.published_at|date:"d M Y" }}{% else %}19 Mar 2024{% endif %}</p>
+         <p class="homepage__event-location" data-fid="343:6005">
+          <span class="homepage__event-location-runs">
+           <span class="homepage__event-location-run-1">&bull; At</span>
+           <span class="homepage__event-location-run-2">{{ landing_events.0.author|default:"Henry Maier Festival Park" }}</span>
+          </span>
+         </p>
+        </footer>
+       </div>
+       <div class="homepage__event-card-2" data-fid="343:6006">
+        <img alt="{{ landing_events.1.title|default:'Event Image' }}" class="homepage__event-image" src="{% if landing_events.1.image_url %}{{ landing_events.1.image_url }}{% else %}{% static 'EventImage.png' %}{% endif %}" data-fid="343:6007"/>
+        <div class="homepage__tags-container-9" data-fid="343:6008">
+         <div class="homepage__tag-container-26" data-fid="343:6009">
+          <p class="homepage__tag-text-26" data-fid="343:6010">Events</p>
+         </div>
+         <div class="homepage__tag-container-27" data-fid="343:6011">
+          <p class="homepage__tag-text-27" data-fid="343:6012">Design</p>
+         </div>
+         <div class="homepage__tag-container-28" data-fid="343:6013">
+          <p class="homepage__tag-text-28" data-fid="343:6014">Art Exhibition</p>
+         </div>
+         <div class="homepage__tag-container-29" data-fid="343:6015">
+          <p class="homepage__tag-text-29" data-fid="343:6016">Contemporary Arts</p>
+         </div>
+         <div class="homepage__more-options-2" data-fid="343:6017">
+          <div class="homepage__more-options-dots-2" data-fid="343:6018">
+           <div class="homepage__ellipse-6-8" data-fid="343:6019">
+           </div>
+           <div class="homepage__ellipse-7-8" data-fid="343:6020">
+           </div>
+           <div class="homepage__ellipse-8-8" data-fid="343:6021">
+           </div>
+          </div>
+         </div>
+        </div>
+        <p class="homepage__event-description-2" data-fid="343:6022">{{ landing_events.1.title|default:"Silvia Giordani and the Stratifications of Time and Space" }}</p>
+        <footer class="homepage__event-footer-container-2" data-fid="343:6023">
+         <p class="homepage__event-date-2" data-fid="343:6024">{% if landing_events.1.published_at %}{{ landing_events.1.published_at|date:"d M Y" }}{% else %}22 May 2024{% endif %}</p>
+         <p class="homepage__event-location-2" data-fid="343:6025">
+          <span class="homepage__event-location-2-runs">
+           <span class="homepage__event-location-2-run-1">&bull; At</span>
+           <span class="homepage__event-location-2-run-2">{{ landing_events.1.author|default:"Museo de Los Pintores Oaxaqueños" }}</span>
+          </span>
+         </p>
+        </footer>
+       </div>
+       <div class="homepage__event-card-3" data-fid="343:6026">
+        <img alt="{{ landing_events.2.title|default:'Event Image' }}" class="homepage__event-image-2" src="{% if landing_events.2.image_url %}{{ landing_events.2.image_url }}{% else %}{% static 'EventImage(1).png' %}{% endif %}" data-fid="343:6027"/>
+        <div class="homepage__tags-container-10" data-fid="343:6028">
+         <div class="homepage__tag-container-30" data-fid="343:6029">
+          <p class="homepage__tag-text-30" data-fid="343:6030">Events</p>
+         </div>
+         <div class="homepage__tag-container-31" data-fid="343:6031">
+          <p class="homepage__tag-text-31" data-fid="343:6032">Design</p>
+         </div>
+         <div class="homepage__tag-container-32" data-fid="343:6033">
+          <p class="homepage__tag-text-32" data-fid="343:6034">Art Exhibition</p>
+         </div>
+         <div class="homepage__tag-container-33" data-fid="343:6035">
+          <p class="homepage__tag-text-33" data-fid="343:6036">Contemporary Arts</p>
+         </div>
+         <div class="homepage__more-options-3" data-fid="343:6037">
+          <div class="homepage__more-options-dots-3" data-fid="343:6038">
+           <div class="homepage__ellipse-6-9" data-fid="343:6039">
+           </div>
+           <div class="homepage__ellipse-7-9" data-fid="343:6040">
+           </div>
+           <div class="homepage__ellipse-8-9" data-fid="343:6041">
+           </div>
+          </div>
+         </div>
+        </div>
+        <p class="homepage__event-description-3" data-fid="343:6042">{{ landing_events.2.title|default:"L’Arc de Triomphe, Wrapped: Testament to Christo and Jeanne Claude" }}</p>
+        <footer class="homepage__event-footer-container-3" data-fid="343:6043">
+         <p class="homepage__event-date-3" data-fid="343:6044">{% if landing_events.2.published_at %}{{ landing_events.2.published_at|date:"d M Y" }}{% else %}01 Jan 2024{% endif %}</p>
+         <p class="homepage__event-location-3" data-fid="343:6045">
+          <span class="homepage__event-location-3-runs">
+           <span class="homepage__event-location-3-run-1">&bull; At</span>
+           <span class="homepage__event-location-3-run-2">{{ landing_events.2.author|default:"Institute of Contemporary Arts" }}</span>
+          </span>
+         </p>
+        </footer>
+       </div>
+      </div>
+     </div>
+     <div class="homepage__latest-news" data-fid="343:6046">
+      <header class="homepage__header-container-2" data-fid="343:6047">
+       <header class="homepage__header-title" data-fid="343:6048">Recently Added</header>
+       <button class="homepage__view-all-button-3" data-fid="343:6049">
+        <span class="homepage__button-text-3" data-fid="343:6050">View All</span>
+       </button>
+      </header>
+      <main class="homepage__main-article-container" data-fid="343:6051">
+       <main class="homepage__main-article-frame" data-fid="343:6052" style="background-image: linear-gradient(180deg, rgba(6, 6, 6, 0.45) 0%, rgba(6, 6, 6, 0.1) 40%, rgba(6, 6, 6, 0.85) 100%), url('{% static 'MainArticleFrame.png' %}');">
+        <main class="homepage__main-article-info-container" data-fid="343:6053">
+         <div class="homepage__tags-container-11" data-fid="343:6054">
+          <div class="homepage__tag-container-34" data-fid="343:6055">
+           <p class="homepage__tag-text-34" data-fid="343:6056">Events</p>
+          </div>
+          <div class="homepage__tag-container-35" data-fid="343:6057">
+           <p class="homepage__tag-text-35" data-fid="343:6058">Music</p>
+          </div>
+          <div class="homepage__tag-container-36" data-fid="343:6059">
+           <p class="homepage__tag-text-36" data-fid="343:6060">Festival</p>
+          </div>
+          <div class="homepage__tag-container-37" data-fid="343:6061">
+           <p class="homepage__tag-text-37" data-fid="343:6062">NOFX</p>
+          </div>
+          <div class="homepage__more-options-4" data-fid="343:6063">
+           <div class="homepage__more-options-dots-4" data-fid="343:6064">
+            <div class="homepage__ellipse-6-10" data-fid="343:6065">
+            </div>
+            <div class="homepage__ellipse-7-10" data-fid="343:6066">
+            </div>
+            <div class="homepage__ellipse-8-10" data-fid="343:6067">
+            </div>
+           </div>
+          </div>
+         </div>
+         <main class="homepage__main-article-info" data-fid="343:6068">
+          <p class="homepage__event-description-4" data-fid="343:6069">You Can Still Get Tickets to Billie Eilish&rsquo;s Sold-Out Hit Me Hard and Soft Tour</p>
+          <div class="homepage__article-meta" data-fid="343:6070">
+           <p class="homepage__date-8" data-fid="343:6071">06 Jun 2024</p>
+           <p class="homepage__author-8" data-fid="343:6072">
+            <span class="homepage__author-8-runs">
+             <span class="homepage__author-8-run-1">&bull; By</span>
+             <span class="homepage__author-8-run-2">Zidan Muharwan</span>
+            </span>
+           </p>
+          </div>
+         </main>
+        </main>
+       </main>
+       <aside class="homepage__sidebar-articles-container" data-fid="343:6073">
+        <aside class="homepage__sidebar-article" data-fid="343:6074">
+         <aside class="homepage__sidebar-tags-container" data-fid="343:6075">
+          <div class="homepage__tag-container-38" data-fid="343:6076">
+           <p class="homepage__tag-text-38" data-fid="343:6077">Fashion</p>
+          </div>
+          <div class="homepage__tag-container-39" data-fid="343:6078">
+           <p class="homepage__tag-text-39" data-fid="343:6079">Supreme</p>
+          </div>
+          <div class="homepage__tag-container-40" data-fid="343:6080">
+           <p class="homepage__tag-text-40" data-fid="343:6081">Nike</p>
+          </div>
+          <ul class="homepage__overflow-menu-container" data-fid="343:6082">
+           <li class="homepage__overflow-menu-dots" data-fid="343:6083">
+            <div class="homepage__ellipse-6-11" data-fid="343:6084">
+            </div>
+            <div class="homepage__ellipse-7-11" data-fid="343:6085">
+            </div>
+            <div class="homepage__ellipse-8-11" data-fid="343:6086">
+            </div>
+           </li>
+          </ul>
+         </aside>
+         <aside class="homepage__sidebar-article-title" data-fid="343:6087">Supreme and Nike Have an Air Max TL 99 Collaboration on the Way</aside>
+         <div class="homepage__date-and-author-container" data-fid="343:6088">
+          <p class="homepage__date-text" data-fid="343:6089">02 Nov 2024</p>
+          <p class="homepage__author-text" data-fid="343:6090">
+           <span class="homepage__author-text-runs">
+            <span class="homepage__author-text-run-1">&bull; By</span>
+            <span class="homepage__author-text-run-2">Guy Hawkins</span>
+           </span>
+          </p>
+         </div>
+        </aside>
+        <aside class="homepage__sidebar-article-2" data-fid="343:6091">
+         <aside class="homepage__sidebar-tags-container-2" data-fid="343:6092">
+          <div class="homepage__tag-container-41" data-fid="343:6093">
+           <p class="homepage__tag-text-41" data-fid="343:6094">Design</p>
+          </div>
+          <div class="homepage__tag-container-42" data-fid="343:6095">
+           <p class="homepage__tag-text-42" data-fid="343:6096">Inges Idee</p>
+          </div>
+          <div class="homepage__tag-container-43" data-fid="343:6097">
+           <p class="homepage__tag-text-43" data-fid="343:6098">Shanghai</p>
+          </div>
+          <ul class="homepage__overflow-menu-container-2" data-fid="343:6099">
+           <li class="homepage__overflow-menu-dots-2" data-fid="343:6100">
+            <div class="homepage__ellipse-6-12" data-fid="343:6101">
+            </div>
+            <div class="homepage__ellipse-7-12" data-fid="343:6102">
+            </div>
+            <div class="homepage__ellipse-8-12" data-fid="343:6103">
+            </div>
+           </li>
+          </ul>
+         </aside>
+         <aside class="homepage__sidebar-article-title-2" data-fid="343:6104">Inges Idee and AllRightsReserved's Art Installations Tower Over New Landmark in Shanghai</aside>
+         <div class="homepage__date-and-author-container-2" data-fid="343:6105">
+          <p class="homepage__date-text-2" data-fid="343:6106">11 Sep 2024</p>
+          <p class="homepage__author-text-2" data-fid="343:6107">
+           <span class="homepage__author-text-2-runs">
+            <span class="homepage__author-text-2-run-1">&bull; By</span>
+            <span class="homepage__author-text-2-run-2">Rich Taylor</span>
+           </span>
+          </p>
+         </div>
+        </aside>
+        <aside class="homepage__sidebar-article-3" data-fid="343:6108">
+         <aside class="homepage__sidebar-tags-container-3" data-fid="343:6109">
+          <div class="homepage__tag-container-44" data-fid="343:6110">
+           <p class="homepage__tag-text-44" data-fid="343:6111">Pop Culture</p>
+          </div>
+          <div class="homepage__tag-container-45" data-fid="343:6112">
+           <p class="homepage__tag-text-45" data-fid="343:6113">Design</p>
+          </div>
+          <div class="homepage__tag-container-46" data-fid="343:6114">
+           <p class="homepage__tag-text-46" data-fid="343:6115">Andy Warhol</p>
+          </div>
+          <ul class="homepage__overflow-menu-container-3" data-fid="343:6116">
+           <li class="homepage__overflow-menu-dots-3" data-fid="343:6117">
+            <div class="homepage__ellipse-6-13" data-fid="343:6118">
+            </div>
+            <div class="homepage__ellipse-7-13" data-fid="343:6119">
+            </div>
+            <div class="homepage__ellipse-8-13" data-fid="343:6120">
+            </div>
+           </li>
+          </ul>
+         </aside>
+         <aside class="homepage__sidebar-article-title-3" data-fid="343:6121">New &ldquo;Andy Warhol's Social Network&rdquo; Exhibition To Explore the Late Visionary's Pop-Cultural Works</aside>
+         <div class="homepage__date-and-author-container-3" data-fid="343:6122">
+          <p class="homepage__date-text-3" data-fid="343:6123">25 Aug 2024</p>
+          <p class="homepage__author-text-3" data-fid="343:6124">
+           <span class="homepage__author-text-3-runs">
+            <span class="homepage__author-text-3-run-1">&bull; By</span>
+            <span class="homepage__author-text-3-run-2">Jacob Jones</span>
+           </span>
+          </p>
+         </div>
+        </aside>
+       </aside>
+      </main>
+      <div class="homepage__bottom-articles-container" data-fid="343:6179">
+       <div class="homepage__bottom-article" data-fid="343:6180">
+        <img alt="Bottom Article Image" class="homepage__bottom-article-image" src="{% static 'BottomArticleImage.png' %}" data-fid="343:6181"/>
+        <main class="homepage__main-tags-container" data-fid="343:6182">
+         <div class="homepage__tag-container-47" data-fid="343:6183">
+          <p class="homepage__tag-text-47" data-fid="343:6184">Events</p>
+         </div>
+         <div class="homepage__tag-container-48" data-fid="343:6185">
+          <p class="homepage__tag-text-48" data-fid="343:6186">Music</p>
+         </div>
+         <div class="homepage__tag-container-49" data-fid="343:6187">
+          <p class="homepage__tag-text-49" data-fid="343:6188">Festival</p>
+         </div>
+         <ul class="homepage__overflow-menu" data-fid="343:6189">
+          <li class="homepage__overflow-menu-dots-4" data-fid="343:6190">Australia</li>
+         </ul>
+         <main class="homepage__main-article" data-fid="343:6191">
+          <div class="homepage__date-9" data-fid="343:6192">
+           <div class="homepage__ellipse-6-14" data-fid="343:6193">
+           </div>
+           <div class="homepage__ellipse-7-14" data-fid="343:6194">
+           </div>
+           <div class="homepage__ellipse-8-14" data-fid="343:6195">
+           </div>
+          </div>
+         </main>
+        </main>
+        <p class="homepage__author-9" data-fid="343:6196">The Big Australian Music Festival Is Dead. What Next?</p>
+        <div class="homepage__bottom-article-metadata" data-fid="343:6197">
+         <p class="homepage__date-10" data-fid="343:6198">12 Feb 2024</p>
+         <p class="homepage__author-10" data-fid="343:6199">
+          <span class="homepage__author-10-runs">
+           <span class="homepage__author-10-run-1">&bull; By</span>
+           <span class="homepage__author-10-run-2">Leslie Alexander</span>
+          </span>
+         </p>
+        </div>
+       </div>
+       <div class="homepage__bottom-article-2" data-fid="343:6200">
+        <div class="homepage__bottom-article-image-2" data-fid="343:6201" style="background-image: url('{% static 'BottomArticleImage(1).png' %}');">
+        </div>
+        <main class="homepage__main-tags-container-2" data-fid="343:6202">
+         <div class="homepage__tag-container-50" data-fid="343:6203">
+          <p class="homepage__tag-text-50" data-fid="343:6204">Tech</p>
+         </div>
+         <div class="homepage__tag-container-51" data-fid="343:6205">
+          <p class="homepage__tag-text-51" data-fid="343:6206">Game</p>
+         </div>
+         <div class="homepage__tag-container-52" data-fid="343:6207">
+          <p class="homepage__tag-text-52" data-fid="343:6208">Gameboy</p>
+         </div>
+         <ul class="homepage__overflow-menu-2" data-fid="343:6209">
+          <li class="homepage__overflow-menu-dots-5" data-fid="343:6210">
+           <div class="homepage__ellipse-6-15" data-fid="343:6211">
+           </div>
+           <div class="homepage__ellipse-7-15" data-fid="343:6212">
+           </div>
+           <div class="homepage__ellipse-8-15" data-fid="343:6213">
+           </div>
+          </li>
+         </ul>
+        </main>
+        <p class="homepage__bottom-article-title" data-fid="343:6214">This Gameboy Lookalike Loaded With Games Is Now 20% Off for Cyber Monday</p>
+        <div class="homepage__bottom-article-metadata-2" data-fid="343:6215">
+         <p class="homepage__date-11" data-fid="343:6216">02 Jun 2024</p>
+         <p class="homepage__author-11" data-fid="343:6217">
+          <span class="homepage__author-11-runs">
+           <span class="homepage__author-11-run-1">&bull; By</span>
+           <span class="homepage__author-11-run-2">Leslie Alexander</span>
+          </span>
+         </p>
+        </div>
+       </div>
+       <div class="homepage__bottom-article-3" data-fid="343:6218">
+        <div class="homepage__bottom-article-image-3" data-fid="343:6219" style="background-image: url('{% static 'BottomArticleImage(2).png' %}');">
+        </div>
+        <main class="homepage__main-tags-container-3" data-fid="343:6220">
+         <div class="homepage__tag-container-53" data-fid="343:6221">
+          <p class="homepage__tag-text-53" data-fid="343:6222">Sports</p>
+         </div>
+         <div class="homepage__tag-container-54" data-fid="343:6223">
+          <p class="homepage__tag-text-54" data-fid="343:6224">Events</p>
+         </div>
+         <div class="homepage__tag-container-55" data-fid="343:6225">
+          <p class="homepage__tag-text-55" data-fid="343:6226">Hockey</p>
+         </div>
+         <ul class="homepage__overflow-menu-3" data-fid="343:6227">
+          <li class="homepage__overflow-menu-dots-6" data-fid="343:6228">Utah</li>
+         </ul>
+         <div class="homepage__bottom-article-title-2" data-fid="343:6229">
+          <div class="homepage__bottom-article-metadata-3" data-fid="343:6230">
+           <div class="homepage__ellipse-6-16" data-fid="343:6231">
+           </div>
+           <div class="homepage__ellipse-7-16" data-fid="343:6232">
+           </div>
+           <div class="homepage__ellipse-8-16" data-fid="343:6233">
+           </div>
+          </div>
+         </div>
+        </main>
+        <p class="homepage__bottom-article-title-3" data-fid="343:6234">Hockey Fans in Utah Crush Stadium Beer Record at First Game</p>
+        <div class="homepage__bottom-article-metadata-4" data-fid="343:6235">
+         <p class="homepage__date-12" data-fid="343:6236">23 May 2024</p>
+         <p class="homepage__author-12" data-fid="343:6237">
+          <span class="homepage__author-12-runs">
+           <span class="homepage__author-12-run-1">&bull; By</span>
+           <span class="homepage__author-12-run-2">Leslie Alexander</span>
+          </span>
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="homepage__editor-s-top-picks" data-fid="343:6238">
+      <header class="homepage__header-section" data-fid="343:6239">
+       <header class="homepage__header-title-2" data-fid="343:6240">Editor&rsquo;s Top Picks</header>
+      </header>
+      <div class="homepage__item-row" data-fid="343:6243">
+       <div class="homepage__item-image" data-fid="343:6244" style="background-image: url('{% if editor_picks.0.image_url %}{{ editor_picks.0.image_url }}{% else %}{% static 'ItemImage.png' %}{% endif %}');">
+       </div>
+       <div class="homepage__item-description-container" data-fid="343:6245">
+        <div class="homepage__categories-row" data-fid="343:6246">
+         <div class="homepage__category-wrapper" data-fid="343:6247">
+          <p class="homepage__category-text" data-fid="343:6248">Fashion</p>
+         </div>
+         <div class="homepage__category-wrapper-2" data-fid="343:6249">
+          <p class="homepage__category-text-2" data-fid="343:6250">Streetwear</p>
+         </div>
+         <div class="homepage__category-wrapper-3" data-fid="343:6251">
+          <p class="homepage__category-text-3" data-fid="343:6252">Sneakers</p>
+         </div>
+         <button class="homepage__category-button-wrapper" data-fid="343:6253">
+          <span class="homepage__category-button-dots" data-fid="343:6254">
+           <div class="homepage__ellipse-6-17" data-fid="343:6255">
+           </div>
+           <div class="homepage__ellipse-7-17" data-fid="343:6256">
+           </div>
+           <div class="homepage__ellipse-8-17" data-fid="343:6257">
+           </div>
+          </span>
+         </button>
+        </div>
+        <p class="homepage__item-title" data-fid="343:6258">{{ editor_picks.0.title|default:"How Much Money ‘Big Brother’ Contestants Made Back in the Day" }}</p>
+        <div class="homepage__item-metadata-wrapper" data-fid="343:6259">
+         <p class="homepage__item-date" data-fid="343:6260">{% if editor_picks.0.published_at %}{{ editor_picks.0.published_at|date:"d M Y" }}{% else %}24 Sep 2022{% endif %}</p>
+         <p class="homepage__item-author" data-fid="343:6261">
+          <span class="homepage__item-author-runs">
+           <span class="homepage__item-author-run-1">&bull; By</span>
+           <span class="homepage__item-author-run-2">{{ editor_picks.0.author|default:"Leslie Alexander" }}</span>
+          </span>
+         </p>
+        </div>
+       </div>
+       <div class="homepage__item-text-container" data-fid="343:6262">
+        <p class="homepage__item-description-text" data-fid="343:6263">
+         <span class="homepage__item-description-text-runs">
+          <span class="homepage__item-description-text-run-1">Craig Phillips was up on the roof of someone&rsquo;s house doing work on the chimney when he got a phone call that would change his life. It was a TV producer calling him to talk about a TV show called&nbsp;</span>
+          <span class="homepage__item-description-text-run-2">Big</span>
+          <span class="homepage__item-description-text-run-3">&nbsp;</span>
+          <span class="homepage__item-description-text-run-4">Brother</span>
+          <span class="homepage__item-description-text-run-5">. &ldquo;I said: &lsquo;Sorry, can you say that again?&rsquo;,&rdquo; Phillips says now.</span>
+         </span>
+        </p>
+        <button class="homepage__read-more-button" data-fid="343:6264">
+         <span class="homepage__button-text-4" data-fid="343:6265">Read More</span>
+        </button>
+       </div>
+      </div>
+      <div class="homepage__item-row-2" data-fid="343:6266">
+       <div class="homepage__item-image-2" data-fid="343:6267" style="background-image: url('{% if editor_picks.1.image_url %}{{ editor_picks.1.image_url }}{% else %}{% static 'ItemImage(1).png' %}{% endif %}');">
+       </div>
+       <div class="homepage__item-description-container-2" data-fid="343:6268">
+        <div class="homepage__categories-row-2" data-fid="343:6269">
+         <div class="homepage__category-wrapper-4" data-fid="343:6270">
+          <p class="homepage__category-text-4" data-fid="343:6271">Fashion</p>
+         </div>
+         <div class="homepage__category-wrapper-5" data-fid="343:6272">
+          <p class="homepage__category-text-5" data-fid="343:6273">Streetwear</p>
+         </div>
+         <div class="homepage__category-wrapper-6" data-fid="343:6274">
+          <p class="homepage__category-text-6" data-fid="343:6275">Sneakers</p>
+         </div>
+         <button class="homepage__category-button-wrapper-2" data-fid="343:6276">
+          <span class="homepage__category-button-dots-2" data-fid="343:6277">
+           <div class="homepage__ellipse-6-18" data-fid="343:6278">
+           </div>
+           <div class="homepage__ellipse-7-18" data-fid="343:6279">
+           </div>
+           <div class="homepage__ellipse-8-18" data-fid="343:6280">
+           </div>
+          </span>
+         </button>
+        </div>
+        <p class="homepage__item-title-2" data-fid="343:6281">{{ editor_picks.1.title|default:"25 Great Pop Culture Stories You Won’t See Anywhere Else" }}</p>
+        <div class="homepage__item-metadata-wrapper-2" data-fid="343:6282">
+         <p class="homepage__item-date-2" data-fid="343:6283">24 Sep 2022</p>
+         <p class="homepage__item-author-2" data-fid="343:6284">
+          <span class="homepage__item-author-2-runs">
+           <span class="homepage__item-author-2-run-1">&bull; By</span>
+           <span class="homepage__item-author-2-run-2">Leslie Alexander</span>
+          </span>
+         </p>
+        </div>
+       </div>
+       <div class="homepage__item-text-container-2" data-fid="343:6285">
+        <p class="homepage__item-description-text-2" data-fid="343:6286">Oh pop culture: our shining light in bleak times, the butter to our daily bread, the ultimate distraction as the world literally burns all around us. Because of this central role in the fabric of our rapidly collapsing society, it&rsquo;s covered by just about everyon and, naturally, this makes most of it shitty, regurgitated, celebrity PR vomit.</p>
+        <button class="homepage__read-more-button-2" data-fid="343:6287">
+         <span class="homepage__button-text-5" data-fid="343:6288">Read More</span>
+        </button>
+       </div>
+      </div>
+      <div class="homepage__item-row-3" data-fid="343:6289">
+       <div class="homepage__item-image-3" data-fid="343:6290" style="background-image: url('{% if editor_picks.2.image_url %}{{ editor_picks.2.image_url }}{% else %}{% static 'ItemImage(2).png' %}{% endif %}');">
+       </div>
+       <div class="homepage__item-description-container-3" data-fid="343:6291">
+        <div class="homepage__categories-row-3" data-fid="343:6292">
+         <div class="homepage__category-wrapper-7" data-fid="343:6293">
+          <p class="homepage__category-text-7" data-fid="343:6294">Fashion</p>
+         </div>
+         <div class="homepage__category-wrapper-8" data-fid="343:6295">
+          <p class="homepage__category-text-8" data-fid="343:6296">Streetwear</p>
+         </div>
+         <div class="homepage__category-wrapper-9" data-fid="343:6297">
+          <p class="homepage__category-text-9" data-fid="343:6298">Sneakers</p>
+         </div>
+         <button class="homepage__category-button-wrapper-3" data-fid="343:6299">
+          <span class="homepage__category-button-dots-3" data-fid="343:6300">
+           <div class="homepage__ellipse-6-19" data-fid="343:6301">
+           </div>
+           <div class="homepage__ellipse-7-19" data-fid="343:6302">
+           </div>
+           <div class="homepage__ellipse-8-19" data-fid="343:6303">
+           </div>
+          </span>
+         </button>
+        </div>
+        <p class="homepage__item-title-3" data-fid="343:6304">{{ editor_picks.2.title|default:"Art Gallery Adds ‘This Is Not Pornography’ Sign After Police Visit" }}</p>
+        <div class="homepage__item-metadata-wrapper-3" data-fid="343:6305">
+         <p class="homepage__item-date-3" data-fid="343:6306">{% if editor_picks.2.published_at %}{{ editor_picks.2.published_at|date:"d M Y" }}{% else %}24 Sep 2022{% endif %}</p>
+         <p class="homepage__item-author-3" data-fid="343:6307">
+          <span class="homepage__item-author-3-runs">
+           <span class="homepage__item-author-3-run-1">&bull; By</span>
+           <span class="homepage__item-author-3-run-2">{{ editor_picks.2.author|default:"Leslie Alexander" }}</span>
+          </span>
+         </p>
+        </div>
+       </div>
+       <div class="homepage__item-text-container-3" data-fid="343:6308">
+        <p class="homepage__item-description-text-3" data-fid="343:6309">
+         <span class="homepage__item-description-text-3-runs">
+          <span class="homepage__item-description-text-3-run-1">A painting of a naked woman caused a hot and heavy debate in the U.K. this week. After The Chair&nbsp;</span>
+          <span class="homepage__item-description-text-3-run-2">art gallery</span>
+          <span class="homepage__item-description-text-3-run-3">&nbsp;in Powys, Wales, exhibited a work called &ldquo;This is not P***ography&rdquo; in its window, the residents of the Hay-on-Wye neighborhood decidedly disagreed with&nbsp;</span>
+          <span class="homepage__item-description-text-3-run-4">the artist</span>
+          <span class="homepage__item-description-text-3-run-5">&lsquo;s assertion about her controversial painting.</span>
+         </span>
+        </p>
+        <button class="homepage__read-more-button-3" data-fid="343:6310">
+         <span class="homepage__button-text-6" data-fid="343:6311">Read More</span>
+        </button>
+       </div>
+      </div>
+     </div>
+     <div class="homepage__videos" data-fid="343:6312">
+      <header class="homepage__header-2" data-fid="343:6313">
+       <header class="homepage__header-title-3" data-fid="343:6314">Art</header>
+       <button class="homepage__view-all-button-4" data-fid="343:6315">
+        <span class="homepage__button-text-7" data-fid="343:6316">View All</span>
+       </button>
+      </header>
+      <div class="homepage__content-container" data-fid="343:6317">
+       <div class="homepage__card" data-fid="343:6318">
+        <div class="homepage__frame-81" data-fid="343:6319"{% if artworks.0.image_url %} style="background-image: linear-gradient(rgba(6, 6, 6, 0.25), rgba(6, 6, 6, 0.25)), url('{{ artworks.0.image_url }}');"{% endif %}>
+        </div>
+        <div class="homepage__tag-container-56" data-fid="343:6322">
+         <div class="homepage__tag" data-fid="343:6323">
+          <p class="homepage__tag-text-56" data-fid="343:6324">Tech</p>
+         </div>
+         <div class="homepage__tag-2" data-fid="343:6325">
+          <p class="homepage__tag-text-57" data-fid="343:6326">Design</p>
+         </div>
+         <div class="homepage__tag-3" data-fid="343:6327">
+          <p class="homepage__tag-text-58" data-fid="343:6328">Nothing</p>
+         </div>
+         <div class="homepage__options-container" data-fid="343:6329">
+          <div class="homepage__options-dots" data-fid="343:6330">
+           <div class="homepage__ellipse-6-20" data-fid="343:6331">
+           </div>
+           <div class="homepage__ellipse-7-20" data-fid="343:6332">
+           </div>
+           <div class="homepage__ellipse-8-20" data-fid="343:6333">
+           </div>
+          </div>
+         </div>
+        </div>
+        <p class="homepage__article-title-8" data-fid="343:6334">{{ artworks.0.title|default:"Nothing Announces ChatGPT-Assisted Earbuds, Ear (1) and Ear (a)" }}</p>
+        <div class="homepage__article-info" data-fid="343:6335">
+         <p class="homepage__date-13" data-fid="343:6336">{% if artworks.0.published_at %}{{ artworks.0.published_at|date:"d M Y" }}{% else %}22 May 2023{% endif %}</p>
+         <p class="homepage__author-13" data-fid="343:6337">
+          <span class="homepage__author-13-runs">
+           <span class="homepage__author-13-run-1">&bull; By</span>
+           <span class="homepage__author-13-run-2">{{ artworks.0.author|default:"Leslie Alexander" }}</span>
+          </span>
+         </p>
+        </div>
+       </div>
+       <div class="homepage__card-2" data-fid="343:6338">
+        <div class="homepage__frame-81-2" data-fid="343:6339"{% if artworks.1.image_url %} style="background-image: linear-gradient(rgba(6, 6, 6, 0.25), rgba(6, 6, 6, 0.25)), url('{{ artworks.1.image_url }}');"{% endif %}>
+        </div>
+        <div class="homepage__tag-container-57" data-fid="343:6342">
+         <div class="homepage__tag-4" data-fid="343:6343">
+          <p class="homepage__tag-text-59" data-fid="343:6344">Tech</p>
+         </div>
+         <div class="homepage__tag-5" data-fid="343:6345">
+          <p class="homepage__tag-text-60" data-fid="343:6346">Design</p>
+         </div>
+         <div class="homepage__tag-6" data-fid="343:6347">
+          <p class="homepage__tag-text-61" data-fid="343:6348">Nothing</p>
+         </div>
+         <div class="homepage__options-container-2" data-fid="343:6349">
+          <div class="homepage__options-dots-2" data-fid="343:6350">
+           <div class="homepage__ellipse-6-21" data-fid="343:6351">
+           </div>
+           <div class="homepage__ellipse-7-21" data-fid="343:6352">
+           </div>
+           <div class="homepage__ellipse-8-21" data-fid="343:6353">
+           </div>
+          </div>
+         </div>
+        </div>
+        <p class="homepage__article-title-9" data-fid="343:6354">{{ artworks.1.title|default:"Nothing Unveils First Community-Designed Phone (1)" }}</p>
+        <div class="homepage__article-info-2" data-fid="343:6355">
+         <p class="homepage__date-14" data-fid="343:6356">{% if artworks.1.published_at %}{{ artworks.1.published_at|date:"d M Y" }}{% else %}16 Jan 2024{% endif %}</p>
+         <p class="homepage__author-14" data-fid="343:6357">
+          <span class="homepage__author-14-runs">
+           <span class="homepage__author-14-run-1">&bull; By</span>
+           <span class="homepage__author-14-run-2">{{ artworks.1.author|default:"Zidan Muharwan" }}</span>
+          </span>
+         </p>
+        </div>
+       </div>
+       <div class="homepage__card-3" data-fid="343:6358">
+        <div class="homepage__frame-81-3" data-fid="343:6359"{% if artworks.2.image_url %} style="background-image: linear-gradient(rgba(6, 6, 6, 0.25), rgba(6, 6, 6, 0.25)), url('{{ artworks.2.image_url }}');"{% endif %}>
+        </div>
+        <div class="homepage__tag-container-58" data-fid="343:6362">
+         <div class="homepage__tag-7" data-fid="343:6363">
+          <p class="homepage__tag-text-62" data-fid="343:6364">Events</p>
+         </div>
+         <div class="homepage__tag-8" data-fid="343:6365">
+          <p class="homepage__tag-text-63" data-fid="343:6366">Design</p>
+         </div>
+         <div class="homepage__tag-9" data-fid="343:6367">
+          <p class="homepage__tag-text-64" data-fid="343:6368">Art Exhibition</p>
+         </div>
+         <div class="homepage__tag-10" data-fid="343:6369">
+          <p class="homepage__tag-text-65" data-fid="343:6370">Scope</p>
+         </div>
+         <div class="homepage__options-container-3" data-fid="343:6371">
+          <div class="homepage__options-dots-3" data-fid="343:6372">
+           <div class="homepage__ellipse-6-22" data-fid="343:6373">
+           </div>
+           <div class="homepage__ellipse-7-22" data-fid="343:6374">
+           </div>
+           <div class="homepage__ellipse-8-22" data-fid="343:6375">
+           </div>
+          </div>
+         </div>
+        </div>
+        <p class="homepage__article-title-10" data-fid="343:6376">{{ artworks.2.title|default:"SCOPE Art Show 2024 Explores Interdependence and Innovation" }}</p>
+        <div class="homepage__article-info-3" data-fid="343:6377">
+         <p class="homepage__date-15" data-fid="343:6378">{% if artworks.2.published_at %}{{ artworks.2.published_at|date:"d M Y" }}{% else %}22 May 2023{% endif %}</p>
+         <p class="homepage__author-15" data-fid="343:6379">
+          <span class="homepage__author-15-runs">
+           <span class="homepage__author-15-run-1">&bull; By</span>
+           <span class="homepage__author-15-run-2">{{ artworks.2.author|default:"Leslie Alexander" }}</span>
+          </span>
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="homepage__container" data-fid="343:6380">
+      <div class="homepage__community-frame" data-fid="343:6381">
+       <section class="homepage__section-title" data-fid="343:6382">Our Community Members</section>
+       <ul class="homepage__members-list" data-fid="343:6383">
+        <li class="homepage__member-item" data-fid="343:6384">
+         <div class="homepage__member-info" data-fid="343:6385">
+          <p class="homepage__member-name" data-fid="343:6386">{{ community_voices.0.author_name|default:"Zidan Muharwan" }}</p>
+          <div class="homepage__tag-container-59" data-fid="343:6387">
+           <p class="homepage__tag-text-66" data-fid="343:6388">{{ community_voices.0.author_role|default:"Writer" }}</p>
+          </div>
+         </div>
+         <div class="homepage__member-info-2" data-fid="343:6389">
+          <p class="homepage__member-name-2" data-fid="343:6390">{{ community_voices.1.author_name|default:"Arlene McCoy" }}</p>
+          <div class="homepage__tag-container-60" data-fid="343:6391">
+           <p class="homepage__tag-text-67" data-fid="343:6392">{{ community_voices.1.author_role|default:"Artist" }}</p>
+          </div>
+         </div>
+         <div class="homepage__member-info-3" data-fid="343:6393">
+          <p class="homepage__member-name-3" data-fid="343:6394">{{ community_voices.2.author_name|default:"Robert Fox" }}</p>
+          <div class="homepage__tag-container-61" data-fid="343:6395">
+           <p class="homepage__tag-text-68" data-fid="343:6396">{{ community_voices.2.author_role|default:"Writer" }}</p>
+          </div>
+         </div>
+        </li>
+        <li class="homepage__action-section" data-fid="343:6397">
+         <button class="homepage__view-all-members-button" data-fid="343:6398">
+          <span class="homepage__button-text-8" data-fid="343:6399">View All Members</span>
+         </button>
+         <div class="homepage__join-info-container" data-fid="343:6400">
+          <p class="homepage__join-info-text" data-fid="343:6401">How to Join Community Members?</p>
+         </div>
+        </li>
+       </ul>
+      </div>
+      <div class="homepage__group-51" data-fid="356:6539">
+       <footer class="homepage__footer" data-fid="343:6402">
+        <section class="homepage__section-wrapper" data-fid="343:6403">
+         <div class="homepage__www" data-fid="343:6404">
+          <div class="homepage__chatgpt-image-sep-19-2026-11-28-00-pm-2" data-fid="352:6536">
+          </div>
+          <p class="homepage__wild-wired-world" data-fid="343:6405">MINDSTATE</p>
+          <p class="homepage__description-2" data-fid="343:6406">A space for honest conversations about mental health, culture, and being human.</p>
+         </div>
+         <div class="homepage__categories" data-fid="343:6407">
+          <ul class="homepage__menu-item" data-fid="343:6408">Categories</ul>
+          <ul class="homepage__menu-items" data-fid="343:6409">
+           <li class="homepage__menu-item-2" data-fid="343:6410">Articles</li>
+           <li class="homepage__menu-item-3" data-fid="343:6411">Art and Design</li>
+           <li class="homepage__menu-item-4" data-fid="343:6412">Contact Us</li>
+           <li class="homepage__menu-item-5" data-fid="343:6413">About Us</li>
+           <li class="homepage__menu-item-6" data-fid="343:6414">Join the community</li>
+          </ul>
+         </div>
+         <div class="homepage__social" data-fid="343:6431">
+          <ul class="homepage__menu-item-7" data-fid="343:6432">Social</ul>
+          <ul class="homepage__menu-items-2" data-fid="343:6433">
+           <li class="homepage__menu-item-8" data-fid="343:6434">Instagram</li>
+           <li class="homepage__menu-item-9" data-fid="343:6435">Facebook</li>
+           <li class="homepage__menu-item-10" data-fid="343:6436">Twitter</li>
+           <li class="homepage__menu-item-11" data-fid="343:6437">Youtube</li>
+          </ul>
+         </div>
+         <div class="homepage__frame-88" data-fid="343:6423">
+          <div class="homepage__frame-87" data-fid="343:6424">
+           <div class="homepage__partnerships" data-fid="343:6425">
+            <ul class="homepage__menu-item-12" data-fid="343:6426">Partnerships</ul>
+            <ul class="homepage__menu-items-3" data-fid="343:6427">
+             <li class="homepage__menu-item-13" data-fid="343:6428">Community</li>
+             <li class="homepage__menu-item-14" data-fid="343:6429">Advertising</li>
+             <li class="homepage__menu-item-15" data-fid="343:6430">Media Partner</li>
+            </ul>
+           </div>
+          </div>
+          <div class="homepage__container-2" data-fid="343:6438">
+           <ul class="homepage__menu-item-16" data-fid="343:6439">Subscribe</ul>
+           <form method="POST" action="{% url 'home' %}" class="homepage__email-input-container-2" data-fid="343:6440">{% csrf_token %}<div class="homepage__email-input-2" data-fid="343:6441">
+             <input type="email" name="email" required placeholder="Enter your mail" class="homepage__subscribe-placeholder-2" style="background:transparent;border:none;outline:none;" data-fid="343:6442"/>
+             <button type="submit" class="homepage__arrow-2" style="background:none;border:none;cursor:pointer;padding:0;" data-fid="343:6443">
+              <div class="homepage__vector-4" data-fid="343:6444">
+               <svg aria-label="Vector-12" class="homepage__vector-12-3" fill="none" preserveaspectratio="none" role="img" viewbox="0 0 16 12" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.442 0.442 C6.686 0.198 6.686 -0.198 6.442 -0.442 C6.198 -0.686 5.802 -0.686 5.558 -0.442 L6 0 L6.442 0.442 Z M-0.442 5.558 C-0.686 5.802 -0.686 6.198 -0.442 6.442 C-0.198 6.686 0.198 6.686 0.442 6.442 L0 6 L-0.442 5.558 Z M0.442 5.558 C0.198 5.314 -0.198 5.314 -0.442 5.558 C-0.686 5.802 -0.686 6.198 -0.442 6.442 L0 6 L0.442 5.558 Z M5.558 12.442 C5.802 12.686 6.198 12.686 6.442 12.442 C6.686 12.198 6.686 11.802 6.442 11.558 L6 12 L5.558 12.442 Z M0 5.375 C-0.345 5.375 -0.625 5.655 -0.625 6 C-0.625 6.345 -0.345 6.625 0 6.625 L0 6 L0 5.375 Z M16 6.625 C16.345 6.625 16.625 6.345 16.625 6 C16.625 5.655 16.345 5.375 16 5.375 L16 6 L16 6.625 Z M6 0 L5.558 -0.442 L-0.442 5.558 L0 6 L0.442 6.442 L6.442 0.442 L6 0 Z M0 6 L-0.442 6.442 L5.558 12.442 L6 12 L6.442 11.558 L0.442 5.558 L0 6 Z M0 6 L0 6.625 L16 6.625 L16 6 L16 5.375 L0 5.375 L0 6 Z" fill="rgb(6, 6, 6)" fill-rule="nonzero">
+                </path>
+               </svg>
+              </div>
+             </button>
+            </div>
+           </form>
+          </div>
+         </div>
+        </section>
+       </footer>
+       <div class="homepage__copyright-info" data-fid="343:6449">
+        <p class="homepage__article-body" data-fid="343:6450">MindState &copy; 2026, All Rights Reserved</p>
+        <p class="homepage__article-body-2" data-fid="343:6451">Privacy Policy</p>
+        <p class="homepage__article-body-3" data-fid="343:6452">Terms and conditions</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </article>
+ </body>
 </html>
