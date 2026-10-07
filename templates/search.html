@@ -698,7 +698,7 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
      </section>
      <footer class="mindstate-footer">
       <div class="footer-brand">
-       <div class="footer-logo" aria-hidden="true">◒</div>
+       <div class="footer-logo"><img src="{% static 'ChatgptImageSep19202611_28_00Pm1.png' %}" alt="MindState"></div>
        <h2>MINDSTATE</h2>
        <p>A space for honest conversations about mental health, culture, and being human.</p>
       </div>
@@ -710,10 +710,10 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
        <button type="button" data-community-action="join-the-community">Join the Community</button>
       </div>
       <div class="footer-column"><h3>Social</h3>
-       <button type="button" data-community-action="instagram">Instagram</button>
-       <button type="button" data-community-action="facebook">Facebook</button>
-       <button type="button" data-community-action="twitter">Twitter</button>
-       <button type="button" data-community-action="youtube">YouTube</button>
+       <a href="https://www.instagram.com/mindstate.space/">Instagram</a>
+       <a href="https://www.instagram.com/mindstate.space/">Facebook</a>
+       <a href="https://www.instagram.com/mindstate.space/">Twitter</a>
+       <a href="https://www.instagram.com/mindstate.space/">YouTube</a>
       </div>
       <form class="footer-subscribe">
        <h3>Subscribe</h3>
@@ -733,12 +733,12 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
     </div>
    </div>
    <header class="search__header">
-    <div class="search__brand" role="img" aria-label="MindState"></div>
+    <a class="search__brand" href="{% url 'home' %}" aria-label="MindState home"><img src="{% static 'ChatgptImageSep19202611_28_00Pm1.png' %}" alt="MindState"></a>
     <ul class="search__menu" aria-label="Main menu">
-     <li class="search__nav-item">Articles <span class="search__count">13</span></li>
-     <li class="search__nav-item">Art <span class="search__count">42</span></li>
+     <li class="search__nav-item"><a href="{% url 'home' %}#home-articles">Articles <span class="search__count">13</span></a></li>
+     <li class="search__nav-item"><a href="{% url 'home' %}#home-art">Art <span class="search__count">42</span></a></li>
      <li class="search__nav-item">About us</li>
-     <li class="search__nav-item">Contact us</li>
+     <li class="search__nav-item"><a href="mailto:contact@mindstate.space">Contact us</a></li>
     </ul>
     <div class="search__user-actions">
      <span class="search__header-icon" aria-hidden="true"><svg aria-hidden="true" viewBox="0 0 32 32" fill="none"><circle cx="13" cy="13" r="10" stroke="currentColor" stroke-width="1.7"/><path d="m21 21 8 8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>

@@ -4994,6 +4994,9 @@ body { background: rgb(254, 240, 216); }
     .search__suggestions .search__metadata-container { font-size: 12px; line-height: 18px; }
     .search__pagination { width: calc(100% - 48px); gap: 12px; }
 }
+.search__brand img { display: block; width: 38px; height: 38px; object-fit: contain; }
+.search__nav-item a { color: inherit; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
+.search__author, .search__date, .search__metadata, [class*="author"] { white-space: nowrap; width: auto; max-width: none; }
 @media (max-width: 540px) {
     .search__contents { gap: 32px; }
     .search__frame-85, .search__suggestions { padding-inline: 20px; }

@@ -108,5 +108,12 @@
     const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('show'); observer.unobserve(entry.target); } }), { threshold: .12 });
     document.querySelectorAll('.fade-up').forEach(element => observer.observe(element));
   </script>
+<script>
+document.querySelectorAll('footer a').forEach(function (link) {
+  if (/^(Instagram|Facebook|Twitter|YouTube)$/i.test(link.textContent.trim())) {
+    link.href = 'https://www.instagram.com/mindstate.space/';
+  }
+});
+</script>
 </body>
 </html>

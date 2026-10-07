@@ -8753,13 +8753,3 @@ svg {
 .homepage__card-3 {
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
 }
-
-.homepage__article-container-2:hover,
-.homepage__event-card:hover,
-.homepage__event-card-2:hover,
-.homepage__event-card-3:hover,
-.homepage__card:hover,
-.homepage__card-2:hover,
-.homepage__card-3:hover {
-    transform: translateY(-3px);
-}

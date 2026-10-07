@@ -5,7 +5,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>Landing Pages &mdash; HomePage</title>
-    <link href="{% static 'home.css' %}" rel="stylesheet"/>
+    <link href="{% static 'home.css' %}?v=recent-layout-1" rel="stylesheet"/>
     <style>
       .homepage__article-container {
         display: grid !important;
@@ -28,36 +28,17 @@
         position: relative !important;
       }
 
-      .homepage__article-container > div:not(.homepage__subscribe-container):hover {
-        transform: translateY(-8px) !important;
-      }
-
       /* Image zoom with contained overflow */
       .homepage__article-container > div:not(.homepage__subscribe-container) [class*="homepage__article-image"] {
         border-radius: 12px !important;
         overflow: hidden !important;
         transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, filter 0.3s ease !important;
-        box-shadow: 0 4px 16px rgba(41, 32, 33, 0.08) !important;
-      }
-
-      .homepage__article-container > div:not(.homepage__subscribe-container):hover [class*="homepage__article-image"] {
-        transform: scale(1.03) !important;
-        box-shadow: 0 16px 32px -8px rgba(41, 32, 33, 0.22) !important;
-        filter: brightness(1.03) !important;
+        box-shadow: none !important;
       }
 
       /* Title interactive color feedback */
       .homepage__article-container > div:not(.homepage__subscribe-container) [class*="homepage__article-title"] {
         transition: color 0.25s ease !important;
-      }
-
-      .homepage__article-container > div:not(.homepage__subscribe-container):hover [class*="homepage__article-title"] {
-        color: rgb(180, 50, 40) !important;
-      }
-
-      .homepage__article-container > div:not(.homepage__subscribe-container):active {
-        transform: translateY(-2px) scale(0.99) !important;
-        transition: transform 0.1s ease !important;
       }
 
       /* Additional article sections hover animations */
@@ -79,19 +60,6 @@
       .homepage__event-card-3 {
         cursor: pointer !important;
         transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease !important;
-      }
-
-      .homepage__bottom-article:hover,
-      .homepage__bottom-article-2:hover,
-      .homepage__bottom-article-3:hover,
-      .homepage__card:hover,
-      .homepage__card-2:hover,
-      .homepage__card-3:hover,
-      .homepage__event-card:hover,
-      .homepage__event-card-2:hover,
-      .homepage__event-card-3:hover {
-        transform: translateY(-6px) !important;
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12) !important;
       }
 
       /* Card link reset */
@@ -596,12 +564,6 @@
         transition: background 0.25s ease !important;
       }
 
-      .homepage__item-row:hover,
-      .homepage__item-row-2:hover,
-      .homepage__item-row-3:hover {
-        background: rgba(255, 255, 255, 0.02) !important;
-      }
-
       .homepage__item-row-3 {
         border-bottom: none !important;
         padding-bottom: 0 !important;
@@ -652,16 +614,9 @@
         background-size: cover !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
+        box-shadow: none !important;
         flex: 1 1 auto !important;
         transition: transform 0.35s ease, box-shadow 0.35s ease !important;
-      }
-
-      .homepage__item-row:hover .homepage__item-image,
-      .homepage__item-row-2:hover .homepage__item-image-2,
-      .homepage__item-row-3:hover .homepage__item-image-3 {
-        transform: scale(1.02) !important;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45) !important;
       }
 
       /* Column 2: Title, Tags & Metadata */
@@ -764,15 +719,6 @@
         overflow: hidden !important;
         cursor: pointer !important;
         transition: color 0.2s ease !important;
-      }
-
-      .homepage__item-row:hover .homepage__item-title,
-      .homepage__item-row-2:hover .homepage__item-title-2,
-      .homepage__item-row-3:hover .homepage__item-title-3,
-      .homepage__item-title:hover,
-      .homepage__item-title-2:hover,
-      .homepage__item-title-3:hover {
-        color: #ffffff !important;
       }
 
       .homepage__item-metadata-wrapper,
@@ -995,15 +941,6 @@
         transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
       }
 
-      .homepage__member-info:hover,
-      .homepage__member-info-2:hover,
-      .homepage__member-info-3:hover {
-        background: rgba(255, 255, 255, 0.07) !important;
-        border-color: rgba(246, 246, 246, 0.2) !important;
-        transform: translateY(-4px) !important;
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35) !important;
-      }
-
       .homepage__member-name,
       .homepage__member-name-2,
       .homepage__member-name-3 {
@@ -1023,12 +960,6 @@
         transition: color 0.2s ease !important;
       }
 
-      .homepage__member-info:hover .homepage__member-name,
-      .homepage__member-info-2:hover .homepage__member-name-2,
-      .homepage__member-info-3:hover .homepage__member-name-3 {
-        color: #ffffff !important;
-      }
-
       .homepage__tag-container-59,
       .homepage__tag-container-60,
       .homepage__tag-container-61 {
@@ -1045,13 +976,6 @@
         flex-shrink: 0 !important;
         box-sizing: border-box !important;
         transition: all 0.2s ease !important;
-      }
-
-      .homepage__member-info:hover .homepage__tag-container-59,
-      .homepage__member-info-2:hover .homepage__tag-container-60,
-      .homepage__member-info-3:hover .homepage__tag-container-61 {
-        background: rgba(255, 255, 255, 0.16) !important;
-        box-shadow: inset 0 0 0 1px rgba(246, 246, 246, 0.6) !important;
       }
 
       .homepage__tag-text-66,
@@ -1183,49 +1107,25 @@ Google Sans Flex: embedded 3/3 face(s), subset to the characters this design use
 Helvetica Neue: embedded 1/1 face(s), subset to the characters this design uses.
 Instrument Serif: embedded 1/1 face(s), subset to the characters this design uses.
 -->
+  <link href="{% static 'community-footer.css' %}" rel="stylesheet"/>
+  <link href="{% static 'home-ui.css' %}?v=recent-layout-1" rel="stylesheet"/>
+  <script src="{% static 'home-ui.js' %}" defer></script>
  </head>
  <body>
+  {% for message in messages %}{% if 'success' in message.tags %}<div data-signup-confirmed hidden>{{ message }}</div>{% endif %}{% endfor %}
   <article class="homepage" data-fid="352:6538">
    <div class="homepage__homepage" data-fid="343:5817">
-    <header class="homepage__header-3" data-fid="343:6453">
-     <div class="homepage__chatgpt-image-sep-19-2026-11-28-00-pm-1" data-fid="348:6535">
-     </div>
-     <ul class="homepage__menu" data-fid="343:6457">
-      <li class="homepage__menu-2" data-fid="343:6462">
-       <ul class="homepage__menu-item-17" data-fid="343:6463">Articles</ul>
-       <div class="homepage__number" data-fid="343:6464">
-        <p class="homepage__number-2" data-fid="343:6465">13</p>
-       </div>
-      </li>
-      <li class="homepage__menu-3" data-fid="343:6466">
-       <ul class="homepage__menu-item-18" data-fid="343:6467">Art</ul>
-       <div class="homepage__number-3" data-fid="343:6468">
-        <p class="homepage__number-4" data-fid="343:6469">42</p>
-       </div>
-      </li>
-      <li class="homepage__menu-4" data-fid="343:6458">
-       <ul class="homepage__menu-item-19" data-fid="343:6459">About US</ul>
-      </li>
-      <li class="homepage__menu-5" data-fid="343:6470">
-       <ul class="homepage__menu-item-20" data-fid="343:6471">Contact us</ul>
-      </li>
-     </ul>
-     <div class="homepage__user-actions" data-fid="343:6486">
-      <a href="{% url 'search' %}" class="homepage__search" data-fid="343:6487" style="text-decoration:none;">
-       <div class="homepage__vector-5" data-fid="343:6488">
-        <svg aria-label="vector-3" class="homepage__vector-3-2" fill="none" preserveaspectratio="none" role="img" viewbox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
-         <path d="M0 7.001 L0.75 7.001 L0.75 7.001 L0 7.001 Z M13.466 4.321 L12.773 4.608 L12.773 4.608 L13.466 4.321 Z M10.889 12.82 L11.306 13.443 L11.306 13.443 L10.889 12.82 Z M2.051 11.95 L2.581 11.42 L2.581 11.42 L2.051 11.95 Z M0 7.001 L0.75 7.001 C0.75 4.02 2.855 1.453 5.78 0.871 L5.633 0.135 L5.487 -0.6 C1.861 0.122 -0.751 3.304 -0.75 7.001 L0 7.001 Z M5.633 0.135 L5.78 0.871 C8.704 0.289 11.632 1.853 12.773 4.608 L13.466 4.321 L14.159 4.034 C12.744 0.618 9.113 -1.322 5.487 -0.6 L5.633 0.135 Z M13.466 4.321 L12.773 4.608 C13.915 7.362 12.951 10.539 10.472 12.196 L10.889 12.82 L11.306 13.443 C14.38 11.389 15.574 7.449 14.159 4.034 L13.466 4.321 Z M10.889 12.82 L10.472 12.196 C7.993 13.853 4.689 13.528 2.581 11.42 L2.051 11.95 L1.52 12.481 C4.135 15.095 8.232 15.498 11.306 13.443 L10.889 12.82 Z M2.051 11.95 L2.581 11.42 C1.409 10.248 0.75 8.659 0.75 7.001 L0 7.001 L-0.75 7.001 C-0.75 9.057 0.067 11.028 1.52 12.481 L2.051 11.95 Z" fill="rgb(255, 255, 255)" fill-rule="nonzero">
-         </path>
-        </svg>
-        <svg aria-label="vector-4" class="homepage__vector-4-2" fill="none" preserveaspectratio="none" role="img" viewbox="0 0 4 4" xmlns="http://www.w3.org/2000/svg">
-         <path d="M0.53 -0.53 C0.237 -0.823 -0.237 -0.823 -0.53 -0.53 C-0.823 -0.237 -0.823 0.237 -0.53 0.53 L0 0 L0.53 -0.53 Z M3.47 4.53 C3.763 4.823 4.237 4.823 4.53 4.53 C4.823 4.237 4.823 3.763 4.53 3.47 L4 4 L3.47 4.53 Z M0 0 L-0.53 0.53 L3.47 4.53 L4 4 L4.53 3.47 L0.53 -0.53 L0 0 Z" fill="rgb(255, 255, 255)" fill-rule="nonzero">
-         </path>
-        </svg>
-       </div>
-      </a>
-      <button class="homepage__read-more-button-4" data-fid="343:6491">
-       <span class="homepage__button-text-9" data-fid="343:6492">Join the Community</span>
-      </button>
+    <header class="homepage__header home-nav">
+     <a class="home-nav__brand" href="{% url 'home' %}" aria-label="MindState home"><img src="{% static 'ChatgptImageSep19202611_28_00Pm1.png' %}" alt="MindState"/></a>
+     <nav class="home-nav__links" aria-label="Main navigation">
+      <a href="#home-articles">Articles <span>13</span></a>
+      <a href="#home-art">Art <span>42</span></a>
+      <span>About us</span>
+      <a href="mailto:contact@mindstate.space">Contact us</a>
+     </nav>
+     <div class="home-nav__actions">
+      <a href="{% url 'search' %}" aria-label="Search articles" class="home-nav__search"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/><path d="m15 15 6 6" stroke="currentColor" stroke-width="1.5"/></svg></a>
+      <a class="home-nav__join" href="mailto:contact@mindstate.space?subject=Joining%20the%20MindState%20community&amp;body=Hi%20MindState%20team%2C%0A%0AI%27d%20love%20to%20join%20the%20MindState%20community.%20Please%20let%20me%20know%20how%20I%20can%20get%20involved.%0A%0AThank%20you%21">Join the Community</a>
      </div>
     </header>
     <div class="homepage__contents" data-fid="343:5818">
@@ -1246,7 +1146,7 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
        <p class="homepage__subtitle" data-fid="343:5830">MENTAL HEALTH</p>
       </div>
      </div>
-     <div class="homepage__features" data-fid="343:5831">
+     <div id="home-articles" class="homepage__features" data-fid="343:5831">
       <header class="homepage__header-container" data-fid="343:5832">
        <p class="homepage__title-5" data-fid="343:5833">Articles</p>
        <button class="homepage__view-all-button" data-fid="343:5834">
@@ -1503,9 +1403,9 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
        </div>
        <div class="homepage__subscribe-container" data-fid="343:5958">
         <p class="homepage__subscribe-prompt" data-fid="343:5959">Subscribe so you don't miss out!</p>
-        <form method="POST" action="{% url 'home' %}" class="homepage__email-input-container" data-fid="343:5960">{% csrf_token %}<div class="homepage__email-input" data-fid="343:5961">
-          <input type="email" name="email" required placeholder="Enter your mail" class="homepage__subscribe-placeholder" style="background:transparent;border:none;outline:none;" data-fid="343:5962"/>
-          <button type="submit" class="homepage__arrow" style="background:none;border:none;cursor:pointer;padding:0;" data-fid="343:5963">
+        <form method="POST" action="{% url 'home' %}" class="homepage__email-input-container home-signup" data-fid="343:5960">{% csrf_token %}<div class="homepage__email-input" data-fid="343:5961">
+          <input type="email" name="email" required aria-label="Email address for articles signup" placeholder="Enter your mail" class="homepage__subscribe-placeholder" style="background:transparent;border:none;outline:none;" data-fid="343:5962"/>
+          <button type="submit" aria-label="Subscribe to MindState" class="homepage__arrow" style="background:none;border:none;cursor:pointer;padding:0;" data-fid="343:5963">
            <div class="homepage__vector" data-fid="343:5964">
             <svg aria-label="Vector-12" class="homepage__vector-12" fill="none" preserveaspectratio="none" role="img" viewbox="0 0 16 12" xmlns="http://www.w3.org/2000/svg">
              <path d="M6.442 0.442 C6.686 0.198 6.686 -0.198 6.442 -0.442 C6.198 -0.686 5.802 -0.686 5.558 -0.442 L6 0 L6.442 0.442 Z M-0.442 5.558 C-0.686 5.802 -0.686 6.198 -0.442 6.442 C-0.198 6.686 0.198 6.686 0.442 6.442 L0 6 L-0.442 5.558 Z M0.442 5.558 C0.198 5.314 -0.198 5.314 -0.442 5.558 C-0.686 5.802 -0.686 6.198 -0.442 6.442 L0 6 L0.442 5.558 Z M5.558 12.442 C5.802 12.686 6.198 12.686 6.442 12.442 C6.686 12.198 6.686 11.802 6.442 11.558 L6 12 L5.558 12.442 Z M0 5.375 C-0.345 5.375 -0.625 5.655 -0.625 6 C-0.625 6.345 -0.345 6.625 0 6.625 L0 6 L0 5.375 Z M16 6.625 C16.345 6.625 16.625 6.345 16.625 6 C16.625 5.655 16.345 5.375 16 5.375 L16 6 L16 6.625 Z M6 0 L5.558 -0.442 L-0.442 5.558 L0 6 L0.442 6.442 L6.442 0.442 L6 0 Z M0 6 L-0.442 6.442 L5.558 12.442 L6 12 L6.442 11.558 L0.442 5.558 L0 6 Z M0 6 L0 6.625 L16 6.625 L16 6 L16 5.375 L0 5.375 L0 6 Z" fill="rgb(6, 6, 6)" fill-rule="nonzero">
@@ -1529,8 +1429,7 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
         <span class="homepage__button-text-2" data-fid="343:5974">View All</span>
        </button>
       </header>
-      <div class="homepage__events-container" data-fid="343:5975">
-       <div class="homepage__event-card" data-fid="343:5976">
+      <div class="home-events-layout"><div class="homepage__event-card" data-fid="343:5976">
         <div class="homepage__event-info-container" data-fid="343:5977">
          <div class="homepage__event-info" data-fid="343:5978">
           <div class="homepage__tags-container-8" data-fid="343:5979">
@@ -1582,7 +1481,7 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
           </span>
          </p>
         </footer>
-       </div>
+       </div><div class="home-events-track" id="home-events-track">
        <div class="homepage__event-card-2" data-fid="343:6006">
         <img alt="{{ landing_events.1.title|default:'Event Image' }}" class="homepage__event-image" src="{% if landing_events.1.image_url %}{{ landing_events.1.image_url }}{% else %}{% static 'EventImage.png' %}{% endif %}" data-fid="343:6007"/>
         <div class="homepage__tags-container-9" data-fid="343:6008">
@@ -1657,7 +1556,7 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
          </p>
         </footer>
        </div>
-      </div>
+      </div></div><div class="home-carousel-controls" aria-label="Events scroll controls"><button type="button" data-scroll-target="home-events-track" data-scroll-direction="-1" aria-label="Previous events"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><button type="button" data-scroll-target="home-events-track" data-scroll-direction="1" aria-label="Next events"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div>
      </div>
      <div class="homepage__latest-news" data-fid="343:6046">
       <header class="homepage__header-container-2" data-fid="343:6047">
@@ -1682,16 +1581,7 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
           <div class="homepage__tag-container-37" data-fid="343:6061">
            <p class="homepage__tag-text-37" data-fid="343:6062">NOFX</p>
           </div>
-          <div class="homepage__more-options-4" data-fid="343:6063">
-           <div class="homepage__more-options-dots-4" data-fid="343:6064">
-            <div class="homepage__ellipse-6-10" data-fid="343:6065">
-            </div>
-            <div class="homepage__ellipse-7-10" data-fid="343:6066">
-            </div>
-            <div class="homepage__ellipse-8-10" data-fid="343:6067">
-            </div>
-           </div>
-          </div>
+          
          </div>
          <main class="homepage__main-article-info" data-fid="343:6068">
           <p class="homepage__event-description-4" data-fid="343:6069">You Can Still Get Tickets to Billie Eilish&rsquo;s Sold-Out Hit Me Hard and Soft Tour</p>
@@ -1719,16 +1609,7 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
           <div class="homepage__tag-container-40" data-fid="343:6080">
            <p class="homepage__tag-text-40" data-fid="343:6081">Nike</p>
           </div>
-          <ul class="homepage__overflow-menu-container" data-fid="343:6082">
-           <li class="homepage__overflow-menu-dots" data-fid="343:6083">
-            <div class="homepage__ellipse-6-11" data-fid="343:6084">
-            </div>
-            <div class="homepage__ellipse-7-11" data-fid="343:6085">
-            </div>
-            <div class="homepage__ellipse-8-11" data-fid="343:6086">
-            </div>
-           </li>
-          </ul>
+          
          </aside>
          <aside class="homepage__sidebar-article-title" data-fid="343:6087">Supreme and Nike Have an Air Max TL 99 Collaboration on the Way</aside>
          <div class="homepage__date-and-author-container" data-fid="343:6088">
@@ -1752,16 +1633,7 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
           <div class="homepage__tag-container-43" data-fid="343:6097">
            <p class="homepage__tag-text-43" data-fid="343:6098">Shanghai</p>
           </div>
-          <ul class="homepage__overflow-menu-container-2" data-fid="343:6099">
-           <li class="homepage__overflow-menu-dots-2" data-fid="343:6100">
-            <div class="homepage__ellipse-6-12" data-fid="343:6101">
-            </div>
-            <div class="homepage__ellipse-7-12" data-fid="343:6102">
-            </div>
-            <div class="homepage__ellipse-8-12" data-fid="343:6103">
-            </div>
-           </li>
-          </ul>
+          
          </aside>
          <aside class="homepage__sidebar-article-title-2" data-fid="343:6104">Inges Idee and AllRightsReserved's Art Installations Tower Over New Landmark in Shanghai</aside>
          <div class="homepage__date-and-author-container-2" data-fid="343:6105">
@@ -1785,16 +1657,7 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
           <div class="homepage__tag-container-46" data-fid="343:6114">
            <p class="homepage__tag-text-46" data-fid="343:6115">Andy Warhol</p>
           </div>
-          <ul class="homepage__overflow-menu-container-3" data-fid="343:6116">
-           <li class="homepage__overflow-menu-dots-3" data-fid="343:6117">
-            <div class="homepage__ellipse-6-13" data-fid="343:6118">
-            </div>
-            <div class="homepage__ellipse-7-13" data-fid="343:6119">
-            </div>
-            <div class="homepage__ellipse-8-13" data-fid="343:6120">
-            </div>
-           </li>
-          </ul>
+          
          </aside>
          <aside class="homepage__sidebar-article-title-3" data-fid="343:6121">New &ldquo;Andy Warhol's Social Network&rdquo; Exhibition To Explore the Late Visionary's Pop-Cultural Works</aside>
          <div class="homepage__date-and-author-container-3" data-fid="343:6122">
@@ -1822,19 +1685,7 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
          <div class="homepage__tag-container-49" data-fid="343:6187">
           <p class="homepage__tag-text-49" data-fid="343:6188">Festival</p>
          </div>
-         <ul class="homepage__overflow-menu" data-fid="343:6189">
-          <li class="homepage__overflow-menu-dots-4" data-fid="343:6190">Australia</li>
-         </ul>
-         <main class="homepage__main-article" data-fid="343:6191">
-          <div class="homepage__date-9" data-fid="343:6192">
-           <div class="homepage__ellipse-6-14" data-fid="343:6193">
-           </div>
-           <div class="homepage__ellipse-7-14" data-fid="343:6194">
-           </div>
-           <div class="homepage__ellipse-8-14" data-fid="343:6195">
-           </div>
-          </div>
-         </main>
+         
         </main>
         <p class="homepage__author-9" data-fid="343:6196">The Big Australian Music Festival Is Dead. What Next?</p>
         <div class="homepage__bottom-article-metadata" data-fid="343:6197">
@@ -1860,16 +1711,7 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
          <div class="homepage__tag-container-52" data-fid="343:6207">
           <p class="homepage__tag-text-52" data-fid="343:6208">Gameboy</p>
          </div>
-         <ul class="homepage__overflow-menu-2" data-fid="343:6209">
-          <li class="homepage__overflow-menu-dots-5" data-fid="343:6210">
-           <div class="homepage__ellipse-6-15" data-fid="343:6211">
-           </div>
-           <div class="homepage__ellipse-7-15" data-fid="343:6212">
-           </div>
-           <div class="homepage__ellipse-8-15" data-fid="343:6213">
-           </div>
-          </li>
-         </ul>
+         
         </main>
         <p class="homepage__bottom-article-title" data-fid="343:6214">This Gameboy Lookalike Loaded With Games Is Now 20% Off for Cyber Monday</p>
         <div class="homepage__bottom-article-metadata-2" data-fid="343:6215">
@@ -1895,19 +1737,7 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
          <div class="homepage__tag-container-55" data-fid="343:6225">
           <p class="homepage__tag-text-55" data-fid="343:6226">Hockey</p>
          </div>
-         <ul class="homepage__overflow-menu-3" data-fid="343:6227">
-          <li class="homepage__overflow-menu-dots-6" data-fid="343:6228">Utah</li>
-         </ul>
-         <div class="homepage__bottom-article-title-2" data-fid="343:6229">
-          <div class="homepage__bottom-article-metadata-3" data-fid="343:6230">
-           <div class="homepage__ellipse-6-16" data-fid="343:6231">
-           </div>
-           <div class="homepage__ellipse-7-16" data-fid="343:6232">
-           </div>
-           <div class="homepage__ellipse-8-16" data-fid="343:6233">
-           </div>
-          </div>
-         </div>
+         
         </main>
         <p class="homepage__bottom-article-title-3" data-fid="343:6234">Hockey Fans in Utah Crush Stadium Beer Record at First Game</p>
         <div class="homepage__bottom-article-metadata-4" data-fid="343:6235">
@@ -2072,14 +1902,14 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
        </div>
       </div>
      </div>
-     <div class="homepage__videos" data-fid="343:6312">
+     <div id="home-art" class="homepage__videos" data-fid="343:6312">
       <header class="homepage__header-2" data-fid="343:6313">
        <header class="homepage__header-title-3" data-fid="343:6314">Art</header>
        <button class="homepage__view-all-button-4" data-fid="343:6315">
         <span class="homepage__button-text-7" data-fid="343:6316">View All</span>
        </button>
       </header>
-      <div class="homepage__content-container" data-fid="343:6317">
+      <div id="home-art-track" class="homepage__content-container" data-fid="343:6317">
        <div class="homepage__card" data-fid="343:6318">
         <div class="homepage__frame-81" data-fid="343:6319"{% if artworks.0.image_url %} style="background-image: linear-gradient(rgba(6, 6, 6, 0.25), rgba(6, 6, 6, 0.25)), url('{{ artworks.0.image_url }}');"{% endif %}>
         </div>
@@ -2188,106 +2018,60 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
          </p>
         </div>
        </div>
-      </div>
+      </div><div class="home-carousel-controls" aria-label="Art scroll controls"><button type="button" data-scroll-target="home-art-track" data-scroll-direction="-1" aria-label="Previous art"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><button type="button" data-scroll-target="home-art-track" data-scroll-direction="1" aria-label="Next art"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div>
      </div>
-     <div class="homepage__container" data-fid="343:6380">
-      <div class="homepage__community-frame" data-fid="343:6381">
-       <section class="homepage__section-title" data-fid="343:6382">Our Community Members</section>
-       <ul class="homepage__members-list" data-fid="343:6383">
-        <li class="homepage__member-item" data-fid="343:6384">
-         <div class="homepage__member-info" data-fid="343:6385">
-          <p class="homepage__member-name" data-fid="343:6386">{{ community_voices.0.author_name|default:"Zidan Muharwan" }}</p>
-          <div class="homepage__tag-container-59" data-fid="343:6387">
-           <p class="homepage__tag-text-66" data-fid="343:6388">{{ community_voices.0.author_role|default:"Writer" }}</p>
-          </div>
-         </div>
-         <div class="homepage__member-info-2" data-fid="343:6389">
-          <p class="homepage__member-name-2" data-fid="343:6390">{{ community_voices.1.author_name|default:"Arlene McCoy" }}</p>
-          <div class="homepage__tag-container-60" data-fid="343:6391">
-           <p class="homepage__tag-text-67" data-fid="343:6392">{{ community_voices.1.author_role|default:"Artist" }}</p>
-          </div>
-         </div>
-         <div class="homepage__member-info-3" data-fid="343:6393">
-          <p class="homepage__member-name-3" data-fid="343:6394">{{ community_voices.2.author_name|default:"Robert Fox" }}</p>
-          <div class="homepage__tag-container-61" data-fid="343:6395">
-           <p class="homepage__tag-text-68" data-fid="343:6396">{{ community_voices.2.author_role|default:"Writer" }}</p>
-          </div>
-         </div>
-        </li>
-        <li class="homepage__action-section" data-fid="343:6397">
-         <button class="homepage__view-all-members-button" data-fid="343:6398">
-          <span class="homepage__button-text-8" data-fid="343:6399">View All Members</span>
-         </button>
-         <div class="homepage__join-info-container" data-fid="343:6400">
-          <p class="homepage__join-info-text" data-fid="343:6401">How to Join Community Members?</p>
-         </div>
-        </li>
-       </ul>
+    <div class="mindstate-community-footer">
+     <section class="community-section" aria-labelledby="community-heading">
+      <h2 class="community-label" id="community-heading">Our Community Members</h2>
+      <div class="members-marquee" aria-label="Community members">
+       <div class="members-track"><div class="members-group"><div class="member">{{ community_voices.0.author_name|default:"Zidan Muharwan" }}<span>{{ community_voices.0.author_role|default:"Writer" }}</span></div>
+<div class="member">{{ community_voices.1.author_name|default:"Arlene McCoy" }}<span>{{ community_voices.1.author_role|default:"Artist" }}</span></div>
+<div class="member">{{ community_voices.2.author_name|default:"Robert Fox" }}<span>{{ community_voices.2.author_role|default:"Writer" }}</span></div>
+<div class="member">Leslie Alexander<span>Editor</span></div></div><div class="members-group" aria-hidden="true"><div class="member">{{ community_voices.0.author_name|default:"Zidan Muharwan" }}<span>{{ community_voices.0.author_role|default:"Writer" }}</span></div>
+<div class="member">{{ community_voices.1.author_name|default:"Arlene McCoy" }}<span>{{ community_voices.1.author_role|default:"Artist" }}</span></div>
+<div class="member">{{ community_voices.2.author_name|default:"Robert Fox" }}<span>{{ community_voices.2.author_role|default:"Writer" }}</span></div>
+<div class="member">Leslie Alexander<span>Editor</span></div></div></div></div>
+      <div class="community-actions">
+       <button type="button" data-community-action="view-members">View All Members</button>
+       <a href="mailto:contact@mindstate.space?subject=Joining%20the%20MindState%20community&amp;body=Hi%20MindState%20team%2C%0A%0AI%27d%20love%20to%20join%20the%20MindState%20community.%20Please%20let%20me%20know%20how%20I%20can%20get%20involved.%0A%0AThank%20you%21" class="text-link" data-community-action="join-community">How to Join Community Members?</a>
       </div>
-      <div class="homepage__group-51" data-fid="356:6539">
-       <footer class="homepage__footer" data-fid="343:6402">
-        <section class="homepage__section-wrapper" data-fid="343:6403">
-         <div class="homepage__www" data-fid="343:6404">
-          <div class="homepage__chatgpt-image-sep-19-2026-11-28-00-pm-2" data-fid="352:6536">
-          </div>
-          <p class="homepage__wild-wired-world" data-fid="343:6405">MINDSTATE</p>
-          <p class="homepage__description-2" data-fid="343:6406">A space for honest conversations about mental health, culture, and being human.</p>
-         </div>
-         <div class="homepage__categories" data-fid="343:6407">
-          <ul class="homepage__menu-item" data-fid="343:6408">Categories</ul>
-          <ul class="homepage__menu-items" data-fid="343:6409">
-           <li class="homepage__menu-item-2" data-fid="343:6410">Articles</li>
-           <li class="homepage__menu-item-3" data-fid="343:6411">Art and Design</li>
-           <li class="homepage__menu-item-4" data-fid="343:6412">Contact Us</li>
-           <li class="homepage__menu-item-5" data-fid="343:6413">About Us</li>
-           <li class="homepage__menu-item-6" data-fid="343:6414">Join the community</li>
-          </ul>
-         </div>
-         <div class="homepage__social" data-fid="343:6431">
-          <ul class="homepage__menu-item-7" data-fid="343:6432">Social</ul>
-          <ul class="homepage__menu-items-2" data-fid="343:6433">
-           <li class="homepage__menu-item-8" data-fid="343:6434">Instagram</li>
-           <li class="homepage__menu-item-9" data-fid="343:6435">Facebook</li>
-           <li class="homepage__menu-item-10" data-fid="343:6436">Twitter</li>
-           <li class="homepage__menu-item-11" data-fid="343:6437">Youtube</li>
-          </ul>
-         </div>
-         <div class="homepage__frame-88" data-fid="343:6423">
-          <div class="homepage__frame-87" data-fid="343:6424">
-           <div class="homepage__partnerships" data-fid="343:6425">
-            <ul class="homepage__menu-item-12" data-fid="343:6426">Partnerships</ul>
-            <ul class="homepage__menu-items-3" data-fid="343:6427">
-             <li class="homepage__menu-item-13" data-fid="343:6428">Community</li>
-             <li class="homepage__menu-item-14" data-fid="343:6429">Advertising</li>
-             <li class="homepage__menu-item-15" data-fid="343:6430">Media Partner</li>
-            </ul>
-           </div>
-          </div>
-          <div class="homepage__container-2" data-fid="343:6438">
-           <ul class="homepage__menu-item-16" data-fid="343:6439">Subscribe</ul>
-           <form method="POST" action="{% url 'home' %}" class="homepage__email-input-container-2" data-fid="343:6440">{% csrf_token %}<div class="homepage__email-input-2" data-fid="343:6441">
-             <input type="email" name="email" required placeholder="Enter your mail" class="homepage__subscribe-placeholder-2" style="background:transparent;border:none;outline:none;" data-fid="343:6442"/>
-             <button type="submit" class="homepage__arrow-2" style="background:none;border:none;cursor:pointer;padding:0;" data-fid="343:6443">
-              <div class="homepage__vector-4" data-fid="343:6444">
-               <svg aria-label="Vector-12" class="homepage__vector-12-3" fill="none" preserveaspectratio="none" role="img" viewbox="0 0 16 12" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.442 0.442 C6.686 0.198 6.686 -0.198 6.442 -0.442 C6.198 -0.686 5.802 -0.686 5.558 -0.442 L6 0 L6.442 0.442 Z M-0.442 5.558 C-0.686 5.802 -0.686 6.198 -0.442 6.442 C-0.198 6.686 0.198 6.686 0.442 6.442 L0 6 L-0.442 5.558 Z M0.442 5.558 C0.198 5.314 -0.198 5.314 -0.442 5.558 C-0.686 5.802 -0.686 6.198 -0.442 6.442 L0 6 L0.442 5.558 Z M5.558 12.442 C5.802 12.686 6.198 12.686 6.442 12.442 C6.686 12.198 6.686 11.802 6.442 11.558 L6 12 L5.558 12.442 Z M0 5.375 C-0.345 5.375 -0.625 5.655 -0.625 6 C-0.625 6.345 -0.345 6.625 0 6.625 L0 6 L0 5.375 Z M16 6.625 C16.345 6.625 16.625 6.345 16.625 6 C16.625 5.655 16.345 5.375 16 5.375 L16 6 L16 6.625 Z M6 0 L5.558 -0.442 L-0.442 5.558 L0 6 L0.442 6.442 L6.442 0.442 L6 0 Z M0 6 L-0.442 6.442 L5.558 12.442 L6 12 L6.442 11.558 L0.442 5.558 L0 6 Z M0 6 L0 6.625 L16 6.625 L16 6 L16 5.375 L0 5.375 L0 6 Z" fill="rgb(6, 6, 6)" fill-rule="nonzero">
-                </path>
-               </svg>
-              </div>
-             </button>
-            </div>
-           </form>
-          </div>
-         </div>
-        </section>
-       </footer>
-       <div class="homepage__copyright-info" data-fid="343:6449">
-        <p class="homepage__article-body" data-fid="343:6450">MindState &copy; 2026, All Rights Reserved</p>
-        <p class="homepage__article-body-2" data-fid="343:6451">Privacy Policy</p>
-        <p class="homepage__article-body-3" data-fid="343:6452">Terms and conditions</p>
-       </div>
+     </section>
+     <footer class="mindstate-footer">
+      <div class="footer-brand">
+       <div class="footer-logo"><img src="{% static 'ChatgptImageSep19202611_28_00Pm1.png' %}" alt="MindState"></div>
+       <h2>MINDSTATE</h2>
+       <p>A space for honest conversations about mental health, culture, and being human.</p>
       </div>
-     </div>
+      <div class="footer-column"><h3>Categories</h3>
+       <a href="#home-articles" data-community-action="articles">Articles</a>
+       <a href="#home-art" data-community-action="art-and-design">Art and Design</a>
+       <a href="mailto:contact@mindstate.space" data-community-action="contact-us">Contact Us</a>
+       <button type="button" data-community-action="about-us">About Us</button>
+       <a href="mailto:contact@mindstate.space?subject=Joining%20the%20MindState%20community&amp;body=Hi%20MindState%20team%2C%0A%0AI%27d%20love%20to%20join%20the%20MindState%20community.%20Please%20let%20me%20know%20how%20I%20can%20get%20involved.%0A%0AThank%20you%21" data-community-action="join-the-community">Join the Community</a>
+      </div>
+      <div class="footer-column"><h3>Social</h3>
+       <a href="https://www.instagram.com/mindstate.space/">Instagram</a>
+       <a href="https://www.instagram.com/mindstate.space/">Facebook</a>
+       <a href="https://www.instagram.com/mindstate.space/">Twitter</a>
+       <a href="https://www.instagram.com/mindstate.space/">YouTube</a>
+      </div>
+      <form class="footer-subscribe home-signup" method="POST" action="{% url 'home' %}">{% csrf_token %}
+       <h3>Subscribe</h3>
+       <label>
+        <span class="sr-only">Email address</span>
+        <input name="email" type="email" placeholder="Enter your mail" required aria-describedby="newsletter-status"/>
+        <button type="submit" aria-label="Subscribe">→</button>
+       </label>
+       <p class="subscribe-status" id="newsletter-status" role="status"></p>
+      </form>
+      <p class="copyright">MindState © 2026, All Rights Reserved</p>
+      <div class="footer-legal">
+       <button type="button" data-community-action="privacy-policy">Privacy Policy</button>
+       <button type="button" data-community-action="terms">Terms and conditions</button>
+      </div>
+     </footer>
+    </div>
+
     </div>
    </div>
   </article>
