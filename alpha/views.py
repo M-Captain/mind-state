@@ -28,13 +28,16 @@ def article(request, pk):
 	content = get_object_or_404(
 		LandingContent,
 		pk=pk,
-		section=LandingContent.ARTICLES,
 		is_published=True,
 	)
 	related_articles = LandingContent.objects.filter(
-		section=LandingContent.ARTICLES,
+		section=content.section,
 		is_published=True,
 	).exclude(pk=content.pk)[:4]
+	if not related_articles.exists():
+		related_articles = LandingContent.objects.filter(
+			is_published=True,
+		).exclude(pk=content.pk)[:4]
 	community_voices = CommunityVoice.objects.filter(is_published=True)[:3]
 	return render(request, 'article.html', {
 		'article': content,

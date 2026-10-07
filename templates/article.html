@@ -54,17 +54,26 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
       height: 64px !important;
       padding: 12px 34px !important;
       border-radius: 64px !important;
-      background-color: rgba(254, 240, 216, 0.94) !important;
-      backdrop-filter: blur(12px) !important;
-      -webkit-backdrop-filter: blur(12px) !important;
-      box-shadow: 0 4px 24px rgba(41, 32, 33, 0.1), inset 0 0 0 1px rgb(41, 32, 33) !important;
+      background-color: rgb(41, 32, 33) !important;
+      box-shadow: 0 8px 30px rgba(41, 32, 33, 0.25) !important;
+      border: none !important;
+    }
+    .article__chatgpt-image-sep-19-2026-11-28-00-pm-1 {
+      background-image: url('ChatgptImageSep19202611_28_00Pm1.png') !important;
+      background-position: -5.83px -6.01px !important;
+      background-repeat: no-repeat !important;
+      background-size: 138.89% 125% !important;
+      flex: 0 0 auto !important;
+      height: 33px !important;
+      width: 30px !important;
+      display: block !important;
     }
     .article__menu {
       display: flex !important;
       flex-direction: row !important;
       align-items: center !important;
       justify-content: center !important;
-      gap: 28px !important;
+      gap: 24px !important;
       margin: 0 !important;
       padding: 0 !important;
       list-style: none !important;
@@ -74,7 +83,7 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
       display: flex !important;
       flex-direction: row !important;
       align-items: center !important;
-      gap: 6px !important;
+      gap: 4px !important;
       list-style: none !important;
       margin: 0 !important;
       padding: 0 !important;
@@ -83,25 +92,80 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
       margin: 0 !important;
       padding: 0 !important;
       list-style: none !important;
-      color: rgb(41, 32, 33) !important;
+      color: rgb(255, 255, 255) !important;
+      font-family: "Google Sans Flex", system-ui, sans-serif !important;
+      font-size: 16px !important;
+      font-weight: 400 !important;
+      text-transform: uppercase !important;
+      letter-spacing: -0.32px !important;
+      line-height: 20px !important;
+      transition: opacity 0.2s ease !important;
+    }
+    .article__menu a {
+      color: rgb(255, 255, 255) !important;
+      text-decoration: none !important;
+    }
+    .article__menu a:hover .article__menu-item-17,
+    .article__menu a:hover .article__menu-item-18,
+    .article__menu a:hover .article__menu-item-19,
+    .article__menu a:hover .article__menu-item-20 {
+      opacity: 0.8 !important;
+    }
+    .article__number, .article__number-3 {
+      border-radius: 4px !important;
+      box-shadow: inset 0 0 0 0.75px rgb(255, 255, 255) !important;
+      background: transparent !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 2px 4px !important;
+      height: 14px !important;
+    }
+    .article__number-2, .article__number-4 {
+      color: rgb(255, 255, 255) !important;
+      font-family: "Google Sans Flex", system-ui, sans-serif !important;
+      font-size: 8px !important;
       font-weight: 500 !important;
-      letter-spacing: 0.02em !important;
+      line-height: 10px !important;
+      margin: 0 !important;
     }
     .article__user-actions {
       display: flex !important;
       flex-direction: row !important;
       align-items: center !important;
-      gap: 16px !important;
+      gap: 24px !important;
       width: auto !important;
       flex: 0 0 auto !important;
     }
+    .article__search svg path {
+      fill: rgb(255, 255, 255) !important;
+    }
     .article__read-more-button {
+      background-color: rgb(255, 255, 255) !important;
+      border-radius: 24px !important;
+      height: 40px !important;
+      padding: 8px 24px !important;
+      border: none !important;
       cursor: pointer !important;
-      transition: opacity 0.2s ease, transform 0.2s ease !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
     .article__read-more-button:hover {
-      opacity: 0.9 !important;
+      background-color: rgb(240, 240, 240) !important;
       transform: translateY(-1px) !important;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+    }
+    .article__button-text-2 {
+      color: rgb(41, 32, 33) !important;
+      font-family: "Google Sans Flex", system-ui, sans-serif !important;
+      font-size: 16px !important;
+      font-weight: 500 !important;
+      line-height: 24px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      white-space: nowrap !important;
     }
 
     /* Page Contents 100% width */
@@ -815,11 +879,11 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
      <a href="{% url 'search' %}" class="article__search" data-fid="356:6812" style="display: block; color: inherit; text-decoration: none;">
       <div class="article__vector-7" data-fid="356:6813">
        <svg aria-label="vector-3" class="article__vector-3-2" fill="none" preserveaspectratio="none" role="img" viewbox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 7.001 L0.75 7.001 L0.75 7.001 L0 7.001 Z M13.466 4.321 L12.773 4.608 L12.773 4.608 L13.466 4.321 Z M10.889 12.82 L11.306 13.443 L11.306 13.443 L10.889 12.82 Z M2.051 11.95 L2.581 11.42 L2.581 11.42 L2.051 11.95 Z M0 7.001 L0.75 7.001 C0.75 4.02 2.855 1.453 5.78 0.871 L5.633 0.135 L5.487 -0.6 C1.861 0.122 -0.751 3.304 -0.75 7.001 L0 7.001 Z M5.633 0.135 L5.78 0.871 C8.704 0.289 11.632 1.853 12.773 4.608 L13.466 4.321 L14.159 4.034 C12.744 0.618 9.113 -1.322 5.487 -0.6 L5.633 0.135 Z M13.466 4.321 L12.773 4.608 C13.915 7.362 12.951 10.539 10.472 12.196 L10.889 12.82 L11.306 13.443 C14.38 11.389 15.574 7.449 14.159 4.034 L13.466 4.321 Z M10.889 12.82 L10.472 12.196 C7.993 13.853 4.689 13.528 2.581 11.42 L2.051 11.95 L1.52 12.481 C4.135 15.095 8.232 15.498 11.306 13.443 L10.889 12.82 Z M2.051 11.95 L2.581 11.42 C1.409 10.248 0.75 8.659 0.75 7.001 L0 7.001 L-0.75 7.001 C-0.75 9.057 0.067 11.028 1.52 12.481 L2.051 11.95 Z" fill="rgb(41, 32, 33)" fill-rule="nonzero">
+        <path d="M0 7.001 L0.75 7.001 L0.75 7.001 L0 7.001 Z M13.466 4.321 L12.773 4.608 L12.773 4.608 L13.466 4.321 Z M10.889 12.82 L11.306 13.443 L11.306 13.443 L10.889 12.82 Z M2.051 11.95 L2.581 11.42 L2.581 11.42 L2.051 11.95 Z M0 7.001 L0.75 7.001 C0.75 4.02 2.855 1.453 5.78 0.871 L5.633 0.135 L5.487 -0.6 C1.861 0.122 -0.751 3.304 -0.75 7.001 L0 7.001 Z M5.633 0.135 L5.78 0.871 C8.704 0.289 11.632 1.853 12.773 4.608 L13.466 4.321 L14.159 4.034 C12.744 0.618 9.113 -1.322 5.487 -0.6 L5.633 0.135 Z M13.466 4.321 L12.773 4.608 C13.915 7.362 12.951 10.539 10.472 12.196 L10.889 12.82 L11.306 13.443 C14.38 11.389 15.574 7.449 14.159 4.034 L13.466 4.321 Z M10.889 12.82 L10.472 12.196 C7.993 13.853 4.689 13.528 2.581 11.42 L2.051 11.95 L1.52 12.481 C4.135 15.095 8.232 15.498 11.306 13.443 L10.889 12.82 Z M2.051 11.95 L2.581 11.42 C1.409 10.248 0.75 8.659 0.75 7.001 L0 7.001 L-0.75 7.001 C-0.75 9.057 0.067 11.028 1.52 12.481 L2.051 11.95 Z" fill="rgb(255, 255, 255)" fill-rule="nonzero">
         </path>
        </svg>
        <svg aria-label="vector-4" class="article__vector-4-2" fill="none" preserveaspectratio="none" role="img" viewbox="0 0 4 4" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0.53 -0.53 C0.237 -0.823 -0.237 -0.823 -0.53 -0.53 C-0.823 -0.237 -0.823 0.237 -0.53 0.53 L0 0 L0.53 -0.53 Z M3.47 4.53 C3.763 4.823 4.237 4.823 4.53 4.53 C4.823 4.237 4.823 3.763 4.53 3.47 L4 4 L3.47 4.53 Z M0 0 L-0.53 0.53 L3.47 4.53 L4 4 L4.53 3.47 L0.53 -0.53 L0 0 Z" fill="rgb(41, 32, 33)" fill-rule="nonzero">
+        <path d="M0.53 -0.53 C0.237 -0.823 -0.237 -0.823 -0.53 -0.53 C-0.823 -0.237 -0.823 0.237 -0.53 0.53 L0 0 L0.53 -0.53 Z M3.47 4.53 C3.763 4.823 4.237 4.823 4.53 4.53 C4.823 4.237 4.823 3.763 4.53 3.47 L4 4 L3.47 4.53 Z M0 0 L-0.53 0.53 L3.47 4.53 L4 4 L4.53 3.47 L0.53 -0.53 L0 0 Z" fill="rgb(255, 255, 255)" fill-rule="nonzero">
         </path>
        </svg>
       </div>

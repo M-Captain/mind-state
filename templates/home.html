@@ -18,6 +18,89 @@
         box-sizing: border-box !important;
       }
 
+      /* === Article Card Hover Animations & Micro-Interactions === */
+      .homepage__article-container > div:not(.homepage__subscribe-container) {
+        cursor: pointer !important;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease !important;
+        border-radius: 14px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        position: relative !important;
+      }
+
+      .homepage__article-container > div:not(.homepage__subscribe-container):hover {
+        transform: translateY(-8px) !important;
+      }
+
+      /* Image zoom with contained overflow */
+      .homepage__article-container > div:not(.homepage__subscribe-container) [class*="homepage__article-image"] {
+        border-radius: 12px !important;
+        overflow: hidden !important;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, filter 0.3s ease !important;
+        box-shadow: 0 4px 16px rgba(41, 32, 33, 0.08) !important;
+      }
+
+      .homepage__article-container > div:not(.homepage__subscribe-container):hover [class*="homepage__article-image"] {
+        transform: scale(1.03) !important;
+        box-shadow: 0 16px 32px -8px rgba(41, 32, 33, 0.22) !important;
+        filter: brightness(1.03) !important;
+      }
+
+      /* Title interactive color feedback */
+      .homepage__article-container > div:not(.homepage__subscribe-container) [class*="homepage__article-title"] {
+        transition: color 0.25s ease !important;
+      }
+
+      .homepage__article-container > div:not(.homepage__subscribe-container):hover [class*="homepage__article-title"] {
+        color: rgb(180, 50, 40) !important;
+      }
+
+      .homepage__article-container > div:not(.homepage__subscribe-container):active {
+        transform: translateY(-2px) scale(0.99) !important;
+        transition: transform 0.1s ease !important;
+      }
+
+      /* Additional article sections hover animations */
+      .homepage__main-article-frame,
+      .homepage__sidebar-article,
+      .homepage__sidebar-article-2,
+      .homepage__sidebar-article-3,
+      .homepage__bottom-article,
+      .homepage__bottom-article-2,
+      .homepage__bottom-article-3,
+      .homepage__item-row,
+      .homepage__item-row-2,
+      .homepage__item-row-3,
+      .homepage__card,
+      .homepage__card-2,
+      .homepage__card-3,
+      .homepage__event-card,
+      .homepage__event-card-2,
+      .homepage__event-card-3 {
+        cursor: pointer !important;
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease !important;
+      }
+
+      .homepage__bottom-article:hover,
+      .homepage__bottom-article-2:hover,
+      .homepage__bottom-article-3:hover,
+      .homepage__card:hover,
+      .homepage__card-2:hover,
+      .homepage__card-3:hover,
+      .homepage__event-card:hover,
+      .homepage__event-card-2:hover,
+      .homepage__event-card-3:hover {
+        transform: translateY(-6px) !important;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12) !important;
+      }
+
+      /* Card link reset */
+      .homepage__card-link {
+        text-decoration: none !important;
+        color: inherit !important;
+        display: contents !important;
+      }
+
       /* === Recently Added Section: UI/UX Fixes === */
       .homepage__latest-news {
         width: 100% !important;
@@ -1171,7 +1254,7 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
        </button>
       </header>
       <div class="homepage__article-container" data-fid="343:5836">
-       <div class="homepage__article-container-2" data-fid="343:5837">
+       <div class="homepage__article-container-2" data-fid="343:5837"{% if articles.0 %} onclick="window.location.href='{% url 'article' articles.0.id %}';" style="cursor: pointer;"{% endif %}>
         <div class="homepage__article-image"{% if articles.0.image_url %} style="background-image: url('{{ articles.0.image_url }}');"{% endif %} data-fid="343:5838">
         </div>
         <div class="homepage__tags-container" data-fid="343:5839">
@@ -1195,7 +1278,9 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
           </div>
          </div>
         </div>
+        {% if articles.0 %}<a href="{% url 'article' articles.0.id %}" style="text-decoration:none; color:inherit; display:block;">{% endif %}
         <p class="homepage__article-title" data-fid="343:5851">{{ articles.0.title }}</p>
+        {% if articles.0 %}</a>{% endif %}
         <div class="homepage__metadata-container" data-fid="343:5852">
          <p class="homepage__date" data-fid="343:5853">{{ articles.0.published_at|date:"d M Y" }}</p>
          <p class="homepage__author" data-fid="343:5854">
@@ -1206,7 +1291,7 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
          </p>
         </div>
        </div>
-       <div class="homepage__article-container-3" data-fid="343:5855">
+       <div class="homepage__article-container-3" data-fid="343:5855"{% if articles.1 %} onclick="window.location='{% url 'article' articles.1.id %}';" style="cursor: pointer;"{% endif %}>
         <div class="homepage__article-image-2"{% if articles.1.image_url %} style="background-image: url('{{ articles.1.image_url }}');"{% endif %} data-fid="343:5856">
         </div>
         <div class="homepage__tags-container-2" data-fid="343:5857">
@@ -1230,7 +1315,9 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
           </div>
          </div>
         </div>
+        {% if articles.1 %}<a href="{% url 'article' articles.1.id %}" style="text-decoration:none; color:inherit; display:block;">{% endif %}
         <p class="homepage__article-title-2" data-fid="343:5869">{{ articles.1.title }}</p>
+        {% if articles.1 %}</a>{% endif %}
         <div class="homepage__metadata-container-2" data-fid="343:5870">
          <p class="homepage__date-2" data-fid="343:5871">{{ articles.1.published_at|date:"d M Y" }}</p>
          <p class="homepage__author-2" data-fid="343:5872">
@@ -1241,7 +1328,7 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
          </p>
         </div>
        </div>
-       <div class="homepage__article-container-4" data-fid="343:5873">
+       <div class="homepage__article-container-4" data-fid="343:5873"{% if articles.2 %} onclick="window.location='{% url 'article' articles.2.id %}';" style="cursor: pointer;"{% endif %}>
         <div class="homepage__article-image-3"{% if articles.2.image_url %} style="background-image: url('{{ articles.2.image_url }}');"{% endif %} data-fid="343:5874">
         </div>
         <div class="homepage__tags-container-3" data-fid="343:5875">
@@ -1265,18 +1352,20 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
           </div>
          </div>
         </div>
+        {% if articles.2 %}<a href="{% url 'article' articles.2.id %}" style="text-decoration:none; color:inherit; display:block;">{% endif %}
         <p class="homepage__article-title-3" data-fid="343:5887">{{ articles.2.title }}</p>
+        {% if articles.2 %}</a>{% endif %}
         <div class="homepage__metadata-container-3" data-fid="343:5888">
          <p class="homepage__date-3" data-fid="343:5889">{{ articles.2.published_at|date:"d M Y" }}</p>
          <p class="homepage__author-3" data-fid="343:5890">
           <span class="homepage__author-3-runs">
-           <span class="homepage__author-3-run-1">&bull; By</span>
-           <span class="homepage__author-3-run-2">{{ articles.2.author }}</span>
+           <span class="homepage__author-run-1">&bull; By</span>
+           <span class="homepage__author-run-2">{{ articles.2.author }}</span>
           </span>
          </p>
         </div>
        </div>
-       <div class="homepage__article-container-5" data-fid="343:5891">
+       <div class="homepage__article-container-5" data-fid="343:5891"{% if articles.3 %} onclick="window.location='{% url 'article' articles.3.id %}';" style="cursor: pointer;"{% endif %}>
         <img alt="{{ articles.3.title|default:'Article Image' }}" class="homepage__article-image-4" src="{% if articles.3.image_url %}{{ articles.3.image_url }}{% else %}{% static 'ArticleImage(3).png' %}{% endif %}" data-fid="343:5892"/>
         <div class="homepage__tags-container-4" data-fid="343:5893">
          <div class="homepage__tag-container-10" data-fid="343:5894">
@@ -1289,7 +1378,9 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
           <p class="homepage__tag-text-12" data-fid="343:5899">Hardly Art</p>
          </div>
         </div>
+        {% if articles.3 %}<a href="{% url 'article' articles.3.id %}" style="text-decoration:none; color:inherit; display:block;">{% endif %}
         <p class="homepage__article-title-4" data-fid="343:5900">{{ articles.3.title }}</p>
+        {% if articles.3 %}</a>{% endif %}
         <div class="homepage__metadata-container-4" data-fid="343:5901">
          <p class="homepage__date-4" data-fid="343:5902">{{ articles.3.published_at|date:"d M Y" }}</p>
          <p class="homepage__author-4" data-fid="343:5903">
@@ -1300,7 +1391,7 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
          </p>
         </div>
        </div>
-       <div class="homepage__article-container-6" data-fid="343:5904">
+       <div class="homepage__article-container-6" data-fid="343:5904"{% if articles.4 %} onclick="window.location='{% url 'article' articles.4.id %}';" style="cursor: pointer;"{% endif %}>
         <div class="homepage__article-image-5"{% if articles.4.image_url %} style="background-image: url('{{ articles.4.image_url }}');"{% endif %} data-fid="343:5905">
         </div>
         <div class="homepage__tags-container-5" data-fid="343:5906">
@@ -1324,7 +1415,9 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
           </div>
          </div>
         </div>
+        {% if articles.4 %}<a href="{% url 'article' articles.4.id %}" style="text-decoration:none; color:inherit; display:block;">{% endif %}
         <p class="homepage__article-title-5" data-fid="343:5918">{{ articles.4.title }}</p>
+        {% if articles.4 %}</a>{% endif %}
         <div class="homepage__metadata-container-5" data-fid="343:5919">
          <p class="homepage__date-5" data-fid="343:5920">{{ articles.4.published_at|date:"d M Y" }}</p>
          <p class="homepage__author-5" data-fid="343:5921">
@@ -1335,7 +1428,7 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
          </p>
         </div>
        </div>
-       <div class="homepage__article-container-7" data-fid="343:5922">
+       <div class="homepage__article-container-7" data-fid="343:5922"{% if articles.5 %} onclick="window.location='{% url 'article' articles.5.id %}';" style="cursor: pointer;"{% endif %}>
         <div class="homepage__article-image-6"{% if articles.5.image_url %} style="background-image: url('{{ articles.5.image_url }}');"{% endif %} data-fid="343:5923">
         </div>
         <div class="homepage__tags-container-6" data-fid="343:5924">
@@ -1359,7 +1452,9 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
           </div>
          </div>
         </div>
+        {% if articles.5 %}<a href="{% url 'article' articles.5.id %}" style="text-decoration:none; color:inherit; display:block;">{% endif %}
         <p class="homepage__article-title-6" data-fid="343:5936">{{ articles.5.title }}</p>
+        {% if articles.5 %}</a>{% endif %}
         <div class="homepage__metadata-container-6" data-fid="343:5937">
          <p class="homepage__date-6" data-fid="343:5938">{{ articles.5.published_at|date:"d M Y" }}</p>
          <p class="homepage__author-6" data-fid="343:5939">
@@ -1370,7 +1465,7 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
          </p>
         </div>
        </div>
-       <div class="homepage__article-container-8" data-fid="343:5940">
+       <div class="homepage__article-container-8" data-fid="343:5940"{% if articles.6 %} onclick="window.location='{% url 'article' articles.6.id %}';" style="cursor: pointer;"{% endif %}>
         <img alt="{{ articles.6.title|default:'Article Image' }}" class="homepage__article-image-7" src="{% if articles.6.image_url %}{{ articles.6.image_url }}{% else %}{% static 'ArticleImage(6).png' %}{% endif %}" data-fid="343:5941"/>
         <div class="homepage__tags-container-7" data-fid="343:5942">
          <div class="homepage__tag-container-19" data-fid="343:5943">
@@ -1393,7 +1488,9 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
           </div>
          </div>
         </div>
+        {% if articles.6 %}<a href="{% url 'article' articles.6.id %}" style="text-decoration:none; color:inherit; display:block;">{% endif %}
         <p class="homepage__article-title-7" data-fid="343:5954">{{ articles.6.title|default:"Forgotten Architecture: The Weirdest Designs of the 20th Century" }}</p>
+        {% if articles.6 %}</a>{% endif %}
         <div class="homepage__metadata-container-7" data-fid="343:5955">
          <p class="homepage__date-7" data-fid="343:5956">{% if articles.6.published_at %}{{ articles.6.published_at|date:"d M Y" }}{% else %}09 Jul 2024{% endif %}</p>
          <p class="homepage__author-7" data-fid="343:5957">
