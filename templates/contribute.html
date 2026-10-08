@@ -10,7 +10,7 @@
  <link href="{% static 'community-footer.css' %}?v=community-directory-3" rel="stylesheet">
  <link href="{% static 'article-ui.css' %}?v=reading-7" rel="stylesheet">
  <link href="{% static 'about.css' %}" rel="stylesheet">
- <link href="{% static 'contribute.css' %}?v=1" rel="stylesheet">
+ <link href="{% static 'contribute.css' %}?v=2" rel="stylesheet">
  <script src="{% static 'home-ui.js' %}" defer></script>
  <link rel="icon" type="image/x-icon" href="{% static 'ChatgptImageSep19202611_28_00Pm2.png' %}">
 </head>
@@ -19,25 +19,26 @@
  <main class="contribute-main" id="top">
   <header class="contribute-intro">
    <p class="about-eyebrow">MindState</p>
-   <h1>Community &amp; Contribution Guidelines</h1>
+   <h1>Help shape MindState.</h1>
+   <a class="contribute-download" href="{% static 'documents/MindState_Guidelines.docx' %}" download="MindState_Guidelines.docx">Download the full guide <span>Word document ↓</span></a>
    <p class="contribute-lede">How we write, draw, translate, build and look after each other on MindState.</p>
    <div class="contribute-actions" aria-label="MindState on GitHub">
     <a href="https://github.com/rudranshshuklaofficial/mindstate" target="_blank" rel="noopener noreferrer">Star on GitHub <span aria-hidden="true">↗</span></a>
-    <a href="https://github.com/rudranshshuklaofficial/mindstate" target="_blank" rel="noopener noreferrer">Contribute <span aria-hidden="true">↗</span></a>
+    <a href="https://github.com/rudranshshuklaofficial/mindstate/issues" target="_blank" rel="noopener noreferrer">Contribute on GitHub <span aria-hidden="true">↗</span></a>
    </div>
    <p class="contribute-repo-note">The repository is being prepared, and more of the project code will be added over time.</p>
-   <details class="contribute-contents" open>
-    <summary>Contents <span aria-hidden="true">⌄</span></summary>
-    <nav aria-label="Guidelines contents"><ul class="contribute-toc-list">{{ guidelines_toc }}</ul></nav>
-   </details>
-   <a class="contribute-brief-jump" href="#brief-info">Read the brief <span aria-hidden="true">↓</span></a>
   </header>
-  <section class="contribute-doc contribute-brief" id="brief-info" aria-label="Guidelines quick guide">
-   {{ brief_guidelines }}
-  </section>
+  <div class="contribute-layout">
+   <aside class="contribute-sidebar">
+    <details class="contribute-contents" open>
+     <summary>Explore the guide <span aria-hidden="true">⌄</span></summary>
+     <nav aria-label="Guidelines contents"><ul class="contribute-toc-list">{{ guidelines_toc }}</ul></nav>
+    </details>
+   </aside>
   <section class="contribute-doc contribute-full" id="full-guidelines" aria-label="Full community and contribution guidelines">
    {{ full_guidelines }}
   </section>
+  </div>
   <p class="contribute-back"><a href="#top">Back to top ↑</a></p>
  </main>
  {% include 'community-footer.html' %}

@@ -13,7 +13,6 @@ def contribute(request):
 	content_dir = Path(settings.BASE_DIR) / 'templates'
 	return render(request, 'contribute.html', {
 		'full_guidelines': mark_safe((content_dir / 'contribute-full.html').read_text(encoding='utf-8')),
-		'brief_guidelines': mark_safe((content_dir / 'contribute-brief.html').read_text(encoding='utf-8')),
 		'guidelines_toc': mark_safe((content_dir / 'contribute-toc.html').read_text(encoding='utf-8')),
 	})
 
