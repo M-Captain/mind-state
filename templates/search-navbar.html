@@ -1,0 +1,14 @@
+{% load static %}
+<header class="search__header">
+ <a class="search__brand" href="{% url 'home' %}" aria-label="MindState home"><img src="{% static 'ChatgptImageSep19202611_28_00Pm2.png' %}" alt="MindState"></a>
+ <ul class="search__menu" aria-label="Main menu">
+  <li class="search__nav-item"><a href="{% url 'home' %}#home-articles">Articles <span class="search__count">11</span></a></li>
+  <li class="search__nav-item"><a href="{% url 'home' %}#home-art">Art <span class="search__count">6</span></a></li>
+  <li class="search__nav-item"><a href="{% url 'about' %}">About us</a></li>
+  <li class="search__nav-item"><a href="{% url 'about' %}#contact-us">Contact us</a></li>
+ </ul>
+ <div class="search__user-actions">
+  <a href="{% url 'search' %}" class="search__header-icon" aria-label="Search"><svg aria-hidden="true" viewBox="0 0 32 32" fill="none"><circle cx="13" cy="13" r="10" stroke="currentColor" stroke-width="1.7"/><path d="m21 21 8 8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></a>
+  <a class="search__read-more-button" href="{% url 'about' %}#get-involved"><span class="search__button-text-2">Join the Community</span></a>
+ </div>
+</header>

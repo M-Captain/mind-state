@@ -1,8 +1,1 @@
-<div class="member">Ishita<span>Writer</span></div>
-<div class="member">Johanna Huber<span>Writer</span></div>
-<div class="member">Ruby<span>Writer</span></div>
-<div class="member">Sophia<span>Writer</span></div>
-<div class="member">Sanja<span>Writer</span></div>
-<div class="member">Selina<span>Writer</span></div>
-<div class="member">Rudransh Shukla<span>Developer</span></div>
-<div class="member">Ashish Maurya<span>Developer</span></div>
+{% for member in community_members %}<div class="member">{{ member.name }}<span>{{ member.role }}</span></div>{% endfor %}

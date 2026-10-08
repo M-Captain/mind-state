@@ -1,0 +1,84 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Our Community | MindState</title>
+ <link rel="icon" type="image/x-icon" href="{% static 'ChatgptImageSep19202611_28_00Pm2.png' %}">
+ <link rel="stylesheet" href="{% static 'site-fonts.css' %}">
+ <link rel="stylesheet" href="{% static 'search.css' %}">
+ <link rel="stylesheet" href="{% static 'community-footer.css' %}?v=community-directory-3">
+ <link rel="stylesheet" href="{% static 'community-directory.css' %}?v=directory-illustration-2">
+ <script src="{% static 'community-directory.js' %}?v=directory-controls-3" defer></script>
+ <script src="{% static 'community-footer.js' %}" defer></script>
+</head>
+<body>
+ <article class="search community-directory-page">
+  <main class="community-directory-main">
+   <section class="community-directory-intro" aria-labelledby="community-directory-title">
+    <div class="community-directory-intro-copy">
+     <p class="community-directory-eyebrow">MindState Community</p>
+     <h1 id="community-directory-title">Our Community Members</h1>
+     <p>Meet the writers and developers behind MindState.</p>
+    </div>
+    <img class="community-directory-illustration" src="{% static 'community-balance-illustration.png' %}?v=2" alt="An illustration of two people sitting on opposite sides of a balance scale">
+   </section>
+
+   <section class="community-directory" aria-label="Browse community members">
+    <div class="community-directory-controls">
+     <label class="community-directory-search">
+      <span class="sr-only">Search members</span>
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/></svg>
+      <input type="search" data-member-search placeholder="Search members" autocomplete="off">
+     </label>
+     <label class="community-directory-select-label">
+      <span>Sort by</span>
+      <select data-member-sort aria-label="Sort members alphabetically">
+       <option value="az">Alphabetical, A–Z</option>
+       <option value="za">Alphabetical, Z–A</option>
+      </select>
+     </label>
+     <label class="community-directory-select-label">
+      <span>Role</span>
+      <select data-member-role aria-label="Filter by role">
+       <option value="all">All roles</option>
+       <option value="writer">Writer</option>
+       <option value="developer">Developer</option>
+      </select>
+     </label>
+    </div>
+
+    <nav class="community-directory-alphabet" aria-label="Filter members by first letter">
+     <button type="button" data-member-letter="all" aria-pressed="true">All</button>
+     {% for letter in alphabet %}
+      <button type="button" data-member-letter="{{ letter }}" aria-pressed="false"{% if letter not in available_letters %} disabled{% endif %}>{{ letter }}</button>
+     {% endfor %}
+    </nav>
+
+    <p class="community-directory-count" data-member-count role="status" aria-live="polite">{{ member_count }} members</p>
+    <div class="community-directory-groups" data-member-groups>
+     {% for group in member_groups %}
+      <section class="community-directory-group" data-letter-section="{{ group.letter }}" aria-labelledby="community-letter-{{ group.letter }}">
+       <h2 id="community-letter-{{ group.letter }}">{{ group.letter }}</h2>
+       <ul>
+        {% for member in group.members %}
+         <li class="community-directory-card" data-member-card data-name="{{ member.name|lower }}" data-role="{{ member.role|lower }}" data-letter="{{ group.letter }}">
+          <span class="community-directory-initial" aria-hidden="true">{{ group.letter }}</span>
+          <span class="community-directory-card-copy"><span class="community-directory-name">{{ member.name }}</span><span class="community-directory-role">{{ member.role }}</span></span>
+         </li>
+        {% endfor %}
+       </ul>
+      </section>
+     {% empty %}
+      <p>No community members are listed yet.</p>
+     {% endfor %}
+    </div>
+    <p class="community-directory-empty" data-member-empty hidden>No members match those filters.</p>
+   </section>
+  </main>
+  {% include 'community-footer.html' %}
+  {% include 'search-navbar.html' %}
+ </article>
+</body>
+</html>

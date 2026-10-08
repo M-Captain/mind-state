@@ -8,7 +8,7 @@
    Search | MindState
   </title>
     <link href="{% static 'search.css' %}?v=colored-logo-1" rel="stylesheet"/>
-    <link href="{% static 'community-footer.css' %}?v=colored-logo-1" rel="stylesheet"/>
+    <link href="{% static 'community-footer.css' %}?v=community-directory-3" rel="stylesheet"/>
     <script src="{% static 'community-footer.js' %}" defer></script>
      <link rel="icon" type="image/x-icon" href="{%static 'ChatgptImageSep19202611_28_00Pm2.png' %}">
 
@@ -18,7 +18,7 @@ Google Sans Flex: embedded 3/3 face(s), subset to the characters this design use
 Instrument Serif: embedded 1/1 face(s), subset to the characters this design uses.
 -->
 
- <link href="{% static 'article-library.css' %}?v=library-art-1" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600&display=swap" rel="stylesheet"></head>
+ <link href="{% static 'article-library.css' %}?v=library-card-spacing-2" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600&display=swap" rel="stylesheet"></head>
  <body>
   <article class="search" data-fid="358:6820">
    <div class="search__contents" data-fid="358:6821">
@@ -46,7 +46,7 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
        </div>
       </div>
       <div class="community-actions">
-       <button type="button" data-community-action="view-members">View All Members</button>
+       <a class="community-view-all" href="{% url 'community-directory' %}" data-community-action="view-members">View All Members</a>
        <button type="button" class="text-link" data-community-action="join-community">How to Join Community Members?</button>
       </div>
      </section>
@@ -86,19 +86,7 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
      </footer>
     </div>
    </div>
-   <header class="search__header">
-    <a class="search__brand" href="{% url 'home' %}" aria-label="MindState home"><img src="{% static 'ChatgptImageSep19202611_28_00Pm2.png' %}" alt="MindState"></a>
-    <ul class="search__menu" aria-label="Main menu">
-     <li class="search__nav-item"><a href="{% url 'home' %}#home-articles">Articles <span class="search__count">11</span></a></li>
-     <li class="search__nav-item"><a href="{% url 'home' %}#home-art">Art <span class="search__count">6</span></a></li>
-     <li class="search__nav-item"><a href="{% url 'about' %}">About us</a></li>
-     <li class="search__nav-item"><a href="{% url 'about' %}#contact-us">Contact us</a></li>
-    </ul>
-    <div class="search__user-actions">
-     <a href="{% url 'search' %}" class="search__header-icon" aria-label="Search"><svg aria-hidden="true" viewBox="0 0 32 32" fill="none"><circle cx="13" cy="13" r="10" stroke="currentColor" stroke-width="1.7"/><path d="m21 21 8 8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></a>
-     <a class="search__read-more-button" href="{% url 'about' %}#get-involved"><span class="search__button-text-2">Join the Community</span></a>
-    </div>
-   </header>
+   {% include 'search-navbar.html' %}
   </article>
  </body>
 </html>

@@ -848,7 +848,7 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
     .article__chatgpt-image-sep-19-2026-11-28-00-pm-2 img { display:block; width:38px; height:38px; object-fit:contain; }
     [class*="article__author"], [class*="article__location"] { width:auto !important; max-width:none !important; white-space:nowrap !important; overflow-wrap:normal !important; flex:0 0 auto !important; }
   </style>
-<link href="{% static 'community-footer.css' %}?v=serif-1" rel="stylesheet"/><link href="{% static 'article-ui.css' %}?v=reading-7" rel="stylesheet"/><script src="{% static 'home-ui.js' %}" defer></script><script src="{% static 'article-ui.js' %}" defer></script><link href="{% static 'article-library.css' %}?v=white-hero-credits-1" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600&display=swap" rel="stylesheet"></head>
+<link href="{% static 'community-footer.css' %}?v=community-directory-3" rel="stylesheet"/><link href="{% static 'article-ui.css' %}?v=reading-7" rel="stylesheet"/><script src="{% static 'home-ui.js' %}" defer></script><script src="{% static 'article-ui.js' %}" defer></script><link href="{% static 'article-library.css' %}?v=library-card-spacing-2" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600&display=swap" rel="stylesheet"></head>
  <body>
   <article class="article{% if article.section == 'art' %} art-post{% endif %}" data-fid="356:6540">
    {% include 'article-navigation.html' %}
@@ -906,7 +906,7 @@ Instrument Serif: embedded 1/1 face(s), subset to the characters this design use
        </div>
       </div>
       <div class="community-actions">
-       <button type="button" data-community-action="view-members">View All Members</button>
+       <a class="community-view-all" href="{% url 'community-directory' %}" data-community-action="view-members">View All Members</a>
        <a href="mailto:contact@mindstate.space?subject=Joining%20the%20MindState%20community&amp;body=Hi%20MindState%20team%2C%0A%0AI%27d%20love%20to%20join%20the%20MindState%20community.%20Please%20let%20me%20know%20how%20I%20can%20get%20involved.%0A%0AThank%20you%21" class="text-link" data-community-action="join-community">How to Join Community Members?</a>
       </div>
      </section>

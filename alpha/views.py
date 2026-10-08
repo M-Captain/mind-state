@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.db.models import Q
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required
+from .community import COMMUNITY_MEMBERS
 from .models import CommunityVoice, EventConversation, FeaturedEdition, LandingContent, Newsletter, Waitlist
 
 
@@ -73,6 +74,26 @@ def search(request):
 		'search_query': query,
 		'search_results': results,
 		'search_section': section,
+	})
+
+
+@login_required
+def community_directory(request):
+	ordered_members = sorted(COMMUNITY_MEMBERS, key=lambda member: member['name'].casefold())
+	grouped_members = {}
+	for member in ordered_members:
+		letter = member['name'][0].upper()
+		grouped_members.setdefault(letter, []).append(member)
+
+	return render(request, 'community-directory.html', {
+		'community_members': COMMUNITY_MEMBERS,
+		'member_groups': [
+			{'letter': letter, 'members': members}
+			for letter, members in grouped_members.items()
+		],
+		'member_count': len(ordered_members),
+		'alphabet': 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+		'available_letters': set(grouped_members),
 	})
 
 @login_required
