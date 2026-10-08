@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.contrib.auth.views import LoginView
 from django.urls import path
 from django.views.generic import TemplateView
-from alpha.views import article, art_post, community_directory, home, landing, search
+from alpha.views import article, art_post, community_directory, contribute, home, landing, search
 
 urlpatterns = [
     path('', home, name='home'),
@@ -31,6 +31,7 @@ urlpatterns = [
     path('landing/', landing, name='landing'),
     path('accounts/login/', LoginView.as_view(template_name='auth.html', next_page='home'), name='login'),
     path('about/', TemplateView.as_view(template_name='about.html'), name='about'),
+    path('contribute/', contribute, name='contribute'),
     path('community/members/', community_directory, name='community-directory'),
     path('admin/', admin.site.urls),
 ]

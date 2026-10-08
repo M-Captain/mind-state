@@ -1,9 +1,21 @@
 from django.contrib import messages
+from django.conf import settings
 from django.db.models import Q
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required
+from django.utils.safestring import mark_safe
+from pathlib import Path
 from .community import COMMUNITY_MEMBERS
 from .models import CommunityVoice, EventConversation, FeaturedEdition, LandingContent, Newsletter, Waitlist
+
+
+def contribute(request):
+	content_dir = Path(settings.BASE_DIR) / 'templates'
+	return render(request, 'contribute.html', {
+		'full_guidelines': mark_safe((content_dir / 'contribute-full.html').read_text(encoding='utf-8')),
+		'brief_guidelines': mark_safe((content_dir / 'contribute-brief.html').read_text(encoding='utf-8')),
+		'guidelines_toc': mark_safe((content_dir / 'contribute-toc.html').read_text(encoding='utf-8')),
+	})
 
 
 @login_required
